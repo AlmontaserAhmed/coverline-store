@@ -93,7 +93,7 @@
       return '' +
         '<div class="piece" data-id="' + p.id + '">' +
           '<a class="swatch-link" href="/product.html?id=' + p.id + '">' +
-            '<div class="swatch"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + p.swatch() + '</svg></div>' +
+            '<div class="swatch">' + (p.image ? '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy">' : '<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + p.swatch() + '</svg>') + '</div>' +
           '</a>' +
           '<h3><a href="/product.html?id=' + p.id + '">' + p.name + '</a></h3>' +
           '<p class="desc">' + p.desc + '</p>' +
