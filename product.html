@@ -63,7 +63,7 @@
 
   document.getElementById('pageTitle').textContent = p.name + ' — Coverline';
   document.getElementById('pageDesc').setAttribute('content', p.desc);
-  document.getElementById('pdpSwatch').innerHTML = '<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + p.swatch() + '</svg>';
+  document.getElementById('pdpSwatch').innerHTML = p.image ? ('<img src="' + p.image + '" alt="' + p.name + '">') : ('<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + p.swatch() + '</svg>');
 
   function renderInfo(){
     var sizesHtml = p.sizes.map(function(s){
@@ -137,7 +137,7 @@
     return '' +
       '<div class="piece" data-id="' + op.id + '">' +
         '<a class="swatch-link" href="/product.html?id=' + op.id + '">' +
-          '<div class="swatch"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + op.swatch() + '</svg></div>' +
+          '<div class="swatch">' + (op.image ? '<img src="' + op.image + '" alt="' + op.name + '" loading="lazy">' : '<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + op.swatch() + '</svg>') + '</div>' +
         '</a>' +
         '<h3><a href="/product.html?id=' + op.id + '">' + op.name + '</a></h3>' +
         '<p class="desc">' + op.desc + '</p>' +
