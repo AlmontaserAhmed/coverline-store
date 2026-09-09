@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title id="pageTitle">Coverline</title>
+<meta name="description" id="pageDesc" content="">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <div class="headerbar">
+    <a class="wordmark" href="/">Coverline</a>
+    <nav>
+      <a href="/#shop">Shop</a>
+      <a class="quiet" href="/#story">Our Story</a>
+      <a class="quiet" href="/shipping-returns.html">Shipping &amp; Returns</a>
+      <span data-cart-slot></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="pdp">
+    <div class="wrap">
+      <div class="pdp-breadcrumb"><a href="/#shop">&larr; Back to The Edit</a></div>
+      <div class="pdp-grid">
+        <div class="pdp-media">
+          <div class="swatch" id="pdpSwatch"></div>
+        </div>
+        <div class="pdp-info" id="pdpInfo">
+          <!-- filled by script -->
+        </div>
+      </div>
+
+      <div class="pdp-other">
+        <h2>More from the edit</h2>
+        <div class="shop-grid" id="otherGrid"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span class="wordmark">Coverline</span>
+  <p>London, United Kingdom — <a href="mailto:coverlineshop@agentmail.to">coverlineshop@agentmail.to</a></p>
+  <div class="foot-links">
+    <a href="/shipping-returns.html">Shipping &amp; Returns</a>
+  </div>
+</footer>
+
+<script src="/assets/products.js"></script>
+<script src="/assets/cart.js"></script>
+<script>
+(function(){
+  var PRODUCTS = window.COVERLINE_PRODUCTS;
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('id') || PRODUCTS[0].id;
+  var p = window.CoverlineCart.productById(id) || PRODUCTS[0];
+  var qty = 1;
+  var chosenSize = null;
+
+  document.getElementById('pageTitle').textContent = p.name + ' — Coverline';
+  document.getElementById('pageDesc').setAttribute('content', p.desc);
+  document.getElementById('pdpSwatch').innerHTML = '<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + p.swatch() + '</svg>';
+
+  function renderInfo(){
+    var sizesHtml = p.sizes.map(function(s){
+      var pressed = chosenSize === s;
+      return '<button type="button" class="size-btn" data-size="' + s + '" aria-pressed="' + pressed + '">' + s + '</button>';
+    }).join('');
+
+    document.getElementById('pdpInfo').innerHTML =
+      '<h1>' + p.name + '</h1>' +
+      '<p class="tagline">' + p.tagline + '</p>' +
+      '<p class="price">' + p.priceLabel + '</p>' +
+      '<span class="proof">' + p.proof + '</span>' +
+      '<p class="longdesc">' + p.longDesc + '</p>' +
+      '<div class="pdp-sizes">' +
+        '<div class="label" style="margin-bottom:10px;">Select a size</div>' +
+        '<div class="sizes" role="group" aria-label="Size">' + sizesHtml + '</div>' +
+      '</div>' +
+      '<div class="pdp-add">' +
+        '<button type="button" class="btn" id="addToBagBtn">Add to bag — £' + p.price + '</button>' +
+        '<p class="pdp-added-note" id="addedNote" hidden>Added to your bag.</p>' +
+      '</div>' +
+      '<div class="pdp-accordion">' +
+        accItem('Fit &amp; sizing', '<p>' + p.fit + '</p>') +
+        accItem('Fabric &amp; care', '<p>Soft-handle stretch fabric, machine washable cold, hang or lay flat to dry — avoid tumble drying to keep the recovery in the stretch.</p>') +
+        accItem('Shipping', '<p>Every piece ships directly from our production and logistics partners. Standard delivery to the UK typically takes 7&ndash;15 business days &mdash; we\'d rather tell you that up front than promise next-day and miss it. You\'ll get a tracking link by email once it\'s on the way.</p><p><a href="/shipping-returns.html" class="link-quiet">Full shipping &amp; returns policy &rarr;</a></p>') +
+        accItem('Returns', '<p>Wrong size or something not right? Email us within 14 days of delivery and we\'ll sort a replacement or a refund &mdash; no need to post anything back. See our <a href="/shipping-returns.html">returns policy</a> for the full detail.</p>') +
+      '</div>';
+
+    document.getElementById('pdpInfo').querySelectorAll('.size-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        chosenSize = btn.getAttribute('data-size');
+        renderInfo();
+      });
+    });
+    document.getElementById('addToBagBtn').addEventListener('click', function(){
+      if(!chosenSize){
+        alert('Pick a size first.');
+        return;
+      }
+      window.CoverlineCart.add(p.id, chosenSize, qty);
+      var note = document.getElementById('addedNote');
+      if(note) note.hidden = false;
+    });
+
+    document.querySelectorAll('.acc-trigger').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        var panel = document.getElementById(btn.getAttribute('aria-controls'));
+        if(panel) panel.hidden = expanded;
+      });
+    });
+  }
+
+  var accCount = 0;
+  function accItem(title, bodyHtml){
+    accCount++;
+    var pid = 'acc-panel-' + accCount;
+    return '' +
+      '<div class="acc-item">' +
+        '<button type="button" class="acc-trigger" aria-expanded="false" aria-controls="' + pid + '">' + title + '<span class="chev">+</span></button>' +
+        '<div class="acc-panel" id="' + pid + '" hidden>' + bodyHtml + '</div>' +
+      '</div>';
+  }
+
+  renderInfo();
+
+  // Other products grid
+  var otherGrid = document.getElementById('otherGrid');
+  otherGrid.innerHTML = PRODUCTS.filter(function(x){ return x.id !== p.id; }).map(function(op){
+    return '' +
+      '<div class="piece" data-id="' + op.id + '">' +
+        '<a class="swatch-link" href="/product.html?id=' + op.id + '">' +
+          '<div class="swatch"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + op.swatch() + '</svg></div>' +
+        '</a>' +
+        '<h3><a href="/product.html?id=' + op.id + '">' + op.name + '</a></h3>' +
+        '<p class="desc">' + op.desc + '</p>' +
+        '<p class="price">' + op.priceLabel + '</p>' +
+        '<a class="view-details" href="/product.html?id=' + op.id + '">Full details &amp; size guide &rarr;</a>' +
+      '</div>';
+  }).join('');
+})();
+</script>
+
+</body>
+</html>
