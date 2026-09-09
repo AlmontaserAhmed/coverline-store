@@ -12,6 +12,7 @@ window.COVERLINE_PRODUCTS = [
     price: 20,
     sizes: ["XS","S","M","L","XL"],
     proof: "Squat-proof. Non-sheer.",
+    image: "/assets/product-images/legging.jpg",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
@@ -25,6 +26,7 @@ window.COVERLINE_PRODUCTS = [
     price: 30,
     sizes: ["XS","S","M","L","XL"],
     proof: "Petite-proportioned. Matching set.",
+    image: "/assets/product-images/loungeset.jpg",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,300 C 90,340 220,250 300,300 L300,400 L0,400 Z" fill="var(--accent)" opacity=".4"/><path d="M20,90 C 120,40 200,140 290,80" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
@@ -38,6 +40,7 @@ window.COVERLINE_PRODUCTS = [
     price: 17,
     sizes: ["XS","S","M","L","XL"],
     proof: "Actually long enough.",
+    image: "/assets/product-images/tee.jpg",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,260 C 80,210 160,300 300,240 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".55"/><path d="M0,120 C 100,180 200,60 300,130" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
@@ -51,6 +54,7 @@ window.COVERLINE_PRODUCTS = [
     price: 35,
     sizes: ["XS","S","M","L","XL"],
     proof: "Two pieces, one outfit.",
+    image: "/assets/product-images/coord.jpg",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,210 C 90,260 190,180 300,230 L300,400 L0,400 Z" fill="var(--accent)" opacity=".45"/><path d="M0,320 C 110,280 190,360 300,310" fill="none" stroke="var(--accent-2)" stroke-width="1"/><path d="M10,80 C 100,120 200,50 290,100" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
@@ -64,6 +68,7 @@ window.COVERLINE_PRODUCTS = [
     price: 14,
     sizes: ["XS","S","M","L","XL"],
     proof: "Passes the squat test.",
+    image: "/assets/product-images/short.jpg",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
 ];
