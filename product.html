@@ -60,10 +60,16 @@
   var p = window.CoverlineCart.productById(id) || PRODUCTS[0];
   var qty = 1;
   var chosenSize = null;
+  var chosenColor = (p.colors && p.colors[0]) || null;
 
   document.getElementById('pageTitle').textContent = p.name + ' — Coverline';
   document.getElementById('pageDesc').setAttribute('content', p.desc);
-  document.getElementById('pdpSwatch').innerHTML = p.image ? ('<img src="' + p.image + '" alt="' + p.name + '">') : ('<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + p.swatch() + '</svg>');
+
+  function renderMedia(){
+    var img = (chosenColor && chosenColor.image) || p.image;
+    document.getElementById('pdpSwatch').innerHTML = img ? ('<img src="' + img + '" alt="' + p.name + (chosenColor ? ' — ' + chosenColor.label : '') + '">') : ('<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + p.swatch() + '</svg>');
+  }
+  renderMedia();
 
   function renderInfo(){
     var sizesHtml = p.sizes.map(function(s){
@@ -77,6 +83,17 @@
       '<p class="price">' + p.priceLabel + '</p>' +
       '<span class="proof">' + p.proof + '</span>' +
       '<p class="longdesc">' + p.longDesc + '</p>' +
+      (p.colors && p.colors.length ? (
+        '<div class="pdp-colors">' +
+          '<div class="label" style="margin-bottom:10px;">Colour: ' + (chosenColor ? chosenColor.label : '') + '</div>' +
+          '<div class="colors" role="group" aria-label="Colour">' +
+            p.colors.map(function(c){
+              var pressed = chosenColor && chosenColor.key === c.key;
+              return '<button type="button" class="color-btn" data-color="' + c.key + '" aria-pressed="' + pressed + '" title="' + c.label + '" style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(0,0,0,.15);cursor:pointer;margin-right:10px;background:' + c.hex + ';' + (pressed ? 'outline:2px solid var(--ink,#1a1a1a);outline-offset:2px;' : '') + '"></button>';
+            }).join('') +
+          '</div>' +
+        '</div>'
+      ) : '') +
       '<div class="pdp-sizes">' +
         '<div class="label" style="margin-bottom:10px;">Select a size</div>' +
         '<div class="sizes" role="group" aria-label="Size">' + sizesHtml + '</div>' +
@@ -95,6 +112,14 @@
     document.getElementById('pdpInfo').querySelectorAll('.size-btn').forEach(function(btn){
       btn.addEventListener('click', function(){
         chosenSize = btn.getAttribute('data-size');
+        renderInfo();
+      });
+    });
+    document.getElementById('pdpInfo').querySelectorAll('.color-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var key = btn.getAttribute('data-color');
+        chosenColor = p.colors.filter(function(c){ return c.key === key; })[0] || chosenColor;
+        renderMedia();
         renderInfo();
       });
     });
