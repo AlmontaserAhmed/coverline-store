@@ -8,91 +8,91 @@ window.COVERLINE_PRODUCTS = [
   {
     id: "legging",
     name: "The Everyday Legging",
-    tagline: "Leggings you can bend over in.",
-    desc: "Opaque when you squat, soft enough to sleep in. No mirror check before you leave the house.",
-    longDesc: "For the days you live in leggings — the school run, the gym, the floor at pickup, the sofa. A high waistband that stays put when you sit, and fabric thick enough that bending down in daylight isn't a decision. You've bought the £12 pair twice. This is the one you keep.",
+    tagline: "The leggings that actually feel this good.",
+    desc: "Squat-proof, buttery-soft, and genuinely opaque — the leggings that don't need a mirror check first.",
+    longDesc: "Built for the days you live in leggings — the school run, the gym, the sofa. A high, comfortable waistband that stays put, and fabric with enough structure that you're not doing a mirror check before you leave the house.",
     fit: "True to size. If you're between two sizes, size up for a more relaxed, less compressive fit through the waist.",
     priceLabel: "£16 – £24",
     price: 20,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Squat-tested. Not sheer. High waist that stays put.",
+    proof: "Squat-proof. Non-sheer.",
     colors: [
-      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/legging-black.jpg" },
-      { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg" }
+      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/legging-black.jpg?v=2" },
+      { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=2" }
     ],
-    image: "/assets/product-images/legging-black.jpg",
+    image: "/assets/product-images/legging-black.jpg?v=2",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
     id: "loungeset",
     name: "The Petite Set",
-    tagline: "The set you stop rolling up.",
-    desc: "Zip jacket and jogger cut for shorter proportions — sleeves and hems that land where they should, no rolling.",
-    longDesc: "A jacket-and-jogger set that gets you dressed in one go. Cut for shorter proportions — the sleeves stop at your wrist and the jogger stops at your ankle, without a single roll or turn-up. Looks like you planned it. You didn't have to.",
+    tagline: "Looks like effort, isn't.",
+    desc: "A matching zip jacket and jogger, cut for petite proportions — looks like effort, isn't.",
+    longDesc: "A jacket-and-jogger set that does the outfit-planning for you. Cut with shorter proportions in mind — sleeves and inseam that don't need rolling up — so it reads pulled-together on a no-effort day.",
     fit: "Runs true to size through the body; petite-friendly length. If you're above average height for your size, the jogger will sit slightly shorter than a standard-length pair.",
     priceLabel: "£24 – £35",
     price: 30,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Cut shorter in the sleeve and leg. Nothing to roll up.",
+    proof: "Petite-proportioned. Matching set.",
     colors: [
-      { key: "cream", label: "Cream", hex: "#efe7da", image: "/assets/product-images/loungeset-cream.jpg" },
-      { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg" }
+      { key: "cream", label: "Cream", hex: "#efe7da", image: "/assets/product-images/loungeset-cream.jpg?v=2" },
+      { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=2" }
     ],
-    image: "/assets/product-images/loungeset-cream.jpg",
+    image: "/assets/product-images/loungeset-cream.jpg?v=2",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,300 C 90,340 220,250 300,300 L300,400 L0,400 Z" fill="var(--accent)" opacity=".4"/><path d="M20,90 C 120,40 200,140 290,80" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
     id: "tee",
     name: "The Longline Tee",
-    tagline: "Stays down when you reach up.",
-    desc: "Long enough to stay down when you reach for the top shelf. Loose enough to go over leggings without riding up.",
-    longDesc: "The tee that ends the reach-up-and-tug-it-down routine. Cut longer through the body so it stays put when you lift your arms, and loose enough to wear over leggings or under a jacket without bunching. It wasn't cropped on you — it was cropped on someone taller. This one isn't cropped at all.",
+    tagline: "Made for ease. Worn with confidence.",
+    desc: "Long enough to actually cover, soft enough to live in — layers over anything.",
+    longDesc: "The one tee that solves the too-short-when-you-reach-up problem. Long enough to stay tucked in, loose enough to layer over leggings or under a jacket without pulling or riding up.",
     fit: "Oversized by design — order your usual size for the intended relaxed fit, or size down for something closer to fitted.",
     priceLabel: "£14 – £19",
     price: 17,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Actually long enough. Loose, not clingy.",
+    proof: "Actually long enough.",
     colors: [
-      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg" },
-      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/tee-black.jpg" }
+      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=2" },
+      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/tee-black.jpg?v=2" }
     ],
-    image: "/assets/product-images/tee-apricot.jpg",
+    image: "/assets/product-images/tee-apricot.jpg?v=2",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,260 C 80,210 160,300 300,240 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".55"/><path d="M0,120 C 100,180 200,60 300,130" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
     id: "coord",
     name: "The Co-ord Set",
-    tagline: "One outfit. Zero decisions.",
-    desc: "Fitted top, wide-leg trouser, made to go together — so the outfit is done the second it's on.",
-    longDesc: "A fitted top and a wide-leg trouser that were made for each other, so there's nothing to match and nothing to think about. The wide leg gives you room to sit, walk and get in a car without anything pulling or clinging. Wear it to brunch, wear it to the office, wear the pieces separately all week.",
+    tagline: "The set that does the styling for you.",
+    desc: "A fitted top and wide-leg trouser, cut to move together — the set that does the styling for you.",
+    longDesc: "A fitted top paired with a wide-leg trouser cut to move with you, not against you — the kind of two-piece that reads as a whole outfit the second it's on, no styling required.",
     fit: "Top runs fitted, true to size. Trouser is designed with a wide leg and relaxed waist — if you prefer more room through the hip, size up.",
     priceLabel: "£28 – £42",
     price: 35,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Two pieces, one outfit. Wide leg, easy waist.",
+    proof: "Two pieces, one outfit.",
     colors: [
-      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/coord-black.jpg" },
-      { key: "beige", label: "Beige", hex: "#d8cdbb", image: "/assets/product-images/coord-beige.jpg" }
+      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/coord-black.jpg?v=2" },
+      { key: "beige", label: "Beige", hex: "#d8cdbb", image: "/assets/product-images/coord-beige.jpg?v=2" }
     ],
-    image: "/assets/product-images/coord-black.jpg",
+    image: "/assets/product-images/coord-black.jpg?v=2",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,210 C 90,260 190,180 300,230 L300,400 L0,400 Z" fill="var(--accent)" opacity=".45"/><path d="M0,320 C 110,280 190,360 300,310" fill="none" stroke="var(--accent-2)" stroke-width="1"/><path d="M10,80 C 100,120 200,50 290,100" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
     id: "short",
     name: "The Everyday Short",
-    tagline: "Shorts that stay where you put them.",
-    desc: "Seamless, opaque, squat-tested — the gym short you don't have to pull back down between sets.",
-    longDesc: "Seamless, so there's no chafing and no lines showing through. Cut with more length than the usual gym short, so squatting, lunging or sitting cross-legged on the floor doesn't need a second thought or a second hand. At £14, it's the easiest add to the bag on this page.",
+    tagline: "Finally, shorts that don't ride up mid-workout.",
+    desc: "Seamless, opaque, and squat-tested — the gym short that passes the bend-over check.",
+    longDesc: "Seamless construction so there's no chafing and no visible lines, with enough length and coverage that bending, squatting, or sitting on the floor at pickup doesn't require a second thought.",
     fit: "True to size, with a bit of stretch. Runs slightly higher-waisted than typical gym shorts.",
     priceLabel: "£12 – £17",
     price: 14,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Passes the squat test. Longer than the usual gym short.",
+    proof: "Passes the squat test.",
     colors: [
-      { key: "maroon", label: "Maroon", hex: "#5b2430", image: "/assets/product-images/short-maroon.jpg" },
-      { key: "pink", label: "Pink", hex: "#e3a9b0", image: "/assets/product-images/short-pink.jpg" }
+      { key: "maroon", label: "Maroon", hex: "#5b2430", image: "/assets/product-images/short-maroon.jpg?v=2" },
+      { key: "pink", label: "Pink", hex: "#e3a9b0", image: "/assets/product-images/short-pink.jpg?v=3" }
     ],
-    image: "/assets/product-images/short-maroon.jpg",
+    image: "/assets/product-images/short-maroon.jpg?v=2",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
 ];
