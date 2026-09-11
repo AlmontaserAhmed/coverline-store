@@ -17,10 +17,10 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["XS","S","M","L","XL"],
     proof: "Squat-tested. Not sheer. High waist that stays put.",
     colors: [
-      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/legging-black.jpg?v=2" },
-      { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=2" }
+      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/legging-black.jpg?v=7" },
+      { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=7" }
     ],
-    image: "/assets/product-images/legging-black.jpg?v=2",
+    image: "/assets/product-images/legging-black.jpg?v=7",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
@@ -35,10 +35,10 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["XS","S","M","L","XL"],
     proof: "Cut shorter in the sleeve and leg. Nothing to roll up.",
     colors: [
-      { key: "cream", label: "Cream", hex: "#efe7da", image: "/assets/product-images/loungeset-cream.jpg?v=2" },
-      { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=2" }
+      { key: "cream", label: "Cream", hex: "#efe7da", image: "/assets/product-images/loungeset-cream.jpg?v=7" },
+      { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=7" }
     ],
-    image: "/assets/product-images/loungeset-cream.jpg?v=2",
+    image: "/assets/product-images/loungeset-cream.jpg?v=7",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,300 C 90,340 220,250 300,300 L300,400 L0,400 Z" fill="var(--accent)" opacity=".4"/><path d="M20,90 C 120,40 200,140 290,80" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
@@ -53,10 +53,10 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["XS","S","M","L","XL"],
     proof: "Actually long enough. Loose, not clingy.",
     colors: [
-      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=2" },
-      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/tee-black.jpg?v=2" }
+      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=7" },
+      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/tee-black.jpg?v=7" }
     ],
-    image: "/assets/product-images/tee-apricot.jpg?v=2",
+    image: "/assets/product-images/tee-apricot.jpg?v=7",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,260 C 80,210 160,300 300,240 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".55"/><path d="M0,120 C 100,180 200,60 300,130" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
@@ -71,10 +71,10 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["XS","S","M","L","XL"],
     proof: "Two pieces, one outfit. Wide leg, easy waist.",
     colors: [
-      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/coord-black.jpg?v=2" },
-      { key: "beige", label: "Beige", hex: "#d8cdbb", image: "/assets/product-images/coord-beige.jpg?v=2" }
+      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/coord-black.jpg?v=7" },
+      { key: "beige", label: "Beige", hex: "#d8cdbb", image: "/assets/product-images/coord-beige.jpg?v=7" }
     ],
-    image: "/assets/product-images/coord-black.jpg?v=2",
+    image: "/assets/product-images/coord-black.jpg?v=7",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,210 C 90,260 190,180 300,230 L300,400 L0,400 Z" fill="var(--accent)" opacity=".45"/><path d="M0,320 C 110,280 190,360 300,310" fill="none" stroke="var(--accent-2)" stroke-width="1"/><path d="M10,80 C 100,120 200,50 290,100" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
@@ -89,10 +89,10 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["XS","S","M","L","XL"],
     proof: "Passes the squat test. Longer than the usual gym short.",
     colors: [
-      { key: "maroon", label: "Maroon", hex: "#5b2430", image: "/assets/product-images/short-maroon.jpg?v=2" },
-      { key: "pink", label: "Pink", hex: "#c79a9d", image: "/assets/product-images/short-pink.jpg?v=5" }
+      { key: "maroon", label: "Maroon", hex: "#5b2430", image: "/assets/product-images/short-maroon.jpg?v=7" },
+      { key: "pink", label: "Pink", hex: "#c79a9d", image: "/assets/product-images/short-pink.jpg?v=7" }
     ],
-    image: "/assets/product-images/short-maroon.jpg?v=2",
+    image: "/assets/product-images/short-maroon.jpg?v=7",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
 ];
