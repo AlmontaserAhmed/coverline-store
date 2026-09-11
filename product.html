@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title id="pageTitle">Coverline</title>
 <meta name="description" id="pageDesc" content="">
-<link rel="stylesheet" href="/assets/style.css?v=2">
+<link rel="stylesheet" href="/assets/style.css?v=3">
 </head>
 <body>
 
@@ -28,11 +28,22 @@
       <div class="pdp-grid">
         <div class="pdp-media">
           <div class="swatch" id="pdpSwatch"></div>
+          <div class="pdp-thumbs" id="pdpThumbs" hidden></div>
         </div>
         <div class="pdp-info" id="pdpInfo">
           <!-- filled by script -->
         </div>
       </div>
+
+      <section class="pdp-reviews" id="pdpReviews" hidden>
+        <h2>From people who bought it</h2>
+        <div class="reviews-list" id="reviewsList"></div>
+      </section>
+
+      <section class="pdp-faq" id="pdpFaq">
+        <h2>Before you ask</h2>
+        <dl class="faq-list" id="faqList"></dl>
+      </section>
 
       <div class="pdp-other">
         <h2>More from the edit</h2>
@@ -51,6 +62,8 @@
 </footer>
 
 <script src="/assets/products.js?v=7"></script>
+<script src="/assets/sizecharts.js?v=1"></script>
+<script src="/assets/reviews.js?v=1"></script>
 <script src="/assets/cart.js?v=2"></script>
 <script>
 (function(){
@@ -65,9 +78,33 @@
   document.getElementById('pageTitle').textContent = p.name + ' — Coverline';
   document.getElementById('pageDesc').setAttribute('content', p.desc);
 
+  var activeImg = 0;
+  function galleryImages(){
+    if(chosenColor && chosenColor.images && chosenColor.images.length) return chosenColor.images;
+    var single = (chosenColor && chosenColor.image) || p.image;
+    return single ? [single] : [];
+  }
+  function renderThumbs(){
+    var wrap = document.getElementById('pdpThumbs');
+    var imgs = galleryImages();
+    if(imgs.length < 2){ wrap.hidden = true; wrap.innerHTML = ''; return; }
+    wrap.hidden = false;
+    wrap.innerHTML = imgs.map(function(src, i){
+      return '<button type="button" class="thumb" data-i="' + i + '" aria-pressed="' + (i === activeImg) + '" aria-label="View image ' + (i+1) + '"><img src="' + src + '" alt=""></button>';
+    }).join('');
+    wrap.querySelectorAll('.thumb').forEach(function(b){
+      b.addEventListener('click', function(){
+        activeImg = parseInt(b.getAttribute('data-i'), 10);
+        renderMedia();
+      });
+    });
+  }
   function renderMedia(){
-    var img = (chosenColor && chosenColor.image) || p.image;
+    var imgs = galleryImages();
+    if(activeImg >= imgs.length) activeImg = 0;
+    var img = imgs[activeImg];
     var newHtml = img ? ('<img src="' + img + '" alt="' + p.name + (chosenColor ? ' — ' + chosenColor.label : '') + '">') : ('<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + p.swatch() + '</svg>');
+    renderThumbs();
     var container = document.getElementById('pdpSwatch');
     var layer = document.createElement('div');
     layer.innerHTML = newHtml;
@@ -119,6 +156,7 @@
       '</div>' +
       '<div class="pdp-accordion">' +
         accItem('Fit &amp; sizing', '<p>' + p.fit + '</p>') +
+        (sizeChartHtml() ? accItem('Size chart', sizeChartHtml()) : '') +
         accItem('Fabric &amp; care', '<p>Soft stretch fabric. Machine wash cold, hang or lay flat to dry. Skip the tumble dryer — it\'s what kills the stretch in every pair you\'ve owned before.</p>') +
         accItem('Shipping', '<p>UK delivery usually takes 7&ndash;15 business days &mdash; it comes from further away than the high street, and it\'s priced like it. We\'d rather say that now than promise next-day and miss it. You\'ll get a tracking link by email once it\'s on the way.</p><p><a href="/shipping-returns.html" class="link-quiet">Full shipping &amp; returns policy &rarr;</a></p>') +
         accItem('Returns', '<p>Wrong size, damaged, or not what you ordered? Email us within 14 days of delivery and we\'ll send a replacement or refund you &mdash; you never have to post anything back. Full detail in our <a href="/shipping-returns.html">returns policy</a>.</p>') +
@@ -134,6 +172,7 @@
       btn.addEventListener('click', function(){
         var key = btn.getAttribute('data-color');
         chosenColor = p.colors.filter(function(c){ return c.key === key; })[0] || chosenColor;
+        activeImg = 0;
         renderMedia();
         renderInfo();
       });
@@ -169,7 +208,49 @@
       '</div>';
   }
 
+  function esc(str){ return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  function sizeChartHtml(){
+    var charts = window.COVERLINE_SIZE_CHARTS || {};
+    var c = charts[p.id];
+    if(!c || !c.rows || !c.rows.length) return '';
+    var head = '<tr>' + c.columns.map(function(h){ return '<th>' + esc(h) + '</th>'; }).join('') + '</tr>';
+    var body = c.rows.map(function(r){ return '<tr>' + r.map(function(v, i){ return (i === 0 ? '<th scope="row">' : '<td>') + esc(v) + (i === 0 ? '</th>' : '</td>'); }).join('') + '</tr>'; }).join('');
+    return '<div class="size-table-wrap"><table class="size-table"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>' +
+      '<p class="size-unit">Measurements in ' + esc(c.unit || 'cm') + '.' + (c.note ? ' ' + esc(c.note) : '') + '</p>';
+  }
+
+  function renderFaq(){
+    var faqs = [
+      ['Is it see-through?',
+       'No. The legging and the short are the thick, seamless kind &mdash; "squat-tested" on the page means exactly that. The tee is a proper cotton weight, not a tissue tee. Nothing in this drop is sheer; that was the first filter when we picked the pieces.'],
+      ['How long does delivery actually take?',
+       'UK delivery is usually 7&ndash;15 business days. It comes from further away than the high street, which is also part of why the prices are what they are. You get a tracking link by email the moment it ships.'],
+      ['I\'m between two sizes &mdash; which way do I go?',
+       'The fit note above says for each piece. Short version: legging and short, size up if you want less compression; the tee is oversized on purpose, so size down if you want it closer to the body; the sets run true to size.'],
+      ['What if it doesn\'t fit?',
+       'Email us within 14 days of delivery and we\'ll sort a replacement or a refund. You don\'t post anything back. Full detail on the <a href="/shipping-returns.html">shipping &amp; returns</a> page.']
+    ];
+    document.getElementById('faqList').innerHTML = faqs.map(function(f){
+      return '<div class="faq-item"><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>';
+    }).join('');
+  }
+
+  function renderReviews(){
+    var all = window.COVERLINE_REVIEWS || [];
+    var mine = all.filter(function(r){ return r.product === p.id && r.quote; });
+    var sec = document.getElementById('pdpReviews');
+    if(!mine.length){ sec.hidden = true; return; }
+    sec.hidden = false;
+    document.getElementById('reviewsList').innerHTML = mine.map(function(r){
+      var meta = [r.name, r.size ? 'size ' + r.size : '', r.height ? r.height : ''].filter(Boolean).map(esc).join(' &middot; ');
+      return '<blockquote class="review"><p>&ldquo;' + esc(r.quote) + '&rdquo;</p><footer>' + meta + '</footer></blockquote>';
+    }).join('');
+  }
+
   renderInfo();
+  renderFaq();
+  renderReviews();
 
   // Other products grid
   var otherGrid = document.getElementById('otherGrid');

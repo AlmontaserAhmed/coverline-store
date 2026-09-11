@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leave a review — Coverline</title>
+<meta name="description" content="Tell the next person how it fit. One line is plenty.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/style.css?v=3">
+</head>
+<body>
+
+<header class="wrap">
+  <div class="headerbar">
+    <a class="wordmark" href="/">Coverline</a>
+    <nav>
+      <a href="/#shop">Shop</a>
+      <a class="quiet" href="/#story">Our Story</a>
+      <a class="quiet" href="/shipping-returns.html">Shipping &amp; Returns</a>
+      <span data-cart-slot></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="policy">
+    <div class="wrap">
+      <h1>How did it fit?</h1>
+      <p class="lede">One honest line helps the next person more than any product description we could write. Height and size are the useful bits &mdash; everything else is optional.</p>
+
+      <form class="review-form" id="reviewForm">
+        <div class="field">
+          <label for="rProduct">Which piece</label>
+          <select id="rProduct" required></select>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="rSize">Size you ordered</label><input id="rSize" placeholder="M"></div>
+          <div class="field"><label for="rHeight">Your height (optional)</label><input id="rHeight" placeholder="5'3&quot;"></div>
+        </div>
+        <div class="field">
+          <label for="rQuote">How it fit, in your words</label>
+          <textarea id="rQuote" rows="3" required placeholder="Stays down when I reach up. Would size down if you like it closer."></textarea>
+        </div>
+        <div class="field">
+          <label for="rName">First name (how it'll appear)</label>
+          <input id="rName" required>
+        </div>
+        <input type="hidden" id="rRef">
+        <button type="submit" class="btn order-submit">Send it</button>
+        <p class="order-note">This opens an email to us with your answers filled in &mdash; hit send and that's it. If you've got a photo of it on, attach it to that email. We only publish what real customers send.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span class="wordmark">Coverline</span>
+  <p>London, United Kingdom — <a href="mailto:coverlineshop@agentmail.to">coverlineshop@agentmail.to</a></p>
+  <div class="foot-links">
+    <a href="/shipping-returns.html">Shipping &amp; Returns</a>
+  </div>
+</footer>
+
+<script src="/assets/products.js?v=7"></script>
+<script src="/assets/cart.js?v=2"></script>
+<script>
+(function(){
+  var PRODUCTS = window.COVERLINE_PRODUCTS || [];
+  var params = new URLSearchParams(window.location.search);
+  var sel = document.getElementById('rProduct');
+  sel.innerHTML = PRODUCTS.map(function(p){ return '<option value="' + p.id + '">' + p.name + '</option>'; }).join('');
+  if(params.get('id')) sel.value = params.get('id');
+  document.getElementById('rRef').value = params.get('ref') || '';
+
+  document.getElementById('reviewForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var pid = sel.value;
+    var product = PRODUCTS.filter(function(p){ return p.id === pid; })[0];
+    var ref = document.getElementById('rRef').value;
+    var body =
+      "Coverline review" + (ref ? " — order " + ref : "") + "\n\n" +
+      "Piece: " + (product ? product.name : pid) + " (" + pid + ")\n" +
+      "Size: " + document.getElementById('rSize').value + "\n" +
+      "Height: " + document.getElementById('rHeight').value + "\n" +
+      "Name to show: " + document.getElementById('rName').value + "\n\n" +
+      "How it fit:\n" + document.getElementById('rQuote').value + "\n\n" +
+      "(Attach a photo if you have one — optional.)";
+    window.location.href = "mailto:" + encodeURIComponent("coverlineshop@agentmail.to") +
+      "?subject=" + encodeURIComponent("Review: " + (product ? product.name : pid) + (ref ? " — " + ref : "")) +
+      "&body=" + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
