@@ -1,5 +1,9 @@
 // Coverline — shared product data. Loaded by index.html, product.html and cart.js.
 // Edit prices/descriptions here; every page pulls from this one file.
+//
+// Each product's `colors` array lists only colors actually in stock from the locked supplier
+// (see project doc coverline-sourcing-and-pricing-lock.md) — `image` always mirrors colors[0].image
+// so index.html/cart.js (which only read `image`) keep working unchanged.
 window.COVERLINE_PRODUCTS = [
   {
     id: "legging",
@@ -12,7 +16,11 @@ window.COVERLINE_PRODUCTS = [
     price: 20,
     sizes: ["XS","S","M","L","XL"],
     proof: "Squat-proof. Non-sheer.",
-    image: "/assets/product-images/legging.jpg",
+    colors: [
+      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/legging-black.jpg" },
+      { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg" }
+    ],
+    image: "/assets/product-images/legging-black.jpg",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
@@ -26,7 +34,11 @@ window.COVERLINE_PRODUCTS = [
     price: 30,
     sizes: ["XS","S","M","L","XL"],
     proof: "Petite-proportioned. Matching set.",
-    image: "/assets/product-images/loungeset.jpg",
+    colors: [
+      { key: "cream", label: "Cream", hex: "#efe7da", image: "/assets/product-images/loungeset-cream.jpg" },
+      { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg" }
+    ],
+    image: "/assets/product-images/loungeset-cream.jpg",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,300 C 90,340 220,250 300,300 L300,400 L0,400 Z" fill="var(--accent)" opacity=".4"/><path d="M20,90 C 120,40 200,140 290,80" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
@@ -40,7 +52,11 @@ window.COVERLINE_PRODUCTS = [
     price: 17,
     sizes: ["XS","S","M","L","XL"],
     proof: "Actually long enough.",
-    image: "/assets/product-images/tee.jpg",
+    colors: [
+      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg" },
+      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/tee-black.jpg" }
+    ],
+    image: "/assets/product-images/tee-apricot.jpg",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,260 C 80,210 160,300 300,240 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".55"/><path d="M0,120 C 100,180 200,60 300,130" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
@@ -54,7 +70,11 @@ window.COVERLINE_PRODUCTS = [
     price: 35,
     sizes: ["XS","S","M","L","XL"],
     proof: "Two pieces, one outfit.",
-    image: "/assets/product-images/coord.jpg",
+    colors: [
+      { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/coord-black.jpg" },
+      { key: "beige", label: "Beige", hex: "#d8cdbb", image: "/assets/product-images/coord-beige.jpg" }
+    ],
+    image: "/assets/product-images/coord-black.jpg",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,210 C 90,260 190,180 300,230 L300,400 L0,400 Z" fill="var(--accent)" opacity=".45"/><path d="M0,320 C 110,280 190,360 300,310" fill="none" stroke="var(--accent-2)" stroke-width="1"/><path d="M10,80 C 100,120 200,50 290,100" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
@@ -68,7 +88,11 @@ window.COVERLINE_PRODUCTS = [
     price: 14,
     sizes: ["XS","S","M","L","XL"],
     proof: "Passes the squat test.",
-    image: "/assets/product-images/short.jpg",
+    colors: [
+      { key: "maroon", label: "Maroon", hex: "#5b2430", image: "/assets/product-images/short-maroon.jpg" },
+      { key: "pink", label: "Pink", hex: "#e3a9b0", image: "/assets/product-images/short-pink.jpg" }
+    ],
+    image: "/assets/product-images/short-maroon.jpg",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
 ];
