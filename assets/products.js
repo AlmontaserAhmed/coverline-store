@@ -90,7 +90,7 @@ window.COVERLINE_PRODUCTS = [
     proof: "Passes the squat test.",
     colors: [
       { key: "maroon", label: "Maroon", hex: "#5b2430", image: "/assets/product-images/short-maroon.jpg?v=2" },
-      { key: "pink", label: "Pink", hex: "#e3a9b0", image: "/assets/product-images/short-pink.jpg?v=3" }
+      { key: "pink", label: "Pink", hex: "#e3a9b0", image: "/assets/product-images/short-pink.jpg?v=4" }
     ],
     image: "/assets/product-images/short-maroon.jpg?v=2",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
