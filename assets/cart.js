@@ -122,7 +122,7 @@
     if(checkoutMode){ renderCheckout(); return; }
 
     if(cart.length === 0){
-      drawerBody.innerHTML = '<p class="cart-empty">Your bag is empty. Pick a piece and a size to add it.</p>';
+      drawerBody.innerHTML = '<p class="cart-empty">Nothing in here yet. Tap a size on any piece to add it.</p>';
       drawerFoot.innerHTML = '';
       return;
     }
@@ -191,7 +191,7 @@
           '<div class="field"><label for="fPost">Postcode</label><input id="fPost" required></div>' +
         '</div>' +
         '<button type="submit" class="btn order-submit">Reserve &amp; Pay via PayPal</button>' +
-        '<p class="order-note">You\'ll pay via PayPal on the next screen, then we ship once payment clears.</p>' +
+        '<p class="order-note">You pay on PayPal next, so your card details never touch this site. We ship once the payment clears — UK delivery is usually 7&ndash;15 business days.</p>' +
         '<button type="button" class="link-quiet" id="backToBag" style="margin-top:14px;">&larr; Back to bag</button>' +
       '</form>';
 
@@ -235,6 +235,7 @@
     }).join("\n");
     var plainSummary =
       "Coverline order " + refCode + "\n" +
+      "Hi — I'd like to order the following:\n" +
       itemLines + "\n" +
       "Total: £" + total + "\n\n" +
       "Name: " + order.name + "\n" +
@@ -263,12 +264,12 @@
     drawerBody.innerHTML =
       '<div class="confirm">' +
         '<div class="check">&#10003;</div>' +
-        '<h3>Order reserved</h3>' +
-        '<p>Reference <strong>' + refCode + '</strong> &middot; total £' + total + '. Your email app may have opened with the order pre-filled, and a PayPal tab should have opened to pay — complete that to confirm.</p>' +
-        '<p class="ref">If either didn\'t open, copy the summary below into an email to <strong>' + ORDER_EMAIL + '</strong>, and pay £' + total + ' to <strong>paypal.me/' + PAYPAL_ME_HANDLE + '</strong> directly.</p>' +
+        '<h3>Nearly there</h3>' +
+        '<p>Your order is reserved under reference <strong>' + refCode + '</strong>, total £' + total + '. A PayPal tab should have opened — pay there and you\'re done. Your email app may also have opened with the order pre-filled; send that and we have your details.</p>' +
+        '<p class="ref">If nothing opened, no stress — copy the summary below into an email to <strong>' + ORDER_EMAIL + '</strong>, and send £' + total + ' to <strong>paypal.me/' + PAYPAL_ME_HANDLE + '</strong>. Same result.</p>' +
         '<div class="copy-box" id="orderCopyBox">' + plainSummary.replace(/</g,'&lt;') + '</div>' +
         '<button type="button" class="link-quiet copy-hint" id="copyOrderBtn">Copy order details</button>' +
-        '<p class="pay-btn"><a class="btn" href="' + payUrl + '" target="_blank" rel="noopener">Open PayPal to pay £' + total + '</a></p>' +
+        '<p class="pay-btn"><a class="btn" href="' + payUrl + '" target="_blank" rel="noopener">Pay £' + total + ' on PayPal</a></p>' +
       '</div>';
 
     var copyBtn = document.getElementById('copyOrderBtn');

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Coverline — Comfort, Reconsidered</title>
-<meta name="description" content="Everyday modest, petite-friendly basics — squat-proof leggings, longline tees, co-ord sets and loungewear cut to move with you.">
+<title>Coverline — Basics That Are Actually Long Enough</title>
+<meta name="description" content="Leggings you can bend over in, tees that stay down when you reach up, sets cut for shorter proportions. Everyday basics from £14, made for women who are done with the mirror check.">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -29,9 +29,9 @@
       <path d="M-40,380 C 260,300 480,460 720,360 S 1060,300 1120,400" fill="none" stroke="var(--accent-2)" stroke-width="1"/>
     </svg>
     <div class="wrap fade-in" style="position:relative; z-index:1;">
-      <span class="label" style="display:block; margin-bottom:22px;">Comfort, Reconsidered</span>
-      <h1 style="font-size:clamp(2.6rem,6.4vw,4.6rem); line-height:1.08; max-width:15ch; margin:0 auto;">Made for ease.<br>Worn with <em>confidence</em>.</h1>
-      <p style="max-width:38ch; margin:26px auto 0; color:var(--ink-soft); font-size:1.05rem;">Everyday basics cut to move with you — soft fabrics, proportions that fit properly, and lengths that stay exactly where you left them.</p>
+      <span class="label" style="display:block; margin-bottom:22px;">Everyday Basics, Cut Properly</span>
+      <h1 style="font-size:clamp(2.6rem,6.4vw,4.6rem); line-height:1.08; max-width:15ch; margin:0 auto;">Made for ease.<br>Worn without <em>thinking</em>.</h1>
+      <p style="max-width:38ch; margin:26px auto 0; color:var(--ink-soft); font-size:1.05rem;">No mirror check before you bend. No tugging the hem back down. No sleeves to roll up. Basics cut a little longer and a little more forgiving, so you get dressed once and forget about it.</p>
       <div style="margin-top:38px; display:inline-flex; flex-direction:column; align-items:center; gap:14px;">
         <a class="btn" href="#shop">Shop The Edit</a>
         <a class="link-quiet" href="#story">Our Story</a>
@@ -44,7 +44,7 @@
       <div class="shop-head">
         <span class="label">First Drop</span>
         <h2>The Edit</h2>
-        <p>Five pieces to start. Tap a size to add it to your bag — mix pieces and sizes, then check out once.</p>
+        <p>Five pieces, all from £14. Tap a size to add it to your bag — mix pieces and sizes, pay once.</p>
       </div>
       <div class="shop-grid" id="shopGrid"></div>
     </div>
@@ -55,15 +55,15 @@
   <section class="statement" id="story" style="padding:92px 0 20px; text-align:center;">
     <div class="wrap-narrow fade-in">
       <blockquote style="margin:0 auto; max-width:30ch; font-family:'Fraunces',serif; font-style:italic; font-weight:440; font-size:clamp(1.5rem,3vw,2.05rem); line-height:1.5; color:var(--ink);">&ldquo;The kind of comfortable you forget you're wearing.&rdquo;</blockquote>
-      <p style="margin-top:24px; color:var(--ink-soft); font-size:.95rem;">We got tired of the trade-off — clothes that either fit properly or felt comfortable, never both. The top that's cute but two inches too short. The leggings you have to check in a mirror before you bend over. So we started making the version we actually wanted: cut a little longer, a little more forgiving, finished like it cost more than it did. Nothing about Coverline is trying to prove a point. It's just easier to feel good in.</p>
+      <p style="margin-top:24px; color:var(--ink-soft); font-size:.95rem;">The top that's cute but two inches too short. The leggings you check in the mirror before you bend over. The joggers you've been rolling up since the day they arrived. It was never you — it was cut for someone taller, and then sold to everyone. So we made the version we actually wanted: a little longer, a little more forgiving, finished like it cost more than it did. Nothing about Coverline is trying to prove a point. It's just easier to feel good in.</p>
     </div>
   </section>
 
   <section class="access">
     <div class="wrap-narrow fade-in">
-      <span class="label">Not Ready Yet</span>
-      <h2 style="margin-top:14px;">Get the next drop first.</h2>
-      <p>No noise — one note, when something new lands.</p>
+      <span class="label">Not Today?</span>
+      <h2 style="margin-top:14px;">Hear about the next drop first.</h2>
+      <p>One email when something new lands. No countdowns, no "last chance", nothing daily.</p>
       <form class="newsletter" id="newsletterForm">
         <input type="email" name="email" id="newsletterEmail" placeholder="your email" required aria-label="Email address">
         <button class="submit" type="submit">Join &rarr;</button>
@@ -124,7 +124,7 @@
     var email = document.getElementById('newsletterEmail').value;
     window.location.href = "mailto:" + encodeURIComponent("coverlineshop@agentmail.to") +
       "?subject=" + encodeURIComponent("Coverline drop list signup") +
-      "&body=" + encodeURIComponent("Please add me to the next-drop list: " + email);
+      "&body=" + encodeURIComponent("Add me to the next-drop list, please: " + email);
   });
 
   render();

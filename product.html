@@ -110,18 +110,18 @@
         '</div>'
       ) : '') +
       '<div class="pdp-sizes">' +
-        '<div class="label" style="margin-bottom:10px;">Select a size</div>' +
+        '<div class="label" style="margin-bottom:10px;">Pick your size</div>' +
         '<div class="sizes" role="group" aria-label="Size">' + sizesHtml + '</div>' +
       '</div>' +
       '<div class="pdp-add">' +
         '<button type="button" class="btn" id="addToBagBtn">Add to bag — £' + p.price + '</button>' +
-        '<p class="pdp-added-note" id="addedNote" hidden>Added to your bag.</p>' +
+        '<p class="pdp-added-note" id="addedNote" hidden>In your bag. Keep browsing or check out when you\'re ready.</p>' +
       '</div>' +
       '<div class="pdp-accordion">' +
         accItem('Fit &amp; sizing', '<p>' + p.fit + '</p>') +
-        accItem('Fabric &amp; care', '<p>Soft-handle stretch fabric, machine washable cold, hang or lay flat to dry — avoid tumble drying to keep the recovery in the stretch.</p>') +
-        accItem('Shipping', '<p>Every piece ships directly from our production and logistics partners. Standard delivery to the UK typically takes 7&ndash;15 business days &mdash; we\'d rather tell you that up front than promise next-day and miss it. You\'ll get a tracking link by email once it\'s on the way.</p><p><a href="/shipping-returns.html" class="link-quiet">Full shipping &amp; returns policy &rarr;</a></p>') +
-        accItem('Returns', '<p>Wrong size or something not right? Email us within 14 days of delivery and we\'ll sort a replacement or a refund &mdash; no need to post anything back. See our <a href="/shipping-returns.html">returns policy</a> for the full detail.</p>') +
+        accItem('Fabric &amp; care', '<p>Soft stretch fabric. Machine wash cold, hang or lay flat to dry. Skip the tumble dryer — it\'s what kills the stretch in every pair you\'ve owned before.</p>') +
+        accItem('Shipping', '<p>UK delivery usually takes 7&ndash;15 business days &mdash; it comes from further away than the high street, and it\'s priced like it. We\'d rather say that now than promise next-day and miss it. You\'ll get a tracking link by email once it\'s on the way.</p><p><a href="/shipping-returns.html" class="link-quiet">Full shipping &amp; returns policy &rarr;</a></p>') +
+        accItem('Returns', '<p>Wrong size, damaged, or not what you ordered? Email us within 14 days of delivery and we\'ll send a replacement or refund you &mdash; you never have to post anything back. Full detail in our <a href="/shipping-returns.html">returns policy</a>.</p>') +
       '</div>';
 
     document.getElementById('pdpInfo').querySelectorAll('.size-btn').forEach(function(btn){
@@ -140,7 +140,7 @@
     });
     document.getElementById('addToBagBtn').addEventListener('click', function(){
       if(!chosenSize){
-        alert('Pick a size first.');
+        alert('Pick a size first — the fit note below will tell you which way to go if you\'re between two.');
         return;
       }
       window.CoverlineCart.add(p.id, chosenSize, qty);
