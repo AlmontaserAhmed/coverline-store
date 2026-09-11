@@ -8,14 +8,14 @@ window.COVERLINE_PRODUCTS = [
   {
     id: "legging",
     name: "The Everyday Legging",
-    tagline: "The leggings that actually feel this good.",
-    desc: "Squat-proof, buttery-soft, and genuinely opaque — the leggings that don't need a mirror check first.",
-    longDesc: "Built for the days you live in leggings — the school run, the gym, the sofa. A high, comfortable waistband that stays put, and fabric with enough structure that you're not doing a mirror check before you leave the house.",
+    tagline: "Leggings you can bend over in.",
+    desc: "Opaque enough to squat in, soft enough to sleep in — no mirror check before you leave the house.",
+    longDesc: "For the days you basically live in leggings — school run, gym, the floor at pickup, the sofa afterwards. High waistband that actually stays put when you sit, fabric thick enough that bending down in daylight isn't a whole calculation. If you've already bought the £12 pair twice, this is meant to be the one you don't have to replace.",
     fit: "True to size. If you're between two sizes, size up for a more relaxed, less compressive fit through the waist.",
     priceLabel: "£16 – £24",
     price: 20,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Squat-proof. Non-sheer.",
+    proof: "Squat-tested. Not sheer. High waist that stays put.",
     colors: [
       { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/legging-black.jpg?v=2" },
       { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=2" }
@@ -26,14 +26,14 @@ window.COVERLINE_PRODUCTS = [
   {
     id: "loungeset",
     name: "The Petite Set",
-    tagline: "Looks like effort, isn't.",
-    desc: "A matching zip jacket and jogger, cut for petite proportions — looks like effort, isn't.",
-    longDesc: "A jacket-and-jogger set that does the outfit-planning for you. Cut with shorter proportions in mind — sleeves and inseam that don't need rolling up — so it reads pulled-together on a no-effort day.",
+    tagline: "The set you stop rolling up.",
+    desc: "Zip jacket and jogger cut for shorter proportions, so the sleeves and hems land where they should instead of needing three rolls.",
+    longDesc: "A jacket-and-jogger set that gets you dressed in one go. Cut for shorter proportions, so the sleeves stop at your wrist and the jogger stops at your ankle without a single roll-up. It just happens to look like you put thought into it, even on the days you very much didn't.",
     fit: "Runs true to size through the body; petite-friendly length. If you're above average height for your size, the jogger will sit slightly shorter than a standard-length pair.",
     priceLabel: "£24 – £35",
     price: 30,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Petite-proportioned. Matching set.",
+    proof: "Cut shorter in the sleeve and leg. Nothing to roll up.",
     colors: [
       { key: "cream", label: "Cream", hex: "#efe7da", image: "/assets/product-images/loungeset-cream.jpg?v=2" },
       { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=2" }
@@ -44,14 +44,14 @@ window.COVERLINE_PRODUCTS = [
   {
     id: "tee",
     name: "The Longline Tee",
-    tagline: "Made for ease. Worn with confidence.",
-    desc: "Long enough to actually cover, soft enough to live in — layers over anything.",
-    longDesc: "The one tee that solves the too-short-when-you-reach-up problem. Long enough to stay tucked in, loose enough to layer over leggings or under a jacket without pulling or riding up.",
+    tagline: "Stays down when you reach up.",
+    desc: "Long enough to stay down when you reach for the top shelf, loose enough to go over leggings without riding up.",
+    longDesc: "The tee that ends the reach-up-and-tug-it-down routine. Cut longer through the body so it stays down when you lift your arms, and loose enough to layer over leggings or under a jacket without bunching at the waist. Most \"longline\" tees on the high street are cut for someone half a foot taller than you — this one's actually made to the length it says.",
     fit: "Oversized by design — order your usual size for the intended relaxed fit, or size down for something closer to fitted.",
     priceLabel: "£14 – £19",
     price: 17,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Actually long enough.",
+    proof: "Actually long enough. Loose, not clingy.",
     colors: [
       { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=2" },
       { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/tee-black.jpg?v=2" }
@@ -62,14 +62,14 @@ window.COVERLINE_PRODUCTS = [
   {
     id: "coord",
     name: "The Co-ord Set",
-    tagline: "The set that does the styling for you.",
-    desc: "A fitted top and wide-leg trouser, cut to move together — the set that does the styling for you.",
-    longDesc: "A fitted top paired with a wide-leg trouser cut to move with you, not against you — the kind of two-piece that reads as a whole outfit the second it's on, no styling required.",
+    tagline: "One outfit. Zero decisions.",
+    desc: "Fitted top, wide-leg trouser, made to go together — so the outfit is done the second it's on.",
+    longDesc: "A fitted top and a wide-leg trouser made for each other, so there's nothing to match and nothing to think about. The wide leg gives you room to sit, walk and get in a car without anything pulling. Works for brunch, works for the office — and honestly, we'd wear the top on its own with jeans too.",
     fit: "Top runs fitted, true to size. Trouser is designed with a wide leg and relaxed waist — if you prefer more room through the hip, size up.",
     priceLabel: "£28 – £42",
     price: 35,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Two pieces, one outfit.",
+    proof: "Two pieces, one outfit. Wide leg, easy waist.",
     colors: [
       { key: "black", label: "Black", hex: "#1a1a1a", image: "/assets/product-images/coord-black.jpg?v=2" },
       { key: "beige", label: "Beige", hex: "#d8cdbb", image: "/assets/product-images/coord-beige.jpg?v=2" }
@@ -80,14 +80,14 @@ window.COVERLINE_PRODUCTS = [
   {
     id: "short",
     name: "The Everyday Short",
-    tagline: "Finally, shorts that don't ride up mid-workout.",
-    desc: "Seamless, opaque, and squat-tested — the gym short that passes the bend-over check.",
-    longDesc: "Seamless construction so there's no chafing and no visible lines, with enough length and coverage that bending, squatting, or sitting on the floor at pickup doesn't require a second thought.",
+    tagline: "Shorts that stay where you put them.",
+    desc: "Seamless, opaque, squat-tested — the gym short you don't have to pull back down between sets.",
+    longDesc: "Seamless, so there's no chafing and no lines showing through leggings underneath. Cut with a bit more length than the usual gym short, so squatting, lunging or sitting on the floor doesn't need a second hand to sort them out afterwards. At £14 they're an easy add if you're already checking out.",
     fit: "True to size, with a bit of stretch. Runs slightly higher-waisted than typical gym shorts.",
     priceLabel: "£12 – £17",
     price: 14,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Passes the squat test.",
+    proof: "Passes the squat test. Longer than the usual gym short.",
     colors: [
       { key: "maroon", label: "Maroon", hex: "#5b2430", image: "/assets/product-images/short-maroon.jpg?v=2" },
       { key: "pink", label: "Pink", hex: "#c79a9d", image: "/assets/product-images/short-pink.jpg?v=5" }
