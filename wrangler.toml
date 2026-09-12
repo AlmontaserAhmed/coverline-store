@@ -1,15 +1,13 @@
 # Cloudflare Pages configuration for coverline-store.
 # Bindings + plain-text vars live here (source of truth); SECRETS stay in the Pages
 # dashboard (Settings → Variables and secrets, type Secret) and are never in this repo.
+# Local dev secrets (Stripe test key, etc.) go in .dev.vars instead — also gitignored.
 name = "coverline-store"
 pages_build_output_dir = "."
 compatibility_date = "2026-09-08"
 
 [vars]
-PAYPAL_ENV = "sandbox"
-PAYPAL_CLIENT_ID = "BAAKTEy_BseOu-hi25LABo4THawRsqjfERuy5DB3HEYD9WDCCwAgiuOcGwiUUAQ2c47Jay9ZpmpNdtwbWc"
 AGENTMAIL_INBOX = "coverlineshop@agentmail.to"
-PAYPAL_WEBHOOK_ID = "98K0843138722882F"
 
 [[kv_namespaces]]
 binding = "ORDERS"
