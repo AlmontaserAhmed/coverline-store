@@ -403,7 +403,7 @@ button.submit{
    and this hover rule is scoped out, so the picked photo stays picked no
    matter where the mouse goes; .show-alt (set only by the click handler)
    takes over from there. */
-@media (hover:hover){ .piece:not(.colour-chosen):hover .swatch img.alt{ opacity:1; } }
+@media (hover:hover){ .piece:not(.colour-chosen):not(.mismatched-photos):hover .swatch img.alt{ opacity:1; } }
 .piece .swatch.show-alt img.alt{ opacity:1; }
 .piece .meta{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
 .piece h3{ font-size:1.12rem; line-height:1.25; }
