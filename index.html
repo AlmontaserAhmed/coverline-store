@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://coverlineshop.com/">
 <meta property="og:image" content="https://coverlineshop.com/assets/product-images/tee-apricot.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/style.css?v=8">
+<link rel="stylesheet" href="/assets/style.css?v=9">
 </head>
 <body>
 
@@ -99,7 +99,7 @@
   </div>
 </footer>
 
-<script src="/assets/products.js?v=13"></script>
+<script src="/assets/products.js?v=14"></script>
 <script src="/assets/config.js?v=2"></script>
 <script src="/assets/cart.js?v=4"></script>
 <script>
@@ -149,6 +149,10 @@
           e.preventDefault(); e.stopPropagation();
           var i = +btn.getAttribute('data-i');
           sw.classList.toggle('show-alt', i === 1);
+          // Once you've actually picked a colour, hover stops overriding it —
+          // .colour-chosen turns off the hover-preview CSS rule below so the
+          // picked photo stays put no matter where the mouse goes.
+          el.classList.add('colour-chosen');
           el.querySelectorAll('.dot').forEach(function(b){ b.setAttribute('aria-pressed', b === btn); });
         });
       });
