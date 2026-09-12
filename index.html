@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Coverline — Basics That Are Actually Long Enough</title>
 <meta name="description" content="Leggings you can bend over in, tees that stay down when you reach up, sets cut for shorter proportions. Everyday basics from £14, made for women who are done with the mirror check.">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 </head>
 <body>
 
@@ -44,7 +44,7 @@
       <div class="shop-head">
         <span class="label">First Drop</span>
         <h2>The Edit</h2>
-        <p>Five pieces, all from £14. Tap a size to add it to your bag — mix pieces and sizes, pay once.</p>
+        <p>Five pieces, all from £14, two colours each. Tap a colour to see it on her — same photo, just the colour changes.</p>
       </div>
       <div class="shop-grid" id="shopGrid"></div>
     </div>
@@ -89,33 +89,49 @@
   var grid = document.getElementById("shopGrid");
   var selectedSizes = {}; // productId -> currently highlighted size (UI only, pre-add)
 
+  function tile(p){
+    var cols = p.colors || [];
+    var main = cols[0] || {image:p.image, label:''};
+    var alt  = cols[1];
+    return '' +
+      '<div class="piece" data-id="' + p.id + '">' +
+        '<a class="tile-link" href="/product.html?id=' + p.id + '" aria-label="' + p.name + '"></a>' +
+        '<div class="swatch">' +
+          '<img src="' + main.image + '" alt="' + p.name + ' in ' + main.label + '" loading="lazy">' +
+          (alt ? '<img class="alt" src="' + alt.image + '" alt="' + p.name + ' in ' + alt.label + '" loading="lazy">' : '') +
+        '</div>' +
+        '<div class="meta"><h3><a href="/product.html?id=' + p.id + '">' + p.name + '</a></h3><p class="price">' + p.priceLabel + '</p></div>' +
+        '<p class="desc">' + p.tagline + '</p>' +
+        (cols.length ? '<div class="dots" role="group" aria-label="Colours">' +
+          cols.map(function(c,i){ return '<button type="button" class="dot" data-i="' + i + '" aria-pressed="' + (i===0) + '" title="' + c.label + '"><span style="background:' + c.hex + '"></span></button>'; }).join('') +
+        '</div>' : '') +
+      '</div>';
+  }
+  function editorial(){
+    return '' +
+      '<div class="piece piece-edit">' +
+        '<span class="label">The fit promise</span>' +
+        '<h3>Cut for how you actually move.</h3>' +
+        '<ul>' +
+          '<li><strong>Longer where it matters.</strong> Tees and sets that stay put when you reach, sit or bend.</li>' +
+          '<li><strong>Opaque in daylight.</strong> Every legging and short is squat-tested before it goes on the site.</li>' +
+          '<li><strong>Easy returns.</strong> Wrong size? Email us within 14 days — no need to post anything back.</li>' +
+        '</ul>' +
+        '<a class="link-quiet" href="#story">Why we started &rarr;</a>' +
+      '</div>';
+  }
   function render(){
-    grid.innerHTML = PRODUCTS.map(function(p){
-      return '' +
-        '<div class="piece" data-id="' + p.id + '">' +
-          '<a class="swatch-link" href="/product.html?id=' + p.id + '">' +
-            '<div class="swatch">' + (p.image ? '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy">' : '<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + p.swatch() + '</svg>') + '</div>' +
-          '</a>' +
-          '<h3><a href="/product.html?id=' + p.id + '">' + p.name + '</a></h3>' +
-          '<p class="desc">' + p.desc + '</p>' +
-          '<p class="price">' + p.priceLabel + '</p>' +
-          '<div class="sizes" role="group" aria-label="Size for ' + p.name + '">' +
-            p.sizes.map(function(s){
-              var pressed = selectedSizes[p.id] === s;
-              return '<button type="button" class="size-btn" data-product="' + p.id + '" data-size="' + s + '" aria-pressed="' + pressed + '">' + s + '</button>';
-            }).join('') +
-          '</div>' +
-          '<a class="view-details" href="/product.html?id=' + p.id + '">Full details &amp; size guide &rarr;</a>' +
-        '</div>';
-    }).join('');
-
-    grid.querySelectorAll('.size-btn').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        var pid = btn.getAttribute('data-product');
-        var size = btn.getAttribute('data-size');
-        selectedSizes[pid] = size;
-        window.CoverlineCart.add(pid, size, 1);
-        render();
+    grid.innerHTML = PRODUCTS.map(tile).join('') + editorial();
+    grid.querySelectorAll('.piece[data-id]').forEach(function(el){
+      var p = PRODUCTS.filter(function(x){ return x.id === el.getAttribute('data-id'); })[0];
+      var sw = el.querySelector('.swatch');
+      el.querySelectorAll('.dot').forEach(function(btn){
+        btn.addEventListener('click', function(e){
+          e.preventDefault(); e.stopPropagation();
+          var i = +btn.getAttribute('data-i');
+          sw.classList.toggle('show-alt', i === 1);
+          el.querySelectorAll('.dot').forEach(function(b){ b.setAttribute('aria-pressed', b === btn); });
+        });
       });
     });
   }
