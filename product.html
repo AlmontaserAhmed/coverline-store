@@ -166,7 +166,7 @@
           '<div class="label" style="margin-bottom:10px;">Colour: ' + (chosenColor ? chosenColor.label : 'Pick a colour') + '</div>' +
           '<div class="colors" role="group" aria-label="Colour">' +
             p.colors.map(function(c){
-              var pressed = chosenColor && chosenColor.key === c.key;
+              var pressed = !!(chosenColor && chosenColor.key === c.key);
               return '<button type="button" class="color-btn" data-color="' + c.key + '" aria-pressed="' + pressed + '" title="' + c.label + '" style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(0,0,0,.15);cursor:pointer;margin-right:10px;background:' + c.hex + ';' + (pressed ? 'outline:2px solid var(--ink,#1a1a1a);outline-offset:2px;' : '') + '"></button>';
             }).join('') +
           '</div>' +
