@@ -1,5 +1,5 @@
 // GET /api/admin/orders (header: Authorization: Bearer <ADMIN_TOKEN>) → every order record (newest first). Your copy of the books,
-// independent of PayPal. Also /api/admin/orders?ref=XXXX for one.
+// independent of Stripe. Also /api/admin/orders?ref=XXXX for one.
 import { requireAdmin } from "../../_lib/admin.js";
 import { json, kvGet } from "../../_lib/util.js";
 export async function onRequestGet({ request, env }){
