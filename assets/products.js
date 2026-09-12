@@ -36,8 +36,8 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["S","M","L","XL"],
     proof: "Cut shorter in the sleeve and leg. Nothing to roll up.",
     colors: [
-      { key: "cream", label: "Cream", hex: "#e6e0d4", image: "/assets/product-images/loungeset-cream.jpg?v=8" },
-      { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=8" }
+      { key: "cream", label: "Cream", hex: "#e6e0d4", image: "/assets/product-images/loungeset-cream.jpg?v=8", images: ["/assets/product-images/loungeset-cream.jpg?v=8", "/assets/product-images/loungeset-cream-proof.jpg?v=22", "/assets/product-images/loungeset-cream-back.jpg?v=22", "/assets/product-images/loungeset-cream-detail.jpg?v=22"] },
+      { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=8", images: ["/assets/product-images/loungeset-navy.jpg?v=8", "/assets/product-images/loungeset-navy-proof.jpg?v=22", "/assets/product-images/loungeset-navy-back.jpg?v=22", "/assets/product-images/loungeset-navy-detail.jpg?v=22"] }
     ],
     image: "/assets/product-images/loungeset-cream.jpg?v=8",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,300 C 90,340 220,250 300,300 L300,400 L0,400 Z" fill="var(--accent)" opacity=".4"/><path d="M20,90 C 120,40 200,140 290,80" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
