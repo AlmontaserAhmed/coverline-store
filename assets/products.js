@@ -90,10 +90,10 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["S","M","L","XL"],
     proof: "Passes the squat test. Longer than the usual gym short.",
     colors: [
-      { key: "maroon", label: "Maroon", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=20" },
-      { key: "pink", label: "Pink", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=19" }
+      { key: "maroon", label: "Maroon", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=21", images: ["/assets/product-images/short-maroon.jpg?v=21", "/assets/product-images/short-maroon-back.jpg?v=21", "/assets/product-images/short-maroon-detail.jpg?v=21"] },
+      { key: "pink", label: "Pink", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=21", images: ["/assets/product-images/short-pink.jpg?v=21", "/assets/product-images/short-pink-back.jpg?v=21", "/assets/product-images/short-pink-detail.jpg?v=21"] }
     ],
-    image: "/assets/product-images/short-maroon.jpg?v=20",
+    image: "/assets/product-images/short-maroon.jpg?v=21",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
 ];
