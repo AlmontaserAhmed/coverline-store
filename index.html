@@ -113,8 +113,8 @@
     var main = cols[0] || {image:p.image, label:''};
     var alt  = cols[1];
     return '' +
-      '<div class="piece" data-id="' + p.id + '">' +
-        '<a class="tile-link" href="/product.html?id=' + p.id + '" aria-label="' + p.name + '"></a>' +
+        '<div class="piece' + (p.colorPhotosMatch === false ? ' mismatched-photos' : '') + '" data-id="' + p.id + '">' +
+      '<a class="tile-link" href="/product.html?id=' + p.id + '" aria-label="' + p.name + '"></a>' +
         '<div class="swatch">' +
           '<img src="' + main.image + '" alt="' + p.name + ' in ' + main.label + '" loading="lazy">' +
           (alt ? '<img class="alt" src="' + alt.image + '" alt="' + p.name + ' in ' + alt.label + '" loading="lazy">' : '') +
