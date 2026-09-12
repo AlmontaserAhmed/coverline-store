@@ -71,10 +71,10 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["S","M","L"],
     proof: "Squat-tested. Not sheer. High waist that stays put.",
     colors: [
-      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=16" },
-      { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=16" }
+      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=17" },
+      { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=17" }
     ],
-    image: "/assets/product-images/legging-black.jpg?v=16",
+    image: "/assets/product-images/legging-black.jpg?v=17",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
@@ -89,10 +89,10 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["S","M","L","XL"],
     proof: "Passes the squat test. Longer than the usual gym short.",
     colors: [
-      { key: "maroon", label: "Maroon", hex: "#5b2430", image: "/assets/product-images/short-maroon.jpg?v=16" },
-      { key: "pink", label: "Pink", hex: "#c79a9d", image: "/assets/product-images/short-pink.jpg?v=16" }
+      { key: "maroon", label: "Maroon", hex: "#5b2430", image: "/assets/product-images/short-maroon.jpg?v=17" },
+      { key: "pink", label: "Pink", hex: "#c79a9d", image: "/assets/product-images/short-pink.jpg?v=17" }
     ],
-    image: "/assets/product-images/short-maroon.jpg?v=16",
+    image: "/assets/product-images/short-maroon.jpg?v=17",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
 ];
