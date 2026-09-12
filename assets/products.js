@@ -74,6 +74,7 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["S","M","L"],
     proof: "Squat-tested. Not sheer. High waist that stays put.",
     modelNote: "Model is 5'3\" and wears a size S.",
+        colorPhotosMatch: false, // 12 Sep 2026: nude/black photos are two separate shoots, not pixel-matched like tee/co-ord's colourway swaps — homepage hover-preview disabled for this product, see style.css .mismatched-photos
     colors: [
       { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=25", images: ["/assets/product-images/legging-black.jpg?v=25", "/assets/product-images/legging-black-proof.jpg?v=24", "/assets/product-images/legging-black-back.jpg?v=25", "/assets/product-images/legging-black-detail.jpg?v=25"] },
       { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=24", images: ["/assets/product-images/legging-nude.jpg?v=24", "/assets/product-images/legging-nude-proof.jpg?v=24"] }
@@ -93,6 +94,7 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["S","M","L","XL"],
     proof: "Passes the squat test. Longer than the usual gym short.",
     modelNote: "Model is 5'3\" and wears a size S.",
+        colorPhotosMatch: false, // 12 Sep 2026: maroon/pink photos are two separate shoots, not pixel-matched like tee/co-ord's colourway swaps — homepage hover-preview disabled for this product, see style.css .mismatched-photos
     colors: [
       { key: "maroon", label: "Maroon", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=21", images: ["/assets/product-images/short-maroon.jpg?v=21", "/assets/product-images/short-maroon-back.jpg?v=21", "/assets/product-images/short-maroon-detail.jpg?v=21"] },
       { key: "pink", label: "Pink", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=21", images: ["/assets/product-images/short-pink.jpg?v=21", "/assets/product-images/short-pink-back.jpg?v=21", "/assets/product-images/short-pink-detail.jpg?v=21"] }
