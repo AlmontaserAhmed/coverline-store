@@ -119,6 +119,8 @@
     var imgs = galleryImages();
     if(imgs.length < 2){ wrap.hidden = true; wrap.innerHTML = ''; return; }
     wrap.hidden = false;
+        wrap.style.transition = 'opacity .15s ease';
+        wrap.style.opacity = '0';
     wrap.innerHTML = imgs.map(function(src, i){
       return '<button type="button" class="thumb" data-i="' + i + '" aria-pressed="' + (i === activeImg) + '" aria-label="View image ' + (i+1) + '"><img src="' + src + '" alt=""></button>';
     }).join('');
@@ -128,6 +130,7 @@
         renderMedia();
       });
     });
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ wrap.style.opacity = '1'; }); });
   }
   function renderMedia(){
     var imgs = galleryImages();
