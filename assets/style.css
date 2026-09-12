@@ -159,9 +159,9 @@ footer a:hover{ color:var(--accent); border-color:var(--accent); }
 .shop-head h2{ font-size:clamp(1.9rem,3.4vw,2.6rem); margin-top:16px; }
 .shop-head p{ color:var(--ink-soft); max-width:44ch; margin:16px auto 0; font-size:.95rem; }
 
-.shop-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:52px 32px; }
-@media (max-width:820px){ .shop-grid{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width:560px){ .shop-grid{ grid-template-columns:1fr; max-width:340px; margin:0 auto; } }
+.shop-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:56px 32px; }
+@media (max-width:820px){ .shop-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:44px 22px; } }
+@media (max-width:560px){ .shop-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px 12px; } }
 
 .piece{ text-align:left; }
 .swatch{ aspect-ratio:3/4; width:100%; margin-bottom:22px; position:relative; overflow:hidden; display:block; }
@@ -338,7 +338,6 @@ button.submit{
   .headerbar{ padding-bottom:14px; }
   .shop{ padding-top:56px; }
   .shop-head{ margin-bottom:40px; }
-  .shop-grid{ gap:36px 20px; }
   .pdp{ padding:34px 0 72px; }
   .pdp-grid{ gap:26px; }
   .pdp-info h1{ font-size:1.7rem; }
@@ -384,3 +383,54 @@ button.submit{
 .review-form{ max-width:520px; margin:0 auto; }
 .review-form select{ width:100%; background:transparent; border:none; border-bottom:1px solid var(--hair); color:var(--ink); padding:9px 2px; font-family:'Jost',sans-serif; font-size:.95rem; }
 .review-form select:focus{ outline:none; border-color:var(--accent); }
+
+/* ---------- Grid v2 (12 Sep 2026): image-led tiles, colour dots, 2-up on phone ---------- */
+.piece{ position:relative; }
+.piece .swatch{ margin-bottom:14px; background:var(--paper-raised); }
+.piece .swatch img{ transition:opacity .35s ease; }
+.piece .swatch img.alt{ position:absolute; inset:0; opacity:0; }
+@media (hover:hover){ .piece:hover .swatch img.alt{ opacity:1; } }
+.piece .swatch.show-alt img.alt{ opacity:1; }
+.piece .meta{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+.piece h3{ font-size:1.12rem; line-height:1.25; }
+.piece .price{ margin:0; font-size:.82rem; white-space:nowrap; color:var(--ink-soft); }
+.piece .desc{ margin-top:6px; font-size:.84rem; }
+.piece .dots{ display:flex; gap:8px; margin-top:10px; align-items:center; }
+.piece .dot{ width:18px; height:18px; border-radius:50%; border:1px solid var(--hair); padding:0; cursor:pointer; background:none; position:relative; }
+.piece .dot span{ position:absolute; inset:3px; border-radius:50%; }
+.piece .dot[aria-pressed="true"]{ outline:1px solid var(--ink); outline-offset:2px; }
+.piece .dots .more{ font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-left:2px; }
+.piece a.tile-link{ position:absolute; inset:0; z-index:1; }
+.piece .dots, .piece .meta, .piece .desc{ position:relative; z-index:2; }
+.piece .meta a, .piece .desc{ pointer-events:none; }
+.piece .meta a{ pointer-events:auto; }
+.piece-edit{ background:var(--paper-raised); display:flex; flex-direction:column; justify-content:flex-end; padding:28px 26px; min-height:0; }
+.piece-edit .label{ margin-bottom:auto; }
+.piece-edit h3{ font-style:italic; font-size:1.5rem; line-height:1.25; margin-top:18px; }
+.piece-edit ul{ list-style:none; margin:18px 0 0; padding:0; }
+.piece-edit li{ font-size:.88rem; color:var(--ink-soft); padding:9px 0; border-top:1px solid var(--hair); line-height:1.45; }
+.piece-edit li strong{ font-weight:500; color:var(--ink); }
+.piece-edit .link-quiet{ margin-top:18px; align-self:flex-start; }
+@media (max-width:560px){
+  .headerbar nav a.quiet{ display:none; }
+  .headerbar nav{ gap:16px; }
+  .hero{ padding:40px 0 56px!important; }
+  .hero h1{ font-size:2.35rem!important; }
+  .hero p{ font-size:.95rem!important; margin-top:18px!important; max-width:32ch!important; }
+  .hero .btn{ width:auto; }
+  .shop{ padding-top:48px; }
+  .shop-head{ margin-bottom:28px; }
+  .shop-head p{ font-size:.9rem; }
+  .piece .swatch{ margin-bottom:10px; }
+  .piece .meta{ flex-direction:column; gap:2px; }
+  .piece h3{ font-size:1rem; }
+  .piece .price{ font-size:.78rem; }
+  .piece .desc{ display:none; }
+  .piece .dots{ margin-top:8px; }
+  .piece-edit{ padding:18px 16px; justify-content:space-between; }
+  .piece-edit ul{ display:none; }
+  .piece-edit h3{ font-size:1.15rem; margin-top:14px; }
+  .piece-edit .link-quiet{ margin-top:14px; font-size:.64rem; }
+  .piece .dot{ width:22px; height:22px; }
+  .piece .dot span{ inset:4px; }
+}
