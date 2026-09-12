@@ -1,6 +1,12 @@
 import { priceOrder } from "../_lib/catalog.js";
-import { paypalBase, paypalToken } from "../_lib/paypal.js";
+import { stripeFetch } from "../_lib/stripe.js";
 import { json, makeRef, kvPut, clean } from "../_lib/util.js";
+
+function safeReturnPath(p){
+  p = clean(p, 200);
+  if(!p || p.charAt(0) !== "/" || p.indexOf("//") === 0 || p.indexOf(":") > -1) return "/";
+  return p.split("?")[0].split("#")[0];
+}
 
 export async function onRequestPost({ request, env }){
   let body;
@@ -17,42 +23,56 @@ export async function onRequestPost({ request, env }){
   if(!customer.name || !customer.email || !customer.address || !customer.city || !customer.postcode){
     return json({ error: "Missing delivery details" }, 400);
   }
+  // Reject obviously-malformed emails ourselves rather than letting Stripe's stricter check
+  // reject them later — that used to surface to the customer as "payment not available", which
+  // is confusing when the real issue is just a typo'd email.
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customer.email)){
+    return json({ error: "Please enter a valid email address" }, 400);
+  }
 
   const ref = makeRef();
-  let token;
-  try{ token = await paypalToken(env); }catch(e){ return json({ error: "Payments not available right now" }, 503); }
+  const origin = new URL(request.url).origin;
+  const returnPath = safeReturnPath(body.returnPath);
+  const sep = function(p){ return p.indexOf("?") > -1 ? "&" : "?"; };
+  const successUrl = origin + returnPath + sep(returnPath) + "stripe_ref=" + ref + "&session_id={CHECKOUT_SESSION_ID}";
+  const cancelUrl = origin + returnPath + sep(returnPath) + "stripe_cancelled=" + ref;
 
-  const res = await fetch(paypalBase(env) + "/v2/checkout/orders", {
-    method: "POST",
-    headers: { "Authorization": "Bearer " + token, "Content-Type": "application/json", "PayPal-Request-Id": "coverline-" + ref },
-    body: JSON.stringify({
-      intent: "CAPTURE",
-      purchase_units: [{
-        reference_id: ref,
-        custom_id: ref,
-        description: "Coverline order " + ref,
-        amount: {
-          currency_code: "GBP",
-          value: priced.total.toFixed(2),
-          breakdown: { item_total: { currency_code: "GBP", value: priced.total.toFixed(2) } }
-        },
-        items: priced.lines.map(function(l){
-          return { name: (l.name + " — " + l.color + " / " + l.size).slice(0, 127), quantity: String(l.qty), unit_amount: { currency_code: "GBP", value: l.unit.toFixed(2) }, category: "PHYSICAL_GOODS" };
-        }),
-        shipping: {
-          name: { full_name: customer.name },
-          address: { address_line_1: customer.address, admin_area_2: customer.city, postal_code: customer.postcode, country_code: "GB" }
-        }
-      }],
-      payment_source: { paypal: { experience_context: { shipping_preference: "SET_PROVIDED_ADDRESS", user_action: "PAY_NOW", brand_name: "Coverline" } } }
-    })
-  });
-  const data = await res.json().catch(function(){ return {}; });
-  if(!res.ok || !data.id) return json({ error: "Could not start payment" }, 502);
+  let session;
+  try{
+    const r = await stripeFetch(env, "/checkout/sessions", {
+      mode: "payment",
+      customer_email: customer.email,
+      client_reference_id: ref,
+      success_url: successUrl,
+      cancel_url: cancelUrl,
+      metadata: { ref: ref },
+      payment_intent_data: { metadata: { ref: ref } },
+      line_items: priced.lines.map(function(l){
+        return {
+          quantity: l.qty,
+          price_data: {
+            currency: "gbp",
+            unit_amount: Math.round(l.unit * 100),
+            product_data: { name: (l.name + " — " + l.color + " / " + l.size).slice(0, 127) }
+          }
+        };
+      })
+    });
+    if(!r.ok || !r.data || !r.data.id || !r.data.url){
+      console.error("Stripe create-order failed", r.status, r.data);
+      return json({ error: "Could not start payment" }, 502);
+    }
+    session = r.data;
+  }catch(e){
+    // Logged (not exposed to the browser) so the real cause shows up in `wrangler pages dev`'s
+    // terminal output instead of just "not available" on the customer's screen.
+    console.error("Stripe create-order exception", e && e.stack || e);
+    return json({ error: "Payments not available right now" }, 503);
+  }
 
   await kvPut(env, "order:" + ref, {
-    ref: ref, status: "created", paypalOrderId: data.id, lines: priced.lines, total: priced.total,
+    ref: ref, status: "created", stripeSessionId: session.id, lines: priced.lines, total: priced.total,
     customer: customer, createdAt: new Date().toISOString()
   });
-  return json({ id: data.id, ref: ref, total: priced.total });
+  return json({ ref: ref, url: session.url, total: priced.total });
 }
