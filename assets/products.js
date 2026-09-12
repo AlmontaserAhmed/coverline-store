@@ -6,22 +6,22 @@
 // so index.html/cart.js (which only read `image`) keep working unchanged.
 window.COVERLINE_PRODUCTS = [
   {
-    id: "legging",
-    name: "The Everyday Legging",
-    tagline: "Leggings you can bend over in.",
-    desc: "Opaque enough to squat in, soft enough to sleep in — no mirror check before you leave the house.",
-    longDesc: "For the days you basically live in leggings — school run, gym, the floor at pickup, the sofa afterwards. High waistband that actually stays put when you sit, fabric thick enough that bending down in daylight isn't a whole calculation. If you've already bought the £12 pair twice, this is meant to be the one you don't have to replace.",
-    fit: "True to size. If you're between two sizes, size up for a more relaxed, less compressive fit through the waist.",
-    priceLabel: "£16 – £24",
-    price: 20,
+    id: "tee",
+    name: "The Longline Tee",
+    tagline: "Stays down when you reach up.",
+    desc: "Long enough to stay down when you reach for the top shelf, loose enough to go over leggings without riding up.",
+    longDesc: "The tee that ends the reach-up-and-tug-it-down routine. Cut longer through the body so it stays down when you lift your arms, and loose enough to layer over leggings or under a jacket without bunching at the waist. Most \"longline\" tees on the high street are cut for someone half a foot taller than you — this one's actually made to the length it says.",
+    fit: "Oversized by design — order your usual size for the intended relaxed fit, or size down for something closer to fitted.",
+    priceLabel: "£14 – £19",
+    price: 17,
     sizes: ["XS","S","M","L","XL"],
-    proof: "Squat-tested. Not sheer. High waist that stays put.",
+    proof: "Actually long enough. Loose, not clingy.",
     colors: [
-      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=8" },
-      { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=8" }
+      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=8" },
+      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/tee-black.jpg?v=8" }
     ],
-    image: "/assets/product-images/legging-black.jpg?v=8",
-    swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
+    image: "/assets/product-images/tee-apricot.jpg?v=8",
+    swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,260 C 80,210 160,300 300,240 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".55"/><path d="M0,120 C 100,180 200,60 300,130" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
     id: "loungeset",
@@ -42,24 +42,6 @@ window.COVERLINE_PRODUCTS = [
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,300 C 90,340 220,250 300,300 L300,400 L0,400 Z" fill="var(--accent)" opacity=".4"/><path d="M20,90 C 120,40 200,140 290,80" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
-    id: "tee",
-    name: "The Longline Tee",
-    tagline: "Stays down when you reach up.",
-    desc: "Long enough to stay down when you reach for the top shelf, loose enough to go over leggings without riding up.",
-    longDesc: "The tee that ends the reach-up-and-tug-it-down routine. Cut longer through the body so it stays down when you lift your arms, and loose enough to layer over leggings or under a jacket without bunching at the waist. Most \"longline\" tees on the high street are cut for someone half a foot taller than you — this one's actually made to the length it says.",
-    fit: "Oversized by design — order your usual size for the intended relaxed fit, or size down for something closer to fitted.",
-    priceLabel: "£14 – £19",
-    price: 17,
-    sizes: ["XS","S","M","L","XL"],
-    proof: "Actually long enough. Loose, not clingy.",
-    colors: [
-      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=8" },
-      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/tee-black.jpg?v=8" }
-    ],
-    image: "/assets/product-images/tee-apricot.jpg?v=8",
-    swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,260 C 80,210 160,300 300,240 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".55"/><path d="M0,120 C 100,180 200,60 300,130" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
-  },
-  {
     id: "coord",
     name: "The Co-ord Set",
     tagline: "One outfit. Zero decisions.",
@@ -76,6 +58,24 @@ window.COVERLINE_PRODUCTS = [
     ],
     image: "/assets/product-images/coord-black.jpg?v=8",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,210 C 90,260 190,180 300,230 L300,400 L0,400 Z" fill="var(--accent)" opacity=".45"/><path d="M0,320 C 110,280 190,360 300,310" fill="none" stroke="var(--accent-2)" stroke-width="1"/><path d="M10,80 C 100,120 200,50 290,100" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
+  },
+  {
+    id: "legging",
+    name: "The Everyday Legging",
+    tagline: "Leggings you can bend over in.",
+    desc: "Opaque enough to squat in, soft enough to sleep in — no mirror check before you leave the house.",
+    longDesc: "For the days you basically live in leggings — school run, gym, the floor at pickup, the sofa afterwards. High waistband that actually stays put when you sit, fabric thick enough that bending down in daylight isn't a whole calculation. If you've already bought the £12 pair twice, this is meant to be the one you don't have to replace.",
+    fit: "True to size. If you're between two sizes, size up for a more relaxed, less compressive fit through the waist.",
+    priceLabel: "£16 – £24",
+    price: 20,
+    sizes: ["XS","S","M","L","XL"],
+    proof: "Squat-tested. Not sheer. High waist that stays put.",
+    colors: [
+      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=8" },
+      { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=8" }
+    ],
+    image: "/assets/product-images/legging-black.jpg?v=8",
+    swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
     id: "short",
