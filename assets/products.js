@@ -16,9 +16,10 @@ window.COVERLINE_PRODUCTS = [
     price: 15,
     sizes: ["S","M","L","XL","XXL"],
     proof: "Actually long enough. Loose, not clingy.",
+    modelNote: "Model is 5'2\" and wears a size S.",
     colors: [
-      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=8" },
-      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/tee-black.jpg?v=8" }
+      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=8", images: ["/assets/product-images/tee-apricot.jpg?v=8", "/assets/product-images/tee-apricot-front.jpg?v=21", "/assets/product-images/tee-apricot-back.jpg?v=21", "/assets/product-images/tee-apricot-detail.jpg?v=21"] },
+      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/tee-black.jpg?v=8", images: ["/assets/product-images/tee-black.jpg?v=8", "/assets/product-images/tee-black-front.jpg?v=21", "/assets/product-images/tee-black-back.jpg?v=21", "/assets/product-images/tee-black-detail.jpg?v=21"] }
     ],
     image: "/assets/product-images/tee-apricot.jpg?v=8",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,260 C 80,210 160,300 300,240 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".55"/><path d="M0,120 C 100,180 200,60 300,130" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
