@@ -67,7 +67,7 @@ export async function onRequestPost({ request, env }){
     const text = orderText(record);
     await sendMail(env, record.customer.email, "Your Coverline order " + ref,
       "Hi " + (record.customer.name.split(" ")[0] || "") + ",\n\n" + (isPending ? "Your payment is with PayPal and should clear shortly — we'll ship the moment it does. Here's your order:" : "Payment received — thank you. Here's what's on its way:") + "\n\n" + text +
-      "\n\nUK delivery is usually 7–15 business days. You'll get a tracking link from us as soon as it ships.\nIf anything's wrong, reply to this email — a person reads it.\n\nCoverline");
+      "\n\nUK delivery is usually 5–10 working days. You'll get a tracking link from us as soon as it ships.\nIf anything's wrong, reply to this email — a person reads it.\n\nCoverline");
     const flag = cj.placed ? " (CJ placed)" : (record.fulfilment === "needs_manual" ? " — NEEDS MANUAL CJ ORDER" : " — HOLD: " + record.reviewReason);
     await sendMail(env, env.AGENTMAIL_INBOX || "coverlineshop@agentmail.to", "New order " + ref + " — £" + record.total + flag,
       text + "\n\nCustomer email: " + record.customer.email + "\nPayPal capture: " + cap.id + "\nSeller protection: " + protection +

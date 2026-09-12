@@ -23,7 +23,7 @@ export async function onRequestPost({ request, env }){
   if(order.customer && order.customer.email){
     await sendMail(env, order.customer.email, "Your Coverline order " + ref + " is on its way",
       "Hi " + ((order.customer.name || "").split(" ")[0]) + ",\n\nIt's shipped. Tracking number: " + number + (carrier !== "OTHER" ? " (" + carrier + ")" : "") +
-      "\n\nUK delivery is usually 7–15 business days from now. If the tracking hasn't moved after 20 business days, reply to this and we'll chase it or send a replacement.\n\nCoverline");
+      "\n\nUK delivery is usually 5–10 working days from now. If the tracking hasn't moved after 20 business days, reply to this and we'll chase it or send a replacement.\n\nCoverline");
   }
   return json({ ok: true, ref: ref, paypal: order.tracking.paypal });
 }

@@ -202,7 +202,7 @@
           '<div class="field"><label for="fPost">Postcode</label><input id="fPost" required></div>' +
         '</div>' +
         '<button type="submit" class="btn order-submit">' + (CONFIG.paypalClientId ? 'Continue to payment' : 'Reserve &amp; Pay via PayPal') + '</button>' +
-        '<p class="order-note">You pay on PayPal next, so your card details never touch this site. We ship once the payment clears — UK delivery is usually 7&ndash;15 business days. Paying means you\'re happy with our <a href="/shipping-returns.html" target="_blank" rel="noopener">shipping &amp; returns terms</a>.</p>' +
+        '<p class="order-note">You pay on PayPal next, so your card details never touch this site. We ship once the payment clears — UK delivery is usually 5&ndash;10 working days. Paying means you\'re happy with our <a href="/shipping-returns.html" target="_blank" rel="noopener">shipping &amp; returns terms</a>.</p>' +
         '<button type="button" class="link-quiet" id="backToBag" style="margin-top:14px;">&larr; Back to bag</button>' +
       '</form>';
 
@@ -295,7 +295,7 @@
       '<div class="confirm">' +
         '<div class="check">&#10003;</div>' +
         '<h3>Paid. That\'s everything.</h3>' +
-        '<p>Order <strong>' + refCode + '</strong>, £' + total + ', is confirmed. A confirmation is on its way to <strong>' + customer.email.replace(/</g,'&lt;') + '</strong>, and you\'ll get a tracking link the moment it ships — usually 7&ndash;15 business days to the UK.</p>' +
+        '<p>Order <strong>' + refCode + '</strong>, £' + total + ', is confirmed. A confirmation is on its way to <strong>' + customer.email.replace(/</g,'&lt;') + '</strong>, and you\'ll get a tracking link the moment it ships — usually 5&ndash;10 working days to the UK.</p>' +
         '<p class="ref">If the email doesn\'t turn up, this screen is your receipt — copy it if you like.</p>' +
         '<div class="copy-box" id="orderCopyBox">' + plainSummary.replace(/</g,'&lt;') + '</div>' +
         '<button type="button" class="link-quiet copy-hint" id="copyOrderBtn">Copy order details</button>' +
