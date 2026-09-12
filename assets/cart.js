@@ -3,7 +3,6 @@
 (function(){
   var PRODUCTS = window.COVERLINE_PRODUCTS || [];
   var ORDER_EMAIL = "coverlineshop@agentmail.to";
-  var PAYPAL_ME_HANDLE = "CoverlineUK";
   var CART_KEY = "coverline_cart_v2";
   var ORDERS_KEY = "coverline_orders";
 
@@ -226,8 +225,8 @@
           '<div class="field"><label for="fCity">City</label><input id="fCity" autocomplete="address-level2" required></div>' +
           '<div class="field"><label for="fPost">Postcode</label><input id="fPost" autocomplete="postal-code" required></div>' +
         '</div>' +
-        '<button type="submit" class="btn order-submit">' + (CONFIG.paypalClientId ? 'Continue to payment' : 'Reserve &amp; Pay via PayPal') + '</button>' +
-        '<p class="order-note">You pay on PayPal next, so your card details never touch this site. We ship once the payment clears — UK delivery is usually 5&ndash;10 working days. Paying means you\'re happy with our <a href="/shipping-returns.html" target="_blank" rel="noopener">shipping &amp; returns terms</a>.</p>' +
+        '<button type="submit" class="btn order-submit">Continue to payment</button>' +
+        '<p class="order-note">You\'ll pay next on a secure Stripe checkout page, so your card details never touch this site. We ship once the payment clears — UK delivery is usually 5&ndash;10 working days. Paying means you\'re happy with our <a href="/shipping-returns.html" target="_blank" rel="noopener">shipping &amp; returns terms</a>.</p>' +
         '<button type="button" class="link-quiet" id="backToBag" style="margin-top:14px;">&larr; Back to bag</button>' +
       '</form>';
 
@@ -241,21 +240,8 @@
     });
   }
 
-  // ---------- Embedded PayPal checkout (used when config.js has a client id) ----------
-  var CONFIG = window.COVERLINE_CONFIG || {};
-  var paypalSdkPromise = null;
-  function loadPayPalSdk(){
-    if(window.paypal) return Promise.resolve(window.paypal);
-    if(paypalSdkPromise) return paypalSdkPromise;
-    paypalSdkPromise = new Promise(function(resolve, reject){
-      var s = document.createElement('script');
-      s.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(CONFIG.paypalClientId) + '&currency=GBP&intent=capture&disable-funding=paylater,venmo';
-      s.onload = function(){ resolve(window.paypal); };
-      s.onerror = function(){ paypalSdkPromise = null; reject(new Error('PayPal failed to load')); };
-      document.head.appendChild(s);
-    });
-    return paypalSdkPromise;
-  }
+  // ---------- Stripe Checkout (hosted, redirect-based — no card fields or Stripe.js on this
+  // site at all: the backend creates the session and we just send the browser to its URL) ----------
   function readCustomer(){
     return {
       name: document.getElementById('fName').value,
@@ -267,60 +253,54 @@
   }
   function postJson(url, payload){
     return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-      .then(function(r){ return r.json().then(function(d){ if(!r.ok) throw new Error(d.error || 'Something went wrong'); return d; }); });
+      .then(function(r){ return r.json().then(function(d){ if(!r.ok){ var err = new Error(d.error || 'Something went wrong'); err.status = r.status; throw err; } return d; }); });
   }
-  function submitOrderPayPal(){
+  function showFieldError(msg){
+    var form = document.getElementById('checkoutForm');
+    var existing = form.querySelector('.order-error');
+    if(existing) existing.remove();
+    var p = document.createElement('p');
+    p.className = 'order-error';
+    p.textContent = msg;
+    form.querySelector('.order-submit').insertAdjacentElement('afterend', p);
+  }
+  function submitOrderStripe(){
     var customer = readCustomer();
     var items = cart.map(function(line){ return { productId: line.productId, size: line.size, qty: line.qty, color: line.color || null }; });
-    var total = cartTotal();
-    var pending = { ref: null };
     var form = document.getElementById('checkoutForm');
     var submitBtn = form.querySelector('.order-submit');
+    var existingError = form.querySelector('.order-error');
+    if(existingError) existingError.remove();
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Loading PayPal…';
-    var host = document.createElement('div');
-    host.id = 'paypalButtons';
-    host.style.marginTop = '14px';
-    submitBtn.insertAdjacentElement('afterend', host);
+    submitBtn.textContent = 'Redirecting to secure payment…';
 
-    loadPayPalSdk().then(function(paypal){
-      submitBtn.hidden = true;
-      return paypal.Buttons({
-        style: { layout: 'vertical', color: 'black', shape: 'rect', label: 'pay' },
-        createOrder: function(){
-          return postJson('/api/create-order', { items: items, customer: customer }).then(function(d){ pending.ref = d.ref; return d.id; });
-        },
-        onApprove: function(data){
-          host.innerHTML = '<p class="order-note">Confirming your payment…</p>';
-          return postJson('/api/capture-order', { orderID: data.orderID, ref: pending.ref }).then(function(d){
-            showPaidConfirmation(d.ref, total, customer);
-          }).catch(function(e){
-            host.innerHTML = '<p class="order-error">' + (e.message || 'Payment could not be confirmed') + ' — if PayPal shows the payment went through, email us with reference ' + (pending.ref || '') + ' and we\'ll sort it.</p>';
-          });
-        },
-        onCancel: function(){ /* buttons stay; customer can retry */ },
-        onError: function(){
-          host.innerHTML = '<p class="order-error">PayPal had a problem. Try again in a moment, or email us and we\'ll take the order by hand.</p>';
-          submitBtn.hidden = false; submitBtn.disabled = false; submitBtn.textContent = 'Try again';
-        }
-      }).render('#paypalButtons');
-    }).catch(function(){
-      host.remove();
-      submitBtn.disabled = false; submitBtn.textContent = 'Reserve & Pay via PayPal';
+    postJson('/api/create-order', { items: items, customer: customer, returnPath: window.location.pathname }).then(function(d){
+      if(!d || !d.url) throw new Error('No payment link returned');
+      window.location.href = d.url;
+    }).catch(function(e){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Continue to payment';
+      // A 400 means WE rejected the input (bad email, missing field) — that's something the
+      // customer can just fix and resubmit, not a reason to drop to the manual email fallback.
+      if(e && e.status === 400){
+        showFieldError(e.message || 'Please check your details and try again.');
+        return;
+      }
       submitOrderLegacy();
     });
   }
   function showPaidConfirmation(refCode, total, customer){
+    customer = customer || {};
     var plainSummary = "Coverline order " + refCode + " — paid £" + total + "\n" +
       cart.map(function(line){ var p = productById(line.productId); return "  - " + (p ? p.name : line.productId) + (colorLabel(line.productId, line.color) ? " — " + colorLabel(line.productId, line.color) : "") + " — size " + line.size + " x" + line.qty; }).join("\n") +
-      "\nDeliver to: " + customer.name + ", " + customer.address + ", " + customer.city + ", " + customer.postcode;
+      "\nDeliver to: " + (customer.name || '') + ", " + (customer.address || '') + ", " + (customer.city || '') + ", " + (customer.postcode || '');
     cart = []; saveCart(cart); renderAll();
     drawerFoot.innerHTML = '';
     drawerBody.innerHTML =
       '<div class="confirm">' +
         '<div class="check">&#10003;</div>' +
         '<h3>Paid. That\'s everything.</h3>' +
-        '<p>Order <strong>' + refCode + '</strong>, £' + total + ', is confirmed. A confirmation is on its way to <strong>' + customer.email.replace(/</g,'&lt;') + '</strong>, and you\'ll get a tracking link the moment it ships — usually 5&ndash;10 working days to the UK.</p>' +
+        '<p>Order <strong>' + refCode + '</strong>, £' + total + ', is confirmed. A confirmation is on its way to <strong>' + (customer.email || '').replace(/</g,'&lt;') + '</strong>, and you\'ll get a tracking link the moment it ships — usually 5&ndash;10 working days to the UK.</p>' +
         '<p class="ref">If the email doesn\'t turn up, this screen is your receipt — copy it if you like.</p>' +
         '<div class="copy-box" id="orderCopyBox">' + plainSummary.replace(/</g,'&lt;') + '</div>' +
         '<button type="button" class="link-quiet copy-hint" id="copyOrderBtn">Copy order details</button>' +
@@ -333,9 +313,37 @@
     }
   }
 
+  // Called on every page load — Stripe redirects back to success_url/cancel_url on this same
+  // site, so this is where the payment either gets confirmed or quietly ignored (cancel).
+  function handleStripeReturn(){
+    var params = new URLSearchParams(window.location.search);
+    var ref = params.get('stripe_ref');
+    var sessionId = params.get('session_id');
+    var cancelled = params.get('stripe_cancelled');
+    if(cancelled){
+      history.replaceState({}, '', window.location.pathname);
+      return;
+    }
+    if(!ref || !sessionId) return;
+    history.replaceState({}, '', window.location.pathname);
+    scrim.classList.add('open');
+    drawer.classList.add('open');
+    checkoutMode = false;
+    drawerBody.innerHTML = '<p class="cart-empty">Confirming your payment…</p>';
+    drawerFoot.innerHTML = '';
+    postJson('/api/confirm-order', { ref: ref, sessionId: sessionId }).then(function(d){
+      showPaidConfirmation(d.ref, d.total, d.customer);
+    }).catch(function(e){
+      drawerBody.innerHTML =
+        '<div class="confirm">' +
+          '<h3>Checking your payment</h3>' +
+          '<p>' + (e.message || 'Something went wrong confirming your order') + '. If Stripe shows the payment went through, email us at <strong>' + ORDER_EMAIL + '</strong> with reference <strong>' + ref + '</strong> and we\'ll sort it right away.</p>' +
+        '</div>';
+    });
+  }
+
   function submitOrder(){
-    if(CONFIG.paypalClientId && window.fetch){ submitOrderPayPal(); return; }
-    submitOrderLegacy();
+    submitOrderStripe();
   }
 
   function submitOrderLegacy(){
@@ -353,7 +361,7 @@
       address: document.getElementById('fAddr').value,
       city: document.getElementById('fCity').value,
       postcode: document.getElementById('fPost').value,
-      status: 'sent_to_paypal',
+      status: 'sent_by_email',
       createdAt: new Date().toISOString()
     };
 
@@ -386,9 +394,6 @@
     // summary below is the real safety net, not just a courtesy.
     try{ window.location.href = mailtoUrl; }catch(e){}
 
-    var payUrl = "https://www.paypal.me/" + PAYPAL_ME_HANDLE + "/" + total + "GBP";
-    try{ window.open(payUrl, "_blank", "noopener"); }catch(e){}
-
     cart = [];
     saveCart(cart);
     renderAll();
@@ -398,11 +403,10 @@
       '<div class="confirm">' +
         '<div class="check">&#10003;</div>' +
         '<h3>Nearly there</h3>' +
-        '<p>Your order is reserved under reference <strong>' + refCode + '</strong>, total £' + total + '. A PayPal tab should have opened — pay there and you\'re done. Your email app may also have opened with the order pre-filled; send that and we have your details.</p>' +
-        '<p class="ref">If nothing opened, no stress — copy the summary below into an email to <strong>' + ORDER_EMAIL + '</strong>, and send £' + total + ' to <strong>paypal.me/' + PAYPAL_ME_HANDLE + '</strong>. Same result.</p>' +
+        '<p>Your order is reserved under reference <strong>' + refCode + '</strong>, total £' + total + '. Online payment isn\'t available right this moment, so your email app should have opened with the order pre-filled — send that and we\'ll follow up with a secure payment link.</p>' +
+        '<p class="ref">If nothing opened, no stress — copy the summary below into an email to <strong>' + ORDER_EMAIL + '</strong> and we\'ll take it from there.</p>' +
         '<div class="copy-box" id="orderCopyBox">' + plainSummary.replace(/</g,'&lt;') + '</div>' +
         '<button type="button" class="link-quiet copy-hint" id="copyOrderBtn">Copy order details</button>' +
-        '<p class="pay-btn"><a class="btn" href="' + payUrl + '" target="_blank" rel="noopener">Pay £' + total + ' on PayPal</a></p>' +
       '</div>';
 
     var copyBtn = document.getElementById('copyOrderBtn');
@@ -433,5 +437,6 @@
   document.addEventListener('DOMContentLoaded', function(){
     ensureScaffold();
     renderAll();
+    handleStripeReturn();
   });
 })();
