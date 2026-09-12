@@ -1,4 +1,4 @@
-// CJdropshipping Open API — places the fulfilment order after a verified PayPal capture.
+// CJdropshipping Open API — places the fulfilment order after a verified Stripe payment.
 // Returns { placed: true, cjOrderId } or { placed: false, reason }. Never throws.
 async function cjToken(env){
   if(!env.CJ_API_KEY || !env.CJ_EMAIL) return null;
