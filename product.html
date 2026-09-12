@@ -64,7 +64,8 @@
 <script src="/assets/products.js?v=7"></script>
 <script src="/assets/sizecharts.js?v=1"></script>
 <script src="/assets/reviews.js?v=1"></script>
-<script src="/assets/cart.js?v=2"></script>
+<script src="/assets/config.js?v=1"></script>
+<script src="/assets/cart.js?v=3"></script>
 <script>
 (function(){
   var PRODUCTS = window.COVERLINE_PRODUCTS;
@@ -182,7 +183,7 @@
         alert('Pick a size first — the fit note below will tell you which way to go if you\'re between two.');
         return;
       }
-      window.CoverlineCart.add(p.id, chosenSize, qty);
+      window.CoverlineCart.add(p.id, chosenSize, qty, chosenColor ? chosenColor.key : null);
       var note = document.getElementById('addedNote');
       if(note) note.hidden = false;
     });

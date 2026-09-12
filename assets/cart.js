@@ -23,16 +23,27 @@
   var cart = loadCart();
   var checkoutMode = false;
 
-  function findLine(productId, size){
-    for(var i=0;i<cart.length;i++){ if(cart[i].productId===productId && cart[i].size===size) return i; }
+  function findLine(productId, size, color){
+    for(var i=0;i<cart.length;i++){ if(cart[i].productId===productId && cart[i].size===size && (cart[i].color||null)===(color||null)) return i; }
     return -1;
   }
 
-  function addToCart(productId, size, qty){
+  function defaultColor(productId){
+    var p = productById(productId);
+    return (p && p.colors && p.colors[0]) ? p.colors[0].key : null;
+  }
+  function colorLabel(productId, key){
+    var p = productById(productId);
+    if(!p || !p.colors) return '';
+    var c = p.colors.filter(function(x){ return x.key === key; })[0];
+    return c ? c.label : '';
+  }
+  function addToCart(productId, size, qty, color){
     qty = qty || 1;
-    var idx = findLine(productId, size);
+    color = color || defaultColor(productId);
+    var idx = findLine(productId, size, color);
     if(idx > -1){ cart[idx].qty += qty; }
-    else { cart.push({ productId: productId, size: size, qty: qty }); }
+    else { cart.push({ productId: productId, size: size, qty: qty, color: color }); }
     saveCart(cart);
     renderAll();
     openDrawer();
@@ -135,7 +146,7 @@
           swatchMarkup(p) +
           '<div class="info">' +
             '<div class="name">' + p.name + '</div>' +
-            '<div class="meta">Size ' + line.size + ' &middot; £' + p.price + ' each</div>' +
+            '<div class="meta">' + (colorLabel(p.id, line.color) ? colorLabel(p.id, line.color) + ' &middot; ' : '') + 'Size ' + line.size + ' &middot; £' + p.price + ' each</div>' +
             '<div class="row">' +
               '<div class="qty-ctrl">' +
                 '<button type="button" data-act="dec" data-idx="' + idx + '">&minus;</button>' +
@@ -190,7 +201,7 @@
           '<div class="field"><label for="fCity">City</label><input id="fCity" required></div>' +
           '<div class="field"><label for="fPost">Postcode</label><input id="fPost" required></div>' +
         '</div>' +
-        '<button type="submit" class="btn order-submit">Reserve &amp; Pay via PayPal</button>' +
+        '<button type="submit" class="btn order-submit">' + (CONFIG.paypalClientId ? 'Continue to payment' : 'Reserve &amp; Pay via PayPal') + '</button>' +
         '<p class="order-note">You pay on PayPal next, so your card details never touch this site. We ship once the payment clears — UK delivery is usually 7&ndash;15 business days.</p>' +
         '<button type="button" class="link-quiet" id="backToBag" style="margin-top:14px;">&larr; Back to bag</button>' +
       '</form>';
@@ -205,14 +216,111 @@
     });
   }
 
+  // ---------- Embedded PayPal checkout (used when config.js has a client id) ----------
+  var CONFIG = window.COVERLINE_CONFIG || {};
+  var paypalSdkPromise = null;
+  function loadPayPalSdk(){
+    if(window.paypal) return Promise.resolve(window.paypal);
+    if(paypalSdkPromise) return paypalSdkPromise;
+    paypalSdkPromise = new Promise(function(resolve, reject){
+      var s = document.createElement('script');
+      s.src = 'https://www.paypal.com/sdk/js?client-id=' + encodeURIComponent(CONFIG.paypalClientId) + '&currency=GBP&intent=capture&disable-funding=paylater,venmo';
+      s.onload = function(){ resolve(window.paypal); };
+      s.onerror = function(){ paypalSdkPromise = null; reject(new Error('PayPal failed to load')); };
+      document.head.appendChild(s);
+    });
+    return paypalSdkPromise;
+  }
+  function readCustomer(){
+    return {
+      name: document.getElementById('fName').value,
+      email: document.getElementById('fEmail').value,
+      address: document.getElementById('fAddr').value,
+      city: document.getElementById('fCity').value,
+      postcode: document.getElementById('fPost').value
+    };
+  }
+  function postJson(url, payload){
+    return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function(r){ return r.json().then(function(d){ if(!r.ok) throw new Error(d.error || 'Something went wrong'); return d; }); });
+  }
+  function submitOrderPayPal(){
+    var customer = readCustomer();
+    var items = cart.map(function(line){ return { productId: line.productId, size: line.size, qty: line.qty, color: line.color || null }; });
+    var total = cartTotal();
+    var pending = { ref: null };
+    var form = document.getElementById('checkoutForm');
+    var submitBtn = form.querySelector('.order-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Loading PayPal…';
+    var host = document.createElement('div');
+    host.id = 'paypalButtons';
+    host.style.marginTop = '14px';
+    submitBtn.insertAdjacentElement('afterend', host);
+
+    loadPayPalSdk().then(function(paypal){
+      submitBtn.hidden = true;
+      return paypal.Buttons({
+        style: { layout: 'vertical', color: 'black', shape: 'rect', label: 'pay' },
+        createOrder: function(){
+          return postJson('/api/create-order', { items: items, customer: customer }).then(function(d){ pending.ref = d.ref; return d.id; });
+        },
+        onApprove: function(data){
+          host.innerHTML = '<p class="order-note">Confirming your payment…</p>';
+          return postJson('/api/capture-order', { orderID: data.orderID, ref: pending.ref }).then(function(d){
+            showPaidConfirmation(d.ref, total, customer);
+          }).catch(function(e){
+            host.innerHTML = '<p class="order-error">' + (e.message || 'Payment could not be confirmed') + ' — if PayPal shows the payment went through, email us with reference ' + (pending.ref || '') + ' and we\'ll sort it.</p>';
+          });
+        },
+        onCancel: function(){ /* buttons stay; customer can retry */ },
+        onError: function(){
+          host.innerHTML = '<p class="order-error">PayPal had a problem. Try again in a moment, or email us and we\'ll take the order by hand.</p>';
+          submitBtn.hidden = false; submitBtn.disabled = false; submitBtn.textContent = 'Try again';
+        }
+      }).render('#paypalButtons');
+    }).catch(function(){
+      host.remove();
+      submitBtn.disabled = false; submitBtn.textContent = 'Reserve & Pay via PayPal';
+      submitOrderLegacy();
+    });
+  }
+  function showPaidConfirmation(refCode, total, customer){
+    var plainSummary = "Coverline order " + refCode + " — paid £" + total + "\n" +
+      cart.map(function(line){ var p = productById(line.productId); return "  - " + (p ? p.name : line.productId) + (colorLabel(line.productId, line.color) ? " — " + colorLabel(line.productId, line.color) : "") + " — size " + line.size + " x" + line.qty; }).join("\n") +
+      "\nDeliver to: " + customer.name + ", " + customer.address + ", " + customer.city + ", " + customer.postcode;
+    cart = []; saveCart(cart); renderAll();
+    drawerFoot.innerHTML = '';
+    drawerBody.innerHTML =
+      '<div class="confirm">' +
+        '<div class="check">&#10003;</div>' +
+        '<h3>Paid. That\'s everything.</h3>' +
+        '<p>Order <strong>' + refCode + '</strong>, £' + total + ', is confirmed. A confirmation is on its way to <strong>' + customer.email.replace(/</g,'&lt;') + '</strong>, and you\'ll get a tracking link the moment it ships — usually 7&ndash;15 business days to the UK.</p>' +
+        '<p class="ref">If the email doesn\'t turn up, this screen is your receipt — copy it if you like.</p>' +
+        '<div class="copy-box" id="orderCopyBox">' + plainSummary.replace(/</g,'&lt;') + '</div>' +
+        '<button type="button" class="link-quiet copy-hint" id="copyOrderBtn">Copy order details</button>' +
+      '</div>';
+    var copyBtn = document.getElementById('copyOrderBtn');
+    if(copyBtn && navigator.clipboard && navigator.clipboard.writeText){
+      copyBtn.addEventListener('click', function(){
+        navigator.clipboard.writeText(plainSummary).then(function(){ copyBtn.textContent = 'Copied'; setTimeout(function(){ copyBtn.textContent = 'Copy order details'; }, 1800); });
+      });
+    }
+  }
+
   function submitOrder(){
+    if(CONFIG.paypalClientId && window.fetch){ submitOrderPayPal(); return; }
+    submitOrderLegacy();
+  }
+
+  function submitOrderLegacy(){
     var refCode = makeRef();
     var total = cartTotal();
     var order = {
       ref: refCode,
       items: cart.map(function(line){
         var p = productById(line.productId);
-        return { name: p ? p.name : line.productId, size: line.size, qty: line.qty, price: p ? p.price : 0 };
+        return { name: p ? p.name : line.productId, size: line.size, color: colorLabel(line.productId, line.color), qty: line.qty, price: p ? p.price : 0 };
       }),
       total: total,
       name: document.getElementById('fName').value,
@@ -231,7 +339,7 @@
     }catch(e){}
 
     var itemLines = order.items.map(function(it){
-      return "  - " + it.name + " — size " + it.size + " x" + it.qty + " (£" + (it.price*it.qty) + ")";
+      return "  - " + it.name + (it.color ? " — " + it.color : "") + " — size " + it.size + " x" + it.qty + " (£" + (it.price*it.qty) + ")";
     }).join("\n");
     var plainSummary =
       "Coverline order " + refCode + "\n" +
