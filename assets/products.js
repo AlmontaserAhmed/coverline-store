@@ -54,8 +54,8 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["S","M","L","XL","XXL"],
     proof: "Two pieces, one outfit. Wide leg, easy waist.",
     colors: [
-      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/coord-black.jpg?v=8" },
-      { key: "beige", label: "Beige", hex: "#c9b9a3", image: "/assets/product-images/coord-beige.jpg?v=8" }
+      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/coord-black.jpg?v=8", images: ["/assets/product-images/coord-black.jpg?v=8", "/assets/product-images/coord-black-front.jpg?v=23", "/assets/product-images/coord-black-back.jpg?v=23", "/assets/product-images/coord-black-detail.jpg?v=23"] },
+      { key: "beige", label: "Beige", hex: "#c9b9a3", image: "/assets/product-images/coord-beige.jpg?v=8", images: ["/assets/product-images/coord-beige.jpg?v=8", "/assets/product-images/coord-beige-front.jpg?v=23", "/assets/product-images/coord-beige-back.jpg?v=23", "/assets/product-images/coord-beige-detail.jpg?v=23"] }
     ],
     image: "/assets/product-images/coord-black.jpg?v=8",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,210 C 90,260 190,180 300,230 L300,400 L0,400 Z" fill="var(--accent)" opacity=".45"/><path d="M0,320 C 110,280 190,360 300,310" fill="none" stroke="var(--accent-2)" stroke-width="1"/><path d="M10,80 C 100,120 200,50 290,100" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
