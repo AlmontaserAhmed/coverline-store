@@ -8,10 +8,10 @@
 // Pull vids from each locked listing (coverline-sourcing-and-pricing-lock.md) via the CJ
 // product/variant query endpoint once the API key exists.
 export const CATALOG = {
-  legging:   { name: "The Everyday Legging", price: 20, sizes: ["XS","S","M","L","XL"], colors: ["black","nude"],   cj: {} },
+  legging:   { name: "The Everyday Legging", price: 18, sizes: ["XS","S","M","L","XL"], colors: ["black","nude"],   cj: {} },
   loungeset: { name: "The Petite Set",       price: 30, sizes: ["XS","S","M","L","XL"], colors: ["cream","navy"],   cj: {} },
-  tee:       { name: "The Longline Tee",     price: 17, sizes: ["XS","S","M","L","XL"], colors: ["apricot","black"], cj: {} },
-  coord:     { name: "The Co-ord Set",       price: 35, sizes: ["XS","S","M","L","XL"], colors: ["black","beige"],  cj: {} },
+  tee:       { name: "The Longline Tee",     price: 15, sizes: ["XS","S","M","L","XL"], colors: ["apricot","black"], cj: {} },
+  coord:     { name: "The Co-ord Set",       price: 30, sizes: ["XS","S","M","L","XL"], colors: ["black","beige"],  cj: {} },
   short:     { name: "The Everyday Short",   price: 14, sizes: ["XS","S","M","L","XL"], colors: ["maroon","pink"],  cj: {} }
 };
 // cj example once filled:  cj: { "black:M": "1234567890", "nude:M": "..." }

@@ -12,8 +12,8 @@ window.COVERLINE_PRODUCTS = [
     desc: "Long enough to stay down when you reach for the top shelf, loose enough to go over leggings without riding up.",
     longDesc: "The tee that ends the reach-up-and-tug-it-down routine. Cut longer through the body so it stays down when you lift your arms, and loose enough to layer over leggings or under a jacket without bunching at the waist. Most \"longline\" tees on the high street are cut for someone half a foot taller than you — this one's actually made to the length it says.",
     fit: "Oversized by design — order your usual size for the intended relaxed fit, or size down for something closer to fitted.",
-    priceLabel: "£17",
-    price: 17,
+    priceLabel: "£15",
+    price: 15,
     sizes: ["XS","S","M","L","XL"],
     proof: "Actually long enough. Loose, not clingy.",
     colors: [
@@ -48,8 +48,8 @@ window.COVERLINE_PRODUCTS = [
     desc: "Fitted top, wide-leg trouser, made to go together — so the outfit is done the second it's on.",
     longDesc: "A fitted top and a wide-leg trouser made for each other, so there's nothing to match and nothing to think about. The wide leg gives you room to sit, walk and get in a car without anything pulling. Works for brunch, works for the office — and honestly, we'd wear the top on its own with jeans too.",
     fit: "Top runs fitted, true to size. Trouser is designed with a wide leg and relaxed waist — if you prefer more room through the hip, size up.",
-    priceLabel: "£35",
-    price: 35,
+    priceLabel: "£30",
+    price: 30,
     sizes: ["XS","S","M","L","XL"],
     proof: "Two pieces, one outfit. Wide leg, easy waist.",
     colors: [
@@ -66,8 +66,8 @@ window.COVERLINE_PRODUCTS = [
     desc: "Opaque enough to squat in, soft enough to sleep in — no mirror check before you leave the house.",
     longDesc: "For the days you basically live in leggings — school run, gym, the floor at pickup, the sofa afterwards. High waistband that actually stays put when you sit, fabric thick enough that bending down in daylight isn't a whole calculation. If you've already bought the £12 pair twice, this is meant to be the one you don't have to replace.",
     fit: "True to size. If you're between two sizes, size up for a more relaxed, less compressive fit through the waist.",
-    priceLabel: "£20",
-    price: 20,
+    priceLabel: "£18",
+    price: 18,
     sizes: ["XS","S","M","L","XL"],
     proof: "Squat-tested. Not sheer. High waist that stays put.",
     colors: [
