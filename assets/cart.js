@@ -118,7 +118,23 @@
     drawer.classList.remove('open');
   }
 
-  function swatchMarkup(p, size){
+  function colorImage(p, colorKey){
+    if(p && p.colors && p.colors.length){
+      var c = p.colors.filter(function(x){ return x.key === colorKey; })[0];
+      if(!c) c = p.colors[0];
+      if(c){
+        if(c.image) return c.image;
+        if(c.images && c.images.length) return c.images[0];
+      }
+    }
+    return (p && p.image) || null;
+  }
+
+  function swatchMarkup(p, colorKey){
+    var img = colorImage(p, colorKey);
+    if(img){
+      return '<div class="swatch-sm"><img src="' + img + '" alt="' + p.name + '" loading="lazy"></div>';
+    }
     return '<div class="swatch-sm"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">' + p.swatch() + '</svg></div>';
   }
 
@@ -143,7 +159,7 @@
       if(!p) return '';
       return '' +
         '<div class="cart-line">' +
-          swatchMarkup(p) +
+          swatchMarkup(p, line.color) +
           '<div class="info">' +
             '<div class="name">' + p.name + '</div>' +
             '<div class="meta">' + (colorLabel(p.id, line.color) ? colorLabel(p.id, line.color) + ' &middot; ' : '') + 'Size ' + line.size + ' &middot; £' + p.price + ' each</div>' +
@@ -187,7 +203,16 @@
     var lines = cart.map(function(line){
       var p = productById(line.productId);
       if(!p) return '';
-      return '<div class="order-line"><div><div class="ol-name">' + p.name + '</div><div class="ol-meta">Size ' + line.size + ' &times; ' + line.qty + '</div></div><div>£' + (p.price*line.qty) + '</div></div>';
+      var colorTxt = colorLabel(p.id, line.color);
+      return '' +
+        '<div class="order-line">' +
+          swatchMarkup(p, line.color) +
+          '<div class="ol-info">' +
+            '<div class="ol-name">' + p.name + '</div>' +
+            '<div class="ol-meta">' + (colorTxt ? colorTxt + ' &middot; ' : '') + 'Size ' + line.size + ' &times; ' + line.qty + '</div>' +
+          '</div>' +
+          '<div class="ol-price">£' + (p.price*line.qty) + '</div>' +
+        '</div>';
     }).join('');
 
     drawerBody.innerHTML =

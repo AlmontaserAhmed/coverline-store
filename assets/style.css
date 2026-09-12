@@ -230,9 +230,13 @@ a.swatch-link{ text-decoration:none; }
 .order-summary .name{ font-family:'Fraunces',serif; font-style:italic; font-size:1.15rem; }
 .order-summary .meta{ font-size:.8rem; color:var(--ink-soft); margin-top:4px; }
 .order-lines{ margin-bottom:20px; }
-.order-line{ display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--hair); font-size:.88rem; }
+.order-line{ display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--hair); font-size:.88rem; }
+.order-line .swatch-sm{ width:44px; height:58px; flex:none; overflow:hidden; }
+.order-line .swatch-sm svg, .order-line .swatch-sm img{ width:100%; height:100%; object-fit:cover; display:block; }
+.order-line .ol-info{ flex:1; min-width:0; }
 .order-line .ol-name{ font-family:'Fraunces',serif; font-style:italic; }
-.order-line .ol-meta{ color:var(--ink-soft); font-size:.78rem; }
+.order-line .ol-meta{ color:var(--ink-soft); font-size:.78rem; margin-top:2px; }
+.order-line .ol-price{ flex:none; }
 .field{ margin-bottom:16px; }
 .field label{
   display:block; font-family:'Jost',sans-serif; font-size:.68rem; letter-spacing:.14em;
