@@ -472,3 +472,8 @@ button.submit{
   .statement p{ text-align:left; font-size:.92rem!important; margin-top:20px!important; }
   .access{ padding:64px 0 80px; }
 }
+
+/* ---------- store-review pass (12 Sep 2026): trust strip + newsletter success state ---------- */
+.trust-strip{ margin:0; font-size:.78rem; letter-spacing:.02em; color:var(--ink-soft); text-align:center; }
+.pdp-add .trust-strip{ margin-top:10px; }
+.joined-note{ margin:0; font-size:.92rem; color:var(--ok); }

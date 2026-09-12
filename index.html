@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://coverlineshop.com/">
 <meta property="og:image" content="https://coverlineshop.com/assets/product-images/tee-apricot.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/style.css?v=6">
+<link rel="stylesheet" href="/assets/style.css?v=7">
 </head>
 <body>
 
@@ -45,6 +45,7 @@
         <div class="hero-cta" style="margin-top:38px; display:inline-flex; flex-direction:column; align-items:center; gap:14px;">
           <a class="btn" href="#shop">Shop The Edit</a>
           <a class="link-quiet" href="#story">Our Story</a>
+          <p class="trust-strip">Free tracked UK delivery &middot; 14&#8209;day no&#8209;post&#8209;back returns</p>
         </div>
       </div>
       <figure class="hero-media" style="margin:0;">
@@ -156,10 +157,25 @@
 
   document.getElementById('newsletterForm').addEventListener('submit', function(e){
     e.preventDefault();
+    var form = e.target;
     var email = document.getElementById('newsletterEmail').value;
-    window.location.href = "mailto:" + encodeURIComponent("coverlineshop@agentmail.to") +
-      "?subject=" + encodeURIComponent("Coverline drop list signup") +
-      "&body=" + encodeURIComponent("Add me to the next-drop list, please: " + email);
+    var btn = form.querySelector('.submit');
+    var original = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Joining…';
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    }).then(function(res){
+      if(!res.ok) throw new Error('subscribe failed');
+      form.innerHTML = '<p class="joined-note">You\'re on the list — we\'ll email you when the next drop lands.</p>';
+    }).catch(function(){
+      // Network hiccup or the function isn't deployed yet: fall back to the mailto path so no signup is lost.
+      window.location.href = "mailto:" + encodeURIComponent("coverlineshop@agentmail.to") +
+        "?subject=" + encodeURIComponent("Coverline drop list signup") +
+        "&body=" + encodeURIComponent("Add me to the next-drop list, please: " + email);
+      btn.disabled = false; btn.textContent = original;
+    });
   });
 
   render();
