@@ -219,12 +219,12 @@
       '<div class="order-lines">' + lines + '</div>' +
       '<div class="order-summary"><div class="name">Total</div><div class="price">£' + cartTotal() + '</div></div>' +
       '<form id="checkoutForm">' +
-        '<div class="field"><label for="fName">Full name</label><input id="fName" required></div>' +
-        '<div class="field"><label for="fEmail">Email</label><input id="fEmail" type="email" required></div>' +
-        '<div class="field"><label for="fAddr">Shipping address</label><textarea id="fAddr" rows="2" required></textarea></div>' +
+        '<div class="field"><label for="fName">Full name</label><input id="fName" autocomplete="name" required></div>' +
+        '<div class="field"><label for="fEmail">Email</label><input id="fEmail" type="email" autocomplete="email" required></div>' +
+        '<div class="field"><label for="fAddr">Shipping address <span class="field-hint">(UK addresses only)</span></label><textarea id="fAddr" rows="2" autocomplete="street-address" required></textarea></div>' +
         '<div class="field-row">' +
-          '<div class="field"><label for="fCity">City</label><input id="fCity" required></div>' +
-          '<div class="field"><label for="fPost">Postcode</label><input id="fPost" required></div>' +
+          '<div class="field"><label for="fCity">City</label><input id="fCity" autocomplete="address-level2" required></div>' +
+          '<div class="field"><label for="fPost">Postcode</label><input id="fPost" autocomplete="postal-code" required></div>' +
         '</div>' +
         '<button type="submit" class="btn order-submit">' + (CONFIG.paypalClientId ? 'Continue to payment' : 'Reserve &amp; Pay via PayPal') + '</button>' +
         '<p class="order-note">You pay on PayPal next, so your card details never touch this site. We ship once the payment clears — UK delivery is usually 5&ndash;10 working days. Paying means you\'re happy with our <a href="/shipping-returns.html" target="_blank" rel="noopener">shipping &amp; returns terms</a>.</p>' +

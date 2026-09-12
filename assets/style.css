@@ -248,6 +248,7 @@ a.swatch-link{ text-decoration:none; }
 }
 .field input:focus, .field textarea:focus{ outline:none; border-color:var(--accent); }
 .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.field-hint{ text-transform:none; letter-spacing:0; font-size:.72rem; color:var(--ink-soft); opacity:.85; }
 .order-submit{ margin-top:8px; width:100%; text-align:center; }
 .order-note{ margin-top:14px; font-size:.76rem; color:var(--ink-soft); text-align:center; }
 .order-error{ margin-top:12px; font-size:.8rem; color:var(--accent); text-align:center; }
