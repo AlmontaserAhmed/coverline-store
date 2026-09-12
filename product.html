@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://coverlineshop.com/product.html">
 <meta property="og:image" content="https://coverlineshop.com/assets/product-images/tee-apricot.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/style.css?v=7">
+<link rel="stylesheet" href="/assets/style.css?v=8">
 </head>
 <body>
 
@@ -73,7 +73,7 @@
   </div>
 </footer>
 
-<script src="/assets/products.js?v=12"></script>
+<script src="/assets/products.js?v=13"></script>
 <script src="/assets/sizecharts.js?v=2"></script>
 <script src="/assets/reviews.js?v=1"></script>
 <script src="/assets/config.js?v=2"></script>
@@ -86,7 +86,12 @@
   var p = window.CoverlineCart.productById(id) || PRODUCTS[0];
   var qty = 1;
   var chosenSize = null;
-  var chosenColor = (p.colors && p.colors[0]) || null;
+  // Store-review pass (12 Sep 2026): no colour pre-selected on load — the page used
+  // to default to colors[0] and mark it pressed before you'd touched anything, which
+  // both looked like a choice you didn't make and let "Add to bag" silently ship
+  // whatever the first colour was if you never picked one. Now nothing is pressed
+  // until you click a swatch, and add-to-bag is blocked (like size) until you do.
+  var chosenColor = null;
 
   document.getElementById('pageTitle').textContent = p.name + ' — Coverline';
   (function(){
@@ -158,7 +163,7 @@
       '<p class="longdesc">' + p.longDesc + '</p>' +
       (p.colors && p.colors.length ? (
         '<div class="pdp-colors">' +
-          '<div class="label" style="margin-bottom:10px;">Colour: ' + (chosenColor ? chosenColor.label : '') + '</div>' +
+          '<div class="label" style="margin-bottom:10px;">Colour: ' + (chosenColor ? chosenColor.label : 'Pick a colour') + '</div>' +
           '<div class="colors" role="group" aria-label="Colour">' +
             p.colors.map(function(c){
               var pressed = chosenColor && chosenColor.key === c.key;
@@ -200,6 +205,10 @@
       });
     });
     document.getElementById('addToBagBtn').addEventListener('click', function(){
+      if(p.colors && p.colors.length && !chosenColor){
+        alert('Pick a colour first — tap one of the swatches above.');
+        return;
+      }
       if(!chosenSize){
         alert('Pick a size first — the fit note below will tell you which way to go if you\'re between two.');
         return;

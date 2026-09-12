@@ -389,7 +389,11 @@ button.submit{
 .piece .swatch{ margin-bottom:14px; background:var(--paper-raised); }
 .piece .swatch img{ transition:opacity .35s ease; }
 .piece .swatch img.alt{ position:absolute; inset:0; opacity:0; }
-@media (hover:hover){ .piece:hover .swatch img.alt{ opacity:1; } }
+/* Colour swap is click-only (store-review pass, 12 Sep 2026): a hover-driven
+   preview here used to swap the photo before anyone picked a colour, which
+   read as the colour "changing itself" and undid whatever you'd actually
+   clicked as soon as the mouse moved away. .show-alt is only ever toggled by
+   the dot click handler in index.html now, so once you click, it sticks. */
 .piece .swatch.show-alt img.alt{ opacity:1; }
 .piece .meta{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
 .piece h3{ font-size:1.12rem; line-height:1.25; }
