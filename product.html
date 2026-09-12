@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://coverlineshop.com/product.html">
 <meta property="og:image" content="https://coverlineshop.com/assets/product-images/tee-apricot.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/style.css?v=9">
+<link rel="stylesheet" href="/assets/style.css?v=10">
 </head>
 <body>
 
@@ -38,6 +38,7 @@
         <div class="pdp-media">
           <div class="swatch" id="pdpSwatch"></div>
           <div class="pdp-thumbs" id="pdpThumbs" hidden></div>
+          <p class="pdp-model-note" id="pdpModelNote" hidden></p>
         </div>
         <div class="pdp-info" id="pdpInfo">
           <!-- filled by script -->
@@ -73,7 +74,7 @@
   </div>
 </footer>
 
-<script src="/assets/products.js?v=19"></script>
+<script src="/assets/products.js?v=21"></script>
 <script src="/assets/sizecharts.js?v=2"></script>
 <script src="/assets/reviews.js?v=1"></script>
 <script src="/assets/config.js?v=2"></script>
@@ -104,6 +105,7 @@
   })();
   document.getElementById('pageDesc').setAttribute('content', p.desc);
 
+  (function(){ var mn=document.getElementById('pdpModelNote'); if(p.modelNote){ mn.textContent=p.modelNote; mn.hidden=false; } })();
   var activeImg = 0;
   function galleryImages(){
     if(chosenColor && chosenColor.images && chosenColor.images.length) return chosenColor.images;
