@@ -16,7 +16,7 @@ window.COVERLINE_PRODUCTS = [
     price: 15,
     sizes: ["S","M","L","XL","XXL"],
     proof: "Actually long enough. Loose, not clingy.",
-    modelNote: "Model is 5'2\" and wears a size S.",
+    modelNote: "Model is 5'6\" and wears a size S.",
     colors: [
       { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=8", images: ["/assets/product-images/tee-apricot.jpg?v=8", "/assets/product-images/tee-apricot-front.jpg?v=21", "/assets/product-images/tee-apricot-back.jpg?v=21", "/assets/product-images/tee-apricot-detail.jpg?v=21"] },
       { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/tee-black.jpg?v=8", images: ["/assets/product-images/tee-black.jpg?v=8", "/assets/product-images/tee-black-front.jpg?v=21", "/assets/product-images/tee-black-back.jpg?v=21", "/assets/product-images/tee-black-detail.jpg?v=21"] }
@@ -35,6 +35,7 @@ window.COVERLINE_PRODUCTS = [
     price: 30,
     sizes: ["S","M","L","XL"],
     proof: "Cut shorter in the sleeve and leg. Nothing to roll up.",
+    modelNote: "Model is 5'6\" and wears a size S.",
     colors: [
       { key: "cream", label: "Cream", hex: "#e6e0d4", image: "/assets/product-images/loungeset-cream.jpg?v=8", images: ["/assets/product-images/loungeset-cream.jpg?v=8", "/assets/product-images/loungeset-cream-proof.jpg?v=22", "/assets/product-images/loungeset-cream-back.jpg?v=22", "/assets/product-images/loungeset-cream-detail.jpg?v=22"] },
       { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=8", images: ["/assets/product-images/loungeset-navy.jpg?v=8", "/assets/product-images/loungeset-navy-proof.jpg?v=22", "/assets/product-images/loungeset-navy-back.jpg?v=22", "/assets/product-images/loungeset-navy-detail.jpg?v=22"] }
@@ -53,6 +54,7 @@ window.COVERLINE_PRODUCTS = [
     price: 30,
     sizes: ["S","M","L","XL","XXL"],
     proof: "Two pieces, one outfit. Wide leg, easy waist.",
+    modelNote: "Model is 5'6\" and wears a size S.",
     colors: [
       { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/coord-black.jpg?v=24", images: ["/assets/product-images/coord-black.jpg?v=24", "/assets/product-images/coord-black-front.jpg?v=24", "/assets/product-images/coord-black-back.jpg?v=24", "/assets/product-images/coord-black-detail.jpg?v=24"] },
       { key: "beige", label: "Beige", hex: "#c9b9a3", image: "/assets/product-images/coord-beige.jpg?v=24", images: ["/assets/product-images/coord-beige.jpg?v=24", "/assets/product-images/coord-beige-front.jpg?v=24", "/assets/product-images/coord-beige-back.jpg?v=24", "/assets/product-images/coord-beige-detail.jpg?v=24"] }
@@ -71,6 +73,7 @@ window.COVERLINE_PRODUCTS = [
     price: 18,
     sizes: ["S","M","L"],
     proof: "Squat-tested. Not sheer. High waist that stays put.",
+    modelNote: "Model is 5'3\" and wears a size S.",
     colors: [
       { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=25", images: ["/assets/product-images/legging-black.jpg?v=25", "/assets/product-images/legging-black-proof.jpg?v=24", "/assets/product-images/legging-black-back.jpg?v=25", "/assets/product-images/legging-black-detail.jpg?v=25"] },
       { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=24", images: ["/assets/product-images/legging-nude.jpg?v=24", "/assets/product-images/legging-nude-proof.jpg?v=24"] }
@@ -89,6 +92,7 @@ window.COVERLINE_PRODUCTS = [
     price: 14,
     sizes: ["S","M","L","XL"],
     proof: "Passes the squat test. Longer than the usual gym short.",
+    modelNote: "Model is 5'3\" and wears a size S.",
     colors: [
       { key: "maroon", label: "Maroon", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=21", images: ["/assets/product-images/short-maroon.jpg?v=21", "/assets/product-images/short-maroon-back.jpg?v=21", "/assets/product-images/short-maroon-detail.jpg?v=21"] },
       { key: "pink", label: "Pink", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=21", images: ["/assets/product-images/short-pink.jpg?v=21", "/assets/product-images/short-pink-back.jpg?v=21", "/assets/product-images/short-pink-detail.jpg?v=21"] }
