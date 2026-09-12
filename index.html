@@ -147,11 +147,21 @@
       el.querySelectorAll('.dot').forEach(function(btn){
         btn.addEventListener('click', function(e){
           e.preventDefault(); e.stopPropagation();
+          var alreadyPicked = btn.getAttribute('aria-pressed') === 'true';
+          if(alreadyPicked){
+            // Click the same dot again to de-select — back to plain hover-preview
+            // mode, nothing locked in on this tile.
+            el.classList.remove('colour-chosen');
+            sw.classList.remove('show-alt');
+            el.querySelectorAll('.dot').forEach(function(b){ b.setAttribute('aria-pressed', 'false'); });
+            return;
+          }
           var i = +btn.getAttribute('data-i');
           sw.classList.toggle('show-alt', i === 1);
           // Once you've actually picked a colour, hover stops overriding it —
           // .colour-chosen turns off the hover-preview CSS rule below so the
-          // picked photo stays put no matter where the mouse goes.
+          // picked photo stays put no matter where the mouse goes. Clicking the
+          // same dot again (above) undoes this and hands control back to hover.
           el.classList.add('colour-chosen');
           el.querySelectorAll('.dot').forEach(function(b){ b.setAttribute('aria-pressed', b === btn); });
         });
