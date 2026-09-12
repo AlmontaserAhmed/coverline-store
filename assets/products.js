@@ -72,10 +72,10 @@ window.COVERLINE_PRODUCTS = [
     sizes: ["S","M","L"],
     proof: "Squat-tested. Not sheer. High waist that stays put.",
     colors: [
-      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=24", images: ["/assets/product-images/legging-black.jpg?v=24", "/assets/product-images/legging-black-proof.jpg?v=24", "/assets/product-images/legging-black-back.jpg?v=24", "/assets/product-images/legging-black-detail.jpg?v=24"] },
+      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=25", images: ["/assets/product-images/legging-black.jpg?v=25", "/assets/product-images/legging-black-proof.jpg?v=24", "/assets/product-images/legging-black-back.jpg?v=25", "/assets/product-images/legging-black-detail.jpg?v=25"] },
       { key: "nude", label: "Nude", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=24", images: ["/assets/product-images/legging-nude.jpg?v=24", "/assets/product-images/legging-nude-proof.jpg?v=24"] }
     ],
-    image: "/assets/product-images/legging-black.jpg?v=24",
+    image: "/assets/product-images/legging-black.jpg?v=25",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
