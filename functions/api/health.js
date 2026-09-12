@@ -6,6 +6,8 @@ export async function onRequestGet({ env }){
     paypalEnv: env.PAYPAL_ENV || "sandbox",
     kv: !!env.ORDERS,
     cj: !!(env.CJ_API_KEY && env.CJ_EMAIL),
-    agentmail: !!env.AGENTMAIL_API_KEY
+    agentmail: !!env.AGENTMAIL_API_KEY,
+    webhook: !!env.PAYPAL_WEBHOOK_ID,
+    admin: !!env.ADMIN_TOKEN
   });
 }

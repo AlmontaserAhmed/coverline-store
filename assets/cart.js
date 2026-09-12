@@ -202,7 +202,7 @@
           '<div class="field"><label for="fPost">Postcode</label><input id="fPost" required></div>' +
         '</div>' +
         '<button type="submit" class="btn order-submit">' + (CONFIG.paypalClientId ? 'Continue to payment' : 'Reserve &amp; Pay via PayPal') + '</button>' +
-        '<p class="order-note">You pay on PayPal next, so your card details never touch this site. We ship once the payment clears — UK delivery is usually 7&ndash;15 business days.</p>' +
+        '<p class="order-note">You pay on PayPal next, so your card details never touch this site. We ship once the payment clears — UK delivery is usually 7&ndash;15 business days. Paying means you\'re happy with our <a href="/shipping-returns.html" target="_blank" rel="noopener">shipping &amp; returns terms</a>.</p>' +
         '<button type="button" class="link-quiet" id="backToBag" style="margin-top:14px;">&larr; Back to bag</button>' +
       '</form>';
 
