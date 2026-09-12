@@ -109,6 +109,8 @@
   var activeImg = 0;
   function galleryImages(){
     if(chosenColor && chosenColor.images && chosenColor.images.length) return chosenColor.images;
+    var c0 = (!chosenColor && p.colors && p.colors[0]) || null;
+    if(c0 && c0.images && c0.images.length) return c0.images;
     var single = (chosenColor && chosenColor.image) || p.image;
     return single ? [single] : [];
   }
