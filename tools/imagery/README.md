@@ -21,3 +21,5 @@ the repo is the right home; a UI can be added later if more than one person need
 
 Model B: once the first hero from `jobs/modelb-galleries.json` passes QC, copy it to `refs/` and point
 `brand.json → models.B.reference` at it, so every later Model B shot keys off the same image.
+
+> **Read RULES.md first.** It is the list of things that went wrong before and how the pipeline prevents them.

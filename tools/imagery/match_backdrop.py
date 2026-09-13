@@ -23,8 +23,9 @@ def floor_row(L):
     if sl>6 and sr>6 and abs(yl-yr)<h*0.03: return (yl+yr)//2
     return -1
 
-def fit_field(L):
-    h,w=L.shape; fy=floor_row(L)
+def fit_field(L, fy=None):
+    h,w=L.shape
+    if fy is None: fy=floor_row(L)
     ys,xs=np.mgrid[0:h,0:w]
     m=np.zeros((h,w),bool)
     m[:int(h*0.04),:]=True                       # top strip
@@ -45,14 +46,16 @@ def fit_field(L):
 
 def main():
     ref=np.asarray(Image.open(sys.argv[1]).convert("RGB")).astype(np.float32)
-    Tf,tfy=fit_field(lum(ref))
+    Tl,tfy=fit_field(lum(ref))
+    Tf=np.stack([fit_field(ref[...,c],tfy)[0] for c in range(3)],-1)   # per channel: matches colour temperature too
     for p in sys.argv[2:]:
         im=Image.open(p).convert("RGB"); a=np.asarray(im).astype(np.float32)
         if a.shape!=ref.shape: raise SystemExit(f"{p}: size {a.shape} != ref {ref.shape}")
         out=a
         for _ in range(2):   # two passes: the quadratic under-fits big gaps, second pass closes it
             L=lum(out); h,w=L.shape
-            F,fy=fit_field(L)
+            Fl,fy=fit_field(L)
+            F=np.stack([fit_field(out[...,c],fy)[0] for c in range(3)],-1) if fy>=0 else Fl
             # tight crops (torso / legs fill the frame) have no clean border: the edge strips are garment
             tight=p.endswith("-detail.jpg") and any(k in p for k in ("tee-","loungeset-","legging-"))
             if fy<0 or tight:
@@ -62,14 +65,14 @@ def main():
                 patch={"tee-":(0.0,0.12,0.0,0.30),"loungeset-":(0.0,0.10,0.0,0.25),"legging-":(0.88,1.0,0.0,0.30)}
                 key=next((k for k in patch if k in p),None)
                 if key:
-                    x0,x1,y0,y1=patch[key]; own=L[int(h*y0):int(h*y1), int(w*x0):int(w*x1)].mean()
-                    g=float(np.clip(Tf[:int(h*0.05)].mean()/max(own,1),0.55,1.25))
+                    x0,x1,y0,y1=patch[key]; own=out[int(h*y0):int(h*y1), int(w*x0):int(w*x1)].reshape(-1,3).mean(0)
+                    g=np.clip(Tf[:int(h*0.05)].reshape(-1,3).mean(0)/np.maximum(own,1),0.55,1.25)
                     out=np.clip(out*g,0,255)
                 break
             shift=fy-tfy; T=np.roll(Tf,shift,axis=0)     # align the target field to THIS image's floor line
             if shift>0: T[:shift]=Tf[0]
             elif shift<0: T[shift:]=Tf[-1]
-            gain=np.clip(T/np.maximum(F,1),0.70,1.45)[...,None]
+            gain=np.clip(T/np.maximum(F,1),0.70,1.45)
             out=np.clip(out*gain,0,255)
         Image.fromarray(out.round().astype(np.uint8)).save(p,quality=94)
         c=lambda z: z[:int(z.shape[0]*0.3), :int(z.shape[1]*0.06)].mean()

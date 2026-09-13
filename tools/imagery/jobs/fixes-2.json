@@ -1,0 +1,42 @@
+{
+ "note": "Regenerate the two loungeset navy edits that drifted (figure moved, so the compositor cannot use them) and the two shorts details as true close-ups. Order matters: base before its edit. Then: python3 finish_batch.py jobs/fixes-2.json",
+ "items": [
+  {
+   "id": "loungeset-navy",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "hero",
+   "out": "out/loungeset-navy-raw.jpg",
+   "base": "out/loungeset-cream-raw.jpg"
+  },
+  {
+   "id": "loungeset-navy-detail",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "detail",
+   "out": "out/loungeset-navy-detail-raw.jpg",
+   "base": "out/loungeset-cream-detail-raw.jpg"
+  },
+  {
+   "id": "short-maroon-detail",
+   "model": "A",
+   "garment": "short",
+   "colour": "wine",
+   "pose": "detail",
+   "out": "out/short-maroon-detail-raw.jpg",
+   "extra": "close crop only: frame from the tee hem at the high hip down to mid-thigh; the short's leg band, side seam and the tee hem overlapping the waistband fill the frame; no face; one relaxed hand at the side with five fingers; the same soft, even studio light and the same plain grey backdrop as the hero, no dark corners"
+  },
+  {
+   "id": "short-pink-detail",
+   "model": "A",
+   "garment": "short",
+   "colour": "blush",
+   "pose": "detail",
+   "out": "out/short-pink-detail-raw.jpg",
+   "base": "out/short-maroon-detail-raw.jpg",
+   "extra": "close crop only: frame from the tee hem at the high hip down to mid-thigh; the short's leg band, side seam and the tee hem overlapping the waistband fill the frame; no face; one relaxed hand at the side with five fingers; the same soft, even studio light and the same plain grey backdrop as the hero, no dark corners"
+  }
+ ]
+}

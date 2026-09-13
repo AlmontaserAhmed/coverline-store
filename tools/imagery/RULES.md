@@ -1,0 +1,47 @@
+# Coverline imagery — standing rules (read before touching any image; every rule here was broken at least twice)
+
+This file lives in the repo so no session can build a pipeline without it. The project doc
+`coverline-imagery-standing-rules.md` is the same text. If you change one, change both.
+
+## 1. A colourway is the SAME photograph — never a new one
+- Colour 2 is made from colour 1's image: Gemini edit of the base → `composite.py` puts the base back everywhere
+  except the garment. Face, hair, skin, light, backdrop, floor, framing are pixel-identical between colours.
+- `finish_batch.py` does this automatically for every job item with `"base"`. It prints `changed%` and `ghost%`
+  per edit. A line marked **DRIFTED** means Gemini moved the figure; that edit is regenerated
+  (`generate.py job --only <id>`), never shipped. Never "fix" a drifted edit by hand.
+- Never ship a colourway that is a separate generation. If the edit keeps drifting, regenerate it; do not fall
+  back to a fresh generation "just this once" — that is exactly what put two different photos on the
+  Off-Duty Set in the 13 Sep catalogue.
+- History: compositor written 12 Sep (`coverline-colourway-compositor.md`), dropped when the 13 Sep pipeline was
+  built, regression noticed by Almontaser on the local site the same evening. Hence this file.
+
+## 2. One room, one light
+- Every finished image passes `match_backdrop.py` against `refs/house-backdrop.jpg` (per channel: brightness,
+  gradient and colour temperature). `grade.py` alone is NOT enough — it matches one mean and left Model B
+  renders 25% brighter and cooler than Model A ones.
+- Check: top-strip luminance ~139 and R−B ~+8.5 on every full-body shot (`match_backdrop.py` prints it).
+  Tight close-ups (tee / loungeset / legging detail) are matched on a hand-picked backdrop patch.
+
+## 3. Views per colourway = hero, proof, back, detail — the same four for every product
+- Hero: standing, face visible, front or three-quarter. Movement/proof shots never lead.
+- Detail is a CLOSE crop of the garment's defining feature. If Gemini returns a full-length or 3/4 shot for
+  "detail", it is wrong — regenerate with an explicit `extra` crop spec (see `jobs/fixes-2.json` for the shorts
+  wording). The 13 Sep loungeset and shorts details both came back as full/3/4 shots the first time.
+
+## 4. Styling
+- No sports bra, bralette, crop top or visible midriff on any SKU, including the gym short. Legging and short
+  are styled with a fitted longline tee whose hem sits below the waistband.
+- Model lock is per product (A: tee, co-ord, short; B: loungeset, legging). Identity comes from the reference
+  sheets in `refs/`; prompts say "the same woman as the reference images", never re-describe her.
+
+## 5. Before shipping
+- Contact-sheet the whole product (both colours, all four views) and LOOK at it on a dark background — the site is
+  dark, and backdrop/tone differences that hide on white jump out on black.
+- QC: `run_qc.py job --graded`. Close-crop FAILs are the human-eyes gate, not a defect; everything else is.
+- Ship = copy `out/<id>.jpg` → `assets/product-images/`, bump image `?v=` in `products.js` and
+  `products.js?v=` in all six html, commit, Almontaser pushes.
+
+## 6. Pipeline order (what `finish_batch.py` does)
+`generate.py job` (raw, from his Terminal — Claude's shells cannot reach the Gemini API) →
+`finish_batch.py job` = crop + `grade.py` → `match_backdrop.py` → `composite.py` for every `"base"` item →
+`run_qc.py job --graded` → contact sheet → ship. Job files list a base before its edits.
