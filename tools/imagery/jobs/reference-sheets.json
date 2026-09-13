@@ -1,0 +1,101 @@
+{
+ "note": "Reference sheets: 6 angles per house model in a neutral black garment. QC each (--strict, refB-hands/refA-hands with --close-crop). Passing images go into refs/ and brand.json \u2192 models.X.references (max 4 per model: front, threequarter, face, hands are the useful four). Generate ONCE; never regenerate references casually or identity drifts.",
+ "items": [
+  {
+   "id": "refA-front",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "ref-front",
+   "out": "out/refA-front-raw.jpg"
+  },
+  {
+   "id": "refA-threequarter",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "ref-threequarter",
+   "out": "out/refA-threequarter-raw.jpg"
+  },
+  {
+   "id": "refA-profile",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "ref-profile",
+   "out": "out/refA-profile-raw.jpg"
+  },
+  {
+   "id": "refA-back",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "ref-back",
+   "out": "out/refA-back-raw.jpg"
+  },
+  {
+   "id": "refA-face",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "ref-face",
+   "out": "out/refA-face-raw.jpg"
+  },
+  {
+   "id": "refA-hands",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "ref-hands",
+   "out": "out/refA-hands-raw.jpg"
+  },
+  {
+   "id": "refB-front",
+   "model": "B",
+   "garment": "legging",
+   "colour": "black",
+   "pose": "ref-front",
+   "out": "out/refB-front-raw.jpg"
+  },
+  {
+   "id": "refB-threequarter",
+   "model": "B",
+   "garment": "legging",
+   "colour": "black",
+   "pose": "ref-threequarter",
+   "out": "out/refB-threequarter-raw.jpg"
+  },
+  {
+   "id": "refB-profile",
+   "model": "B",
+   "garment": "legging",
+   "colour": "black",
+   "pose": "ref-profile",
+   "out": "out/refB-profile-raw.jpg"
+  },
+  {
+   "id": "refB-back",
+   "model": "B",
+   "garment": "legging",
+   "colour": "black",
+   "pose": "ref-back",
+   "out": "out/refB-back-raw.jpg"
+  },
+  {
+   "id": "refB-face",
+   "model": "B",
+   "garment": "legging",
+   "colour": "black",
+   "pose": "ref-face",
+   "out": "out/refB-face-raw.jpg"
+  },
+  {
+   "id": "refB-hands",
+   "model": "B",
+   "garment": "legging",
+   "colour": "black",
+   "pose": "ref-hands",
+   "out": "out/refB-hands-raw.jpg"
+  }
+ ]
+}

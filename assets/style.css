@@ -395,15 +395,12 @@ button.submit{
 .piece .swatch{ margin-bottom:14px; background:var(--paper-raised); }
 .piece .swatch img{ transition:opacity .35s ease; }
 .piece .swatch img.alt{ position:absolute; inset:0; opacity:0; }
-/* Hover preview toggles on/off per product (12 Sep 2026, round 2): before any
-   colour is clicked, hovering the tile previews the alt colourway — nice
-   effect, kept. But it used to keep firing even after a real click, so the
-   preview would override your actual choice as soon as the mouse moved over
-   the tile again. Once a colour's been clicked, .piece gets .colour-chosen
-   and this hover rule is scoped out, so the picked photo stays picked no
-   matter where the mouse goes; .show-alt (set only by the click handler)
-   takes over from there. */
-@media (hover:hover){ .piece:not(.colour-chosen):not(.mismatched-photos):hover .swatch img.alt{ opacity:1; } }
+/* Hover preview (13 Sep 2026): hovering a tile shows the BACK view of the colour
+   currently chosen — a second view of the same garment, the convention shoppers
+   expect. Colour is chosen with the dots only; hover never changes colour.
+   .mismatched-photos (set when a product's colour photos don't match) still
+   suppresses the preview. Phones have no hover, so the dots do all the work. */
+@media (hover:hover){ .piece:not(.mismatched-photos):hover .swatch img.alt{ opacity:1; } }
 .piece .swatch.show-alt img.alt{ opacity:1; }
 .piece .meta{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
 .piece h3{ font-size:1.12rem; line-height:1.25; }

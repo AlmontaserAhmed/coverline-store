@@ -1,0 +1,17 @@
+{
+  "note": "Regenerate the live legging + short galleries to the new Model B. Run generate.py, then qc.py on each raw with --model B --strict, then finish.py to 1512x2016, then copy into assets/product-images and bump products.js ?v=. Hero first; QC it; if it passes, set brand.json models.B.reference to that hero so every later shot keys off the same image.",
+  "items": [
+    {"id":"legging-black","model":"B","garment":"legging","colour":"black","pose":"hero","out":"out/legging-black-raw.jpg"},
+    {"id":"legging-black-back","model":"B","garment":"legging","colour":"black","pose":"back","out":"out/legging-black-back-raw.jpg"},
+    {"id":"legging-black-detail","model":"B","garment":"legging","colour":"black","pose":"detail","out":"out/legging-black-detail-raw.jpg"},
+    {"id":"legging-black-proof","model":"B","garment":"legging","colour":"black","pose":"proof","out":"out/legging-black-proof-raw.jpg"},
+    {"id":"legging-nude","model":"B","garment":"legging","colour":"sand","pose":"hero","out":"out/legging-nude-raw.jpg"},
+    {"id":"legging-nude-back","model":"B","garment":"legging","colour":"sand","pose":"back","out":"out/legging-nude-back-raw.jpg"},
+    {"id":"legging-nude-detail","model":"B","garment":"legging","colour":"sand","pose":"detail","out":"out/legging-nude-detail-raw.jpg"},
+    {"id":"legging-nude-proof","model":"B","garment":"legging","colour":"sand","pose":"proof","out":"out/legging-nude-proof-raw.jpg"},
+    {"id":"short-maroon","model":"B","garment":"short","colour":"wine","pose":"hero","out":"out/short-maroon-raw.jpg"},
+    {"id":"short-maroon-back","model":"B","garment":"short","colour":"wine","pose":"back","out":"out/short-maroon-back-raw.jpg"},
+    {"id":"short-pink","model":"B","garment":"short","colour":"blush","pose":"hero","out":"out/short-pink-raw.jpg"},
+    {"id":"short-pink-back","model":"B","garment":"short","colour":"blush","pose":"back","out":"out/short-pink-back-raw.jpg"}
+  ]
+}

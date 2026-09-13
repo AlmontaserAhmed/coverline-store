@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://coverlineshop.com/">
 <meta property="og:image" content="https://coverlineshop.com/assets/product-images/tee-apricot.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/style.css?v=12">
+<link rel="stylesheet" href="/assets/style.css?v=13">
 </head>
 <body>
 
@@ -99,7 +99,7 @@
   </div>
 </footer>
 
-<script src="/assets/products.js?v=30"></script>
+<script src="/assets/products.js?v=31"></script>
 <script src="/assets/config.js?v=4"></script>
 <script src="/assets/cart.js?v=9"></script>
 <script>
@@ -111,7 +111,11 @@
   function tile(p){
     var cols = p.colors || [];
     var main = cols[0] || {image:p.image, label:''};
-    var alt  = cols[1];
+    // Hover preview (13 Sep 2026): a second VIEW of the same colourway — the back shot,
+    // else the detail shot — not the other colour. Colour is chosen with the dots only.
+    var galleryAlt = (main.images || []).filter(function(u){ return /-back\./.test(u); })[0]
+                  || (main.images || []).filter(function(u){ return /-detail\./.test(u); })[0];
+    var alt  = galleryAlt ? {image: galleryAlt, label: main.label + ', back view'} : null;
     return '' +
         '<div class="piece' + (p.colorPhotosMatch === false ? ' mismatched-photos' : '') + '" data-id="' + p.id + '">' +
       '<a class="tile-link" href="/product.html?id=' + p.id + '" aria-label="' + p.name + '"></a>' +
@@ -144,26 +148,27 @@
     grid.querySelectorAll('.piece[data-id]').forEach(function(el){
       var p = PRODUCTS.filter(function(x){ return x.id === el.getAttribute('data-id'); })[0];
       var sw = el.querySelector('.swatch');
+      var mainImg = sw.querySelector('img:not(.alt)');
+      var altImg  = sw.querySelector('img.alt');
+      function viewsFor(c){
+        var imgs = c.images || [];
+        var back = imgs.filter(function(u){ return /-back\./.test(u); })[0] || imgs.filter(function(u){ return /-detail\./.test(u); })[0];
+        return { hero: c.image, back: back };
+      }
+      function showColour(i){
+        var c = (p.colors || [])[i]; if(!c) return;
+        var v = viewsFor(c);
+        mainImg.src = v.hero; mainImg.alt = p.name + ' in ' + c.label;
+        if(altImg){ if(v.back){ altImg.src = v.back; altImg.alt = p.name + ' in ' + c.label + ', back view'; altImg.style.display=''; } else { altImg.style.display='none'; } }
+        el.querySelectorAll('.dot').forEach(function(b){ b.setAttribute('aria-pressed', +b.getAttribute('data-i') === i); });
+      }
       el.querySelectorAll('.dot').forEach(function(btn){
         btn.addEventListener('click', function(e){
           e.preventDefault(); e.stopPropagation();
-          var alreadyPicked = btn.getAttribute('aria-pressed') === 'true';
-          if(alreadyPicked){
-            // Click the same dot again to de-select — back to plain hover-preview
-            // mode, nothing locked in on this tile.
-            el.classList.remove('colour-chosen');
-            sw.classList.remove('show-alt');
-            el.querySelectorAll('.dot').forEach(function(b){ b.setAttribute('aria-pressed', 'false'); });
-            return;
-          }
           var i = +btn.getAttribute('data-i');
-          sw.classList.toggle('show-alt', i === 1);
-          // Once you've actually picked a colour, hover stops overriding it —
-          // .colour-chosen turns off the hover-preview CSS rule below so the
-          // picked photo stays put no matter where the mouse goes. Clicking the
-          // same dot again (above) undoes this and hands control back to hover.
-          el.classList.add('colour-chosen');
-          el.querySelectorAll('.dot').forEach(function(b){ b.setAttribute('aria-pressed', b === btn); });
+          // Dots choose the colour; hover keeps previewing the back view of whichever colour is chosen.
+          // Clicking the pressed dot again returns to the first colourway.
+          showColour(btn.getAttribute('aria-pressed') === 'true' ? 0 : i);
         });
       });
     });

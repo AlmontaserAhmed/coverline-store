@@ -1,0 +1,199 @@
+{
+ "note": "Weeks 3\u20134 photographic slides, from coverline-content-plan-weeks-3-4-2026-09-13.md. Graphics-only slides (19, 20, 23 grid, 24 maths, 25 diagram, 27, 28) are PIL scripts, not here. -A/-B suffixes are the two-option pairs. model null = garment-only shot.",
+ "items": [
+  {
+   "id": "day15-hero-A",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "three-quarter",
+   "out": "out/day15-hero-A-raw.jpg",
+   "extra": "one hand loosely in the side of the tee, worn over black leggings"
+  },
+  {
+   "id": "day15-hero-B",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "hero",
+   "out": "out/day15-hero-B-raw.jpg",
+   "extra": "arms relaxed, worn over black leggings \u2014 a different, simpler take"
+  },
+  {
+   "id": "day16-s1",
+   "model": "B",
+   "garment": "legging",
+   "colour": "sand",
+   "pose": "hero",
+   "out": "out/day16-s1-raw.jpg"
+  },
+  {
+   "id": "day16-s2",
+   "model": "B",
+   "garment": "legging",
+   "colour": "sand",
+   "pose": "three-quarter",
+   "out": "out/day16-s2-raw.jpg",
+   "extra": "with the real navy Off-Duty Set zip jacket zipped to the collar worn over the tee as a layer"
+  },
+  {
+   "id": "day16-s3",
+   "model": "B",
+   "garment": "legging",
+   "colour": "sand",
+   "pose": "three-quarter",
+   "out": "out/day16-s3-raw.jpg",
+   "extra": "with the real black Wide-Leg Set camp-collar shirt worn open over the black tee as a layer"
+  },
+  {
+   "id": "day17-s1",
+   "model": null,
+   "garment": "coord",
+   "colour": "black",
+   "pose": "detail",
+   "out": "out/day17-s1-raw.jpg",
+   "extra": "a tape measure laid flat along the outside seam of the wide-leg trouser on an oat surface, the white side stripe visible, close focus"
+  },
+  {
+   "id": "day17-s2",
+   "model": "A",
+   "garment": "coord",
+   "colour": "black",
+   "pose": "detail",
+   "out": "out/day17-s2-raw.jpg",
+   "extra": "close crop on hands folding the black wide-leg trouser hem once at the ankle"
+  },
+  {
+   "id": "day17-s3",
+   "model": null,
+   "garment": "loungeset",
+   "colour": "cream",
+   "pose": "detail",
+   "out": "out/day17-s3-raw.jpg",
+   "extra": "close focus on the cream jacket's zip pulled fully up to the collar, fabric texture visible"
+  },
+  {
+   "id": "day18-s1-A",
+   "model": "A",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "three-quarter",
+   "out": "out/day18-s1-A-raw.jpg",
+   "extra": "hands in the jacket pockets"
+  },
+  {
+   "id": "day18-s1-B",
+   "model": "A",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "hero",
+   "out": "out/day18-s1-B-raw.jpg",
+   "extra": "arms relaxed"
+  },
+  {
+   "id": "day18-s2",
+   "model": "A",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "detail",
+   "out": "out/day18-s2-raw.jpg",
+   "extra": "close crop from collar to hip of the navy jacket, zip pull at the collar"
+  },
+  {
+   "id": "day21-s1",
+   "model": "A",
+   "garment": "tee",
+   "colour": "apricot",
+   "pose": "hero",
+   "out": "out/day21-s1-raw.jpg",
+   "extra": "worn over black leggings, full body, framed identically to a matching shot of another model"
+  },
+  {
+   "id": "day21-s2",
+   "model": "B",
+   "garment": "legging",
+   "colour": "black",
+   "pose": "hero",
+   "out": "out/day21-s2-raw.jpg",
+   "extra": "full body, framed identically to a matching shot of another model"
+  },
+  {
+   "id": "day22-s1-A",
+   "model": "A",
+   "garment": "coord",
+   "colour": "oat",
+   "pose": "three-quarter",
+   "out": "out/day22-s1-A-raw.jpg",
+   "extra": "flat shoes, trouser cuffed once, daytime"
+  },
+  {
+   "id": "day22-s1-B",
+   "model": "A",
+   "garment": "coord",
+   "colour": "oat",
+   "pose": "hero",
+   "out": "out/day22-s1-B-raw.jpg",
+   "extra": "flat shoes, trouser cuffed once, daytime \u2014 simpler take"
+  },
+  {
+   "id": "day22-s2",
+   "model": "A",
+   "garment": "coord",
+   "colour": "oat",
+   "pose": "three-quarter",
+   "out": "out/day22-s2-raw.jpg",
+   "extra": "evening styling: heels, small gold earrings, a slim clutch; warmer evening-toned light, slightly moodier shadow, same colour grade"
+  },
+  {
+   "id": "day23-hero",
+   "model": "B",
+   "garment": "short",
+   "colour": "blush",
+   "pose": "hero",
+   "out": "out/day23-hero-raw.jpg"
+  },
+  {
+   "id": "day24-hero",
+   "model": "A",
+   "garment": "tee",
+   "colour": "apricot",
+   "pose": "three-quarter",
+   "out": "out/day24-hero-raw.jpg",
+   "extra": "sitting on a low grey plinth, relaxed, worn over black leggings"
+  },
+  {
+   "id": "day25-hero",
+   "model": "A",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "three-quarter",
+   "out": "out/day25-hero-raw.jpg",
+   "extra": "jogger cuffed once at the ankle, jacket open over a black tee"
+  },
+  {
+   "id": "day26-s1",
+   "model": "B",
+   "garment": "legging",
+   "colour": "black",
+   "pose": "hero",
+   "out": "out/day26-s1-raw.jpg"
+  },
+  {
+   "id": "day26-s2",
+   "model": "B",
+   "garment": "legging",
+   "colour": "black",
+   "pose": "proof",
+   "out": "out/day26-s2-raw.jpg"
+  },
+  {
+   "id": "day26-s3",
+   "model": null,
+   "garment": "legging",
+   "colour": "black",
+   "pose": "detail",
+   "out": "out/day26-s3-raw.jpg",
+   "extra": "the black legging fabric stretched over a rounded grey form, texture visible, no show-through"
+  }
+ ]
+}

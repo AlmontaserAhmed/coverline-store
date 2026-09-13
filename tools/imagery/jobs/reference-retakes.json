@@ -1,0 +1,23 @@
+{
+ "note": "Retakes of the two Model A reference angles that failed review (three-quarter came out with bare legs; hands crop showed one hand only).",
+ "items": [
+  {
+   "id": "refA-threequarter",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "ref-threequarter",
+   "extra": "wearing the black tee over full-length black leggings, legs fully covered",
+   "out": "out/refA-threequarter-raw.jpg"
+  },
+  {
+   "id": "refA-hands",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "ref-hands",
+   "extra": "BOTH hands fully in frame from elbow to fingertips, resting on the thighs over black leggings, five fingers on each hand clearly visible",
+   "out": "out/refA-hands-raw.jpg"
+  }
+ ]
+}

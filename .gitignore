@@ -1,1 +1,8 @@
 .git-credentials
+.dev.vars
+.wrangler/
+tools/imagery/out/
+tools/imagery/__pycache__/
+_to_delete/
+qc/
+Claude outputs/

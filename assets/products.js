@@ -30,7 +30,7 @@ window.COVERLINE_PRODUCTS = [
     tagline: "Dressed in one go.",
     desc: "Boxy zip jacket and matching jogger — zip it up, pull them on, and you're done. No thinking required.",
     longDesc: "A zip jacket and jogger that get you dressed in one move. The jacket is cut boxy and zips right up to the collar, so it works over a tee or on its own; the jogger has an elasticated waist and a full-length leg that sits on the shoe. It just happens to look like you put thought into it, even on the days you very much didn't.",
-    fit: "True to size through the body. The jogger is regular length (100–103cm outside leg) — if you're 5'3\" or under it will stack a little at the ankle, which is how a jogger is meant to sit. Chart below.",
+    fit: "Boxy through the jacket, elasticated waist on the jogger. Outside leg is 100–103cm depending on size — a touch shorter than a standard jogger, which suits a shorter frame; if you're tall for your size it will show ankle. Numbers in the chart below.",
     priceLabel: "£30",
     price: 30,
     sizes: ["S","M","L","XL"],

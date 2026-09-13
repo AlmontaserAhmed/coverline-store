@@ -1,0 +1,14 @@
+{
+ "note": "Day 9 slide 2 regeneration \u2014 the delivered version had an unnatural arm/hand. QC with --strict --close-crop, then finish.py with --text 'ends at the wrist, on purpose' --textpos bl --price \u00a315.",
+ "items": [
+  {
+   "id": "day09-s2",
+   "model": "A",
+   "garment": "tee",
+   "colour": "apricot",
+   "pose": "wrist",
+   "out": "out/day09-s2-raw.jpg",
+   "extra": "arm relaxed at the side, the dropped-shoulder sleeve hem sitting exactly at the wrist bone, hand relaxed and natural, five fingers, no bend at the wrist, skin texture appropriate to a woman in her mid-20s"
+  }
+ ]
+}
