@@ -35,6 +35,11 @@ IMAGE_SIZE = os.environ.get("COVERLINE_IMAGE_SIZE", "2K")                       
 def build_prompt(item):
     g = BRAND["garments"][item["garment"]]
     garment_line = g["line"].format(colour=item["colour"])
+    if item.get("base"):   # colourway edit: same image, only the garment colour changes
+        return (f"Use the first image as the base. Recreate it exactly — the same woman, the same pose, the same framing, "
+                f"the same light and backdrop, pixel-for-pixel where possible — changing ONLY the garment to: {garment_line}. "
+                f"Take the garment's colour and construction from the last reference image. Photography, not digital art. "
+                f"Avoid: {BRAND['negative']}.")
     if item.get("model") is None:   # garment-only / macro shot, no person
         return " ".join(p for p in [
             f"Editorial product photograph, no person in frame. {garment_line}, {item.get('extra','')}",
@@ -59,6 +64,11 @@ def refs(item):
     garment_ref = (PRODUCT_IMAGES / g["colours"][item["colour"]]).resolve()
     if not garment_ref.exists(): raise SystemExit(f"missing reference: {garment_ref}")
     out = []
+    if item.get("base"):
+        base = (HERE / item["base"]).resolve()
+        if not base.exists(): raise SystemExit(f"missing base image: {base}")
+        out.append(Image.open(base).convert("RGB"))
+        out.append(Image.open(garment_ref).convert("RGB")); return out
     if item.get("model") is not None:
         m = BRAND["models"][item["model"]]
         for r in (m.get("references") or [m["reference"]])[:4]:

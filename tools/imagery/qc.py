@@ -51,6 +51,10 @@ if __name__ == "__main__":
     strict = "--strict" in sys.argv
     garment = sys.argv[sys.argv.index("--garment")+1] if "--garment" in sys.argv else ""
     im = Image.open(path); fails, warns = [], []
+    if "--graded" in sys.argv:
+        import grade as G; ms = G.measure(im); lo, hi = BRAND["grade"]["backdrop_L"]; wlo, whi = BRAND["grade"]["warmth"]
+        if not (lo <= ms["backdrop_L"] <= hi): fails.append(f"backdrop luminance {ms['backdrop_L']:.0f} outside {lo}-{hi}")
+        if not (wlo <= ms["warmth"] <= whi): fails.append(f"warmth {ms['warmth']:.0f} outside {wlo}-{whi}")
     if min(im.size) < 1000: fails.append(f"too small {im.size}")
     ok, why = backdrop_check(im)
     if not ok: warns.append(f"backdrop cast: {why}")

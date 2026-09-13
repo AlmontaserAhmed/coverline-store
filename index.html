@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://coverlineshop.com/">
 <meta property="og:image" content="https://coverlineshop.com/assets/product-images/tee-apricot.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/style.css?v=13">
+<link rel="stylesheet" href="/assets/style.css?v=14">
 </head>
 <body>
 
@@ -108,10 +108,10 @@
   var grid = document.getElementById("shopGrid");
   var selectedSizes = {}; // productId -> currently highlighted size (UI only, pre-add)
 
-  // Hover shows the most interesting second view of the chosen colour:
-  // movement ("proof") first, then the fabric detail, then front, then back.
+  // Hover shows the close-up detail of the chosen colour (same for every product);
+  // falls back to movement, front, back if a product has no detail shot yet.
   function altCandidates(imgs){
-    var order = [/-proof\./, /-detail\./, /-front\./, /-back\./], out = [];
+    var order = [/-detail\./, /-proof\./, /-front\./, /-back\./], out = [];
     order.forEach(function(re){ imgs.forEach(function(u){ if (re.test(u) && out.indexOf(u) < 0) out.push(u); }); });
     return out;
   }
@@ -125,10 +125,10 @@
     var alt  = galleryAlt ? {image: galleryAlt, label: main.label + ', second view'} : null;
     return '' +
         '<div class="piece" data-id="' + p.id + '">' +
-      '<a class="tile-link" href="/product.html?id=' + p.id + '" aria-label="' + p.name + '"></a>' +
         '<div class="swatch">' +
           '<img src="' + main.image + '" alt="' + p.name + ' in ' + main.label + '" loading="lazy">' +
           (alt ? '<img class="alt" src="' + alt.image + '" alt="' + p.name + ' in ' + alt.label + '" loading="lazy">' : '') +
+          '<a class="tile-link" href="/product.html?id=' + p.id + '" aria-label="' + p.name + '"></a>' +
         '</div>' +
         '<div class="meta"><h3><a href="/product.html?id=' + p.id + '">' + p.name + '</a></h3><p class="price">' + p.priceLabel + '</p></div>' +
         '<p class="desc">' + p.tagline + '</p>' +

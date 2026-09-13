@@ -394,13 +394,14 @@ button.submit{
 .piece{ position:relative; }
 .piece .swatch{ margin-bottom:14px; background:var(--paper-raised); }
 .piece .swatch img{ transition:opacity .35s ease; }
+.piece .swatch img:not(.alt){ transition:opacity .35s ease; }
 .piece .swatch img.alt{ position:absolute; inset:0; opacity:0; }
 /* Hover preview (13 Sep 2026): hovering a tile shows the BACK view of the colour
    currently chosen — a second view of the same garment, the convention shoppers
    expect. Colour is chosen with the dots only; hover never changes colour.
    Phones have no hover, so the dots do all the work. (The old .mismatched-photos
    opt-out went with the colour-swap hover — no longer needed.) */
-@media (hover:hover){ .piece:hover .swatch img.alt{ opacity:1; } }
+@media (hover:hover){ .piece .swatch:hover img.alt{ opacity:1; } }
 .piece .swatch.show-alt img.alt{ opacity:1; }
 .piece .meta{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
 .piece h3{ font-size:1.12rem; line-height:1.25; }
@@ -411,7 +412,7 @@ button.submit{
 .piece .dot span{ position:absolute; inset:3px; border-radius:50%; }
 .piece .dot[aria-pressed="true"]{ outline:1px solid var(--ink); outline-offset:2px; }
 .piece .dots .more{ font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-left:2px; }
-.piece a.tile-link{ position:absolute; inset:0; z-index:1; }
+.piece .swatch a.tile-link{ position:absolute; inset:0; z-index:1; }  /* link + hover area = the image only */
 .piece .dots, .piece .meta, .piece .desc{ position:relative; z-index:2; }
 .piece .meta a, .piece .desc{ pointer-events:none; }
 .piece .meta a{ pointer-events:auto; }

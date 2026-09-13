@@ -9,6 +9,7 @@ a = sys.argv[1:]; raw, out = a[0], a[1]
 def opt(k, d=None): return a[a.index(k)+1] if k in a else d
 tmp = str(Path(out).with_suffix(".proc.jpg"))
 subprocess.check_call([sys.executable, HERE/"process.py", raw, tmp])
+subprocess.check_call([sys.executable, HERE/"grade.py", tmp, tmp])   # house grade: same light in every image
 cmd = [sys.executable, HERE/"overlay.py", tmp, out]
 if opt("--text"):  cmd += ["--text", opt("--text"), "--textpos", opt("--textpos", "bl")]
 if opt("--price"): cmd += ["--price", opt("--price"), "--pricepos", "bl"]
