@@ -1,0 +1,73 @@
+{
+ "note": "Pilot: the tee only (8 items) \u2014 review before the rest.",
+ "items": [
+  {
+   "id": "tee-apricot",
+   "model": "A",
+   "garment": "tee",
+   "colour": "apricot",
+   "pose": "hero",
+   "out": "out/tee-apricot-raw.jpg"
+  },
+  {
+   "id": "tee-black",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "hero",
+   "out": "out/tee-black-raw.jpg",
+   "base": "out/tee-apricot-raw.jpg"
+  },
+  {
+   "id": "tee-apricot-proof",
+   "model": "A",
+   "garment": "tee",
+   "colour": "apricot",
+   "pose": "move-tee",
+   "out": "out/tee-apricot-proof-raw.jpg"
+  },
+  {
+   "id": "tee-black-proof",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "move-tee",
+   "out": "out/tee-black-proof-raw.jpg",
+   "base": "out/tee-apricot-proof-raw.jpg"
+  },
+  {
+   "id": "tee-apricot-back",
+   "model": "A",
+   "garment": "tee",
+   "colour": "apricot",
+   "pose": "back",
+   "out": "out/tee-apricot-back-raw.jpg"
+  },
+  {
+   "id": "tee-black-back",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "back",
+   "out": "out/tee-black-back-raw.jpg",
+   "base": "out/tee-apricot-back-raw.jpg"
+  },
+  {
+   "id": "tee-apricot-detail",
+   "model": "A",
+   "garment": "tee",
+   "colour": "apricot",
+   "pose": "detail",
+   "out": "out/tee-apricot-detail-raw.jpg"
+  },
+  {
+   "id": "tee-black-detail",
+   "model": "A",
+   "garment": "tee",
+   "colour": "black",
+   "pose": "detail",
+   "out": "out/tee-black-detail-raw.jpg",
+   "base": "out/tee-apricot-detail-raw.jpg"
+  }
+ ]
+}

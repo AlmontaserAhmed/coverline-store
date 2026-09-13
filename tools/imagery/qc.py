@@ -41,7 +41,7 @@ def gemini_check(path, model_key, garment_hint=""):
          "same_person (true/false), confidence (0-1), defects (list of strings from: extra_fingers, fused_fingers, "
          "bent_wrist, watermark, bare_midriff, extra_limb, distorted_face, text_artifacts — empty if none), "
          "backdrop_plain_grey (true/false), notes (short). " + (f"Garment expected: {garment_hint}. Add key garment_matches (true/false)." if garment_hint else ""))
-    resp = client.models.generate_content(model="gemini-2.5-flash", contents=[ref, cand, q])
+    resp = client.models.generate_content(model="gemini-3.6-flash", contents=[ref, cand, q])
     txt = resp.text.strip().strip("`")
     if txt.startswith("json"): txt = txt[4:]
     return json.loads(txt)

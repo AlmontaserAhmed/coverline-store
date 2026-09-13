@@ -1,0 +1,245 @@
+{
+ "note": "Full catalogue re-shoot for one consistent look: colour 1 generated from the model's reference sheet; colour 2 is an EDIT of the colour-1 image (same pose/frame) so colour switching is seamless. Views: hero, movement (the product's fit point), back, detail. Model per product: tee A, loungeset B, coord A, short A, legging B. Run in order \u2014 the edits need their base image to exist. REST: everything except tee (tee pilot already done and QC-passed).",
+ "items": [
+  {
+   "id": "loungeset-cream",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "cream",
+   "pose": "hero",
+   "out": "out/loungeset-cream-raw.jpg"
+  },
+  {
+   "id": "loungeset-navy",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "hero",
+   "out": "out/loungeset-navy-raw.jpg",
+   "base": "out/loungeset-cream-raw.jpg"
+  },
+  {
+   "id": "loungeset-cream-proof",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "cream",
+   "pose": "move-loungeset",
+   "out": "out/loungeset-cream-proof-raw.jpg"
+  },
+  {
+   "id": "loungeset-navy-proof",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "move-loungeset",
+   "out": "out/loungeset-navy-proof-raw.jpg",
+   "base": "out/loungeset-cream-proof-raw.jpg"
+  },
+  {
+   "id": "loungeset-cream-back",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "cream",
+   "pose": "back",
+   "out": "out/loungeset-cream-back-raw.jpg"
+  },
+  {
+   "id": "loungeset-navy-back",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "back",
+   "out": "out/loungeset-navy-back-raw.jpg",
+   "base": "out/loungeset-cream-back-raw.jpg"
+  },
+  {
+   "id": "loungeset-cream-detail",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "cream",
+   "pose": "detail",
+   "out": "out/loungeset-cream-detail-raw.jpg"
+  },
+  {
+   "id": "loungeset-navy-detail",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "detail",
+   "out": "out/loungeset-navy-detail-raw.jpg",
+   "base": "out/loungeset-cream-detail-raw.jpg"
+  },
+  {
+   "id": "coord-black",
+   "model": "A",
+   "garment": "coord",
+   "colour": "black",
+   "pose": "hero",
+   "out": "out/coord-black-raw.jpg"
+  },
+  {
+   "id": "coord-oat",
+   "model": "A",
+   "garment": "coord",
+   "colour": "oat",
+   "pose": "hero",
+   "out": "out/coord-oat-raw.jpg",
+   "base": "out/coord-black-raw.jpg"
+  },
+  {
+   "id": "coord-black-proof",
+   "model": "A",
+   "garment": "coord",
+   "colour": "black",
+   "pose": "move-coord",
+   "out": "out/coord-black-proof-raw.jpg"
+  },
+  {
+   "id": "coord-oat-proof",
+   "model": "A",
+   "garment": "coord",
+   "colour": "oat",
+   "pose": "move-coord",
+   "out": "out/coord-oat-proof-raw.jpg",
+   "base": "out/coord-black-proof-raw.jpg"
+  },
+  {
+   "id": "coord-black-back",
+   "model": "A",
+   "garment": "coord",
+   "colour": "black",
+   "pose": "back",
+   "out": "out/coord-black-back-raw.jpg"
+  },
+  {
+   "id": "coord-oat-back",
+   "model": "A",
+   "garment": "coord",
+   "colour": "oat",
+   "pose": "back",
+   "out": "out/coord-oat-back-raw.jpg",
+   "base": "out/coord-black-back-raw.jpg"
+  },
+  {
+   "id": "coord-black-detail",
+   "model": "A",
+   "garment": "coord",
+   "colour": "black",
+   "pose": "detail",
+   "out": "out/coord-black-detail-raw.jpg"
+  },
+  {
+   "id": "coord-oat-detail",
+   "model": "A",
+   "garment": "coord",
+   "colour": "oat",
+   "pose": "detail",
+   "out": "out/coord-oat-detail-raw.jpg",
+   "base": "out/coord-black-detail-raw.jpg"
+  },
+  {
+   "id": "short-maroon",
+   "model": "A",
+   "garment": "short",
+   "colour": "wine",
+   "pose": "hero",
+   "out": "out/short-maroon-raw.jpg"
+  },
+  {
+   "id": "short-pink",
+   "model": "A",
+   "garment": "short",
+   "colour": "blush",
+   "pose": "hero",
+   "out": "out/short-pink-raw.jpg",
+   "base": "out/short-maroon-raw.jpg"
+  },
+  {
+   "id": "short-maroon-proof",
+   "model": "A",
+   "garment": "short",
+   "colour": "wine",
+   "pose": "move-short",
+   "out": "out/short-maroon-proof-raw.jpg"
+  },
+  {
+   "id": "short-pink-proof",
+   "model": "A",
+   "garment": "short",
+   "colour": "blush",
+   "pose": "move-short",
+   "out": "out/short-pink-proof-raw.jpg",
+   "base": "out/short-maroon-proof-raw.jpg"
+  },
+  {
+   "id": "short-maroon-back",
+   "model": "A",
+   "garment": "short",
+   "colour": "wine",
+   "pose": "back",
+   "out": "out/short-maroon-back-raw.jpg"
+  },
+  {
+   "id": "short-pink-back",
+   "model": "A",
+   "garment": "short",
+   "colour": "blush",
+   "pose": "back",
+   "out": "out/short-pink-back-raw.jpg",
+   "base": "out/short-maroon-back-raw.jpg"
+  },
+  {
+   "id": "short-maroon-detail",
+   "model": "A",
+   "garment": "short",
+   "colour": "wine",
+   "pose": "detail",
+   "out": "out/short-maroon-detail-raw.jpg"
+  },
+  {
+   "id": "short-pink-detail",
+   "model": "A",
+   "garment": "short",
+   "colour": "blush",
+   "pose": "detail",
+   "out": "out/short-pink-detail-raw.jpg",
+   "base": "out/short-maroon-detail-raw.jpg"
+  },
+  {
+   "id": "legging-nude",
+   "model": "B",
+   "garment": "legging",
+   "colour": "sand",
+   "pose": "hero",
+   "out": "out/legging-nude-raw.jpg",
+   "base": "out/legging-black-raw.jpg"
+  },
+  {
+   "id": "legging-nude-proof",
+   "model": "B",
+   "garment": "legging",
+   "colour": "sand",
+   "pose": "move-legging",
+   "out": "out/legging-nude-proof-raw.jpg",
+   "base": "out/legging-black-proof-raw.jpg"
+  },
+  {
+   "id": "legging-nude-back",
+   "model": "B",
+   "garment": "legging",
+   "colour": "sand",
+   "pose": "back",
+   "out": "out/legging-nude-back-raw.jpg",
+   "base": "out/legging-black-back-raw.jpg"
+  },
+  {
+   "id": "legging-nude-detail",
+   "model": "B",
+   "garment": "legging",
+   "colour": "sand",
+   "pose": "detail",
+   "out": "out/legging-nude-detail-raw.jpg",
+   "base": "out/legging-black-detail-raw.jpg"
+  }
+ ]
+}
