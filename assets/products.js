@@ -80,7 +80,7 @@ window.COVERLINE_PRODUCTS = [
     care: "Seamless stretch knit. Machine wash cold, hang or lay flat to dry. Skip the tumble dryer — it\'s what kills the stretch in every pair you\'ve owned before.",
     colors: [
       { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=39", images: ["/assets/product-images/legging-black.jpg?v=39", "/assets/product-images/legging-black-proof.jpg?v=39", "/assets/product-images/legging-black-back.jpg?v=39", "/assets/product-images/legging-black-detail.jpg?v=39"] },
-      { key: "nude", label: "Sand", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=44", images: ["/assets/product-images/legging-nude.jpg?v=44", "/assets/product-images/legging-nude-proof.jpg?v=44", "/assets/product-images/legging-nude-back.jpg?v=44", "/assets/product-images/legging-nude-detail.jpg?v=44"] }
+      { key: "nude", label: "Sand", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=45", images: ["/assets/product-images/legging-nude.jpg?v=45", "/assets/product-images/legging-nude-proof.jpg?v=45", "/assets/product-images/legging-nude-back.jpg?v=45", "/assets/product-images/legging-nude-detail.jpg?v=45"] }
     ],
     image: "/assets/product-images/legging-black.jpg?v=39",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }

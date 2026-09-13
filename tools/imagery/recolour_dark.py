@@ -35,13 +35,13 @@ def main():
     solid=np.asarray(lab)==128
     region=_blur(solid.astype(float),4.0)>0.02          # garment + a few px of edge
     # 3. per-pixel recolour strength: 1 on solid fabric, fading to 0 across the anti-aliased edge (by darkness)
-    s=np.clip((th+40-mx)/60.0,0,1)*region*neutral
+    s=np.clip((th+25-mx)/45.0,0,1)*region*neutral
     s=np.where(solid,1.0,s)
     # 4. shading: normalise the garment's own luminance range, place it on the target colour
     Lg=L[solid]; lo,hi=np.percentile(Lg,2),np.percentile(Lg,99.5)
     n=np.clip((L-lo)/max(hi-lo,1),0,1)
     k=0.5+(1.3-0.5)*n**0.85                            # dark folds 0.5×target, highlights 1.3× — keeps the fabric's contrast so it never reads as skin
-    k=np.where(solid,k,np.minimum(k,0.6))               # edge pixels stay on the dark side of the curve (reads as the original edge, no rim)
+    k=np.where(solid,k,np.minimum(k,0.5))               # edge pixels stay on the dark side of the curve (reads as the original edge, no rim)
     col=tgt[None,None,:]*k[...,None]
     out=s[...,None]*col+(1-s[...,None])*x
     Image.fromarray(np.clip(out,0,255).astype(np.uint8)).save(outp,quality=94)
