@@ -166,27 +166,34 @@
         if (idx >= 0 && idx + 1 < alts.length) altImg.src = alts[idx + 1]; else altImg.style.display = 'none';
       });
       if (altImg) altImg.setAttribute('data-alts', altCandidates(((p.colors||[])[0]||{}).images || []).join('|'));
+      var swapBusy = false;
       function showColour(i){
         var c = (p.colors || [])[i]; if(!c) return;
         var v = viewsFor(c);
         el.querySelectorAll('.dot').forEach(function(b){ b.setAttribute('aria-pressed', +b.getAttribute('data-i') === i); });
-        if (mainImg.getAttribute('src') === v.hero) return; // already showing this colour
-        // Crossfade instead of a hard src swap: preload the new hero, fade the current one out,
-        // swap once it is actually decoded (never fades in on a still-loading/blank frame), fade back in.
-        var pre = new Image();
+        if (mainImg.getAttribute('src') === v.hero || swapBusy) return; // already showing this colour, or a swap is already running
+        swapBusy = true;
+        // True crossfade: a temporary image is layered on top (above main AND the hover-alt), faded in as
+        // the new photo, then main is updated underneath and the overlay removed — never a fade-to-nothing.
+        var overlay = document.createElement('img');
+        overlay.className = 'swap-overlay';
+        overlay.alt = '';
+        overlay.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .35s ease;';
+        sw.appendChild(overlay);
         var applied = false;
         function apply(){
           if (applied) return; applied = true;
-          mainImg.style.opacity = '0';
+          requestAnimationFrame(function(){ overlay.style.opacity = '1'; });
           window.setTimeout(function(){
             mainImg.src = v.hero; mainImg.alt = p.name + ' in ' + c.label;
             if(altImg){ altImg.setAttribute('data-alts', (v.alts||[]).join('|')); if(v.back){ altImg.style.display=''; altImg.src = v.back; altImg.alt = p.name + ' in ' + c.label + ', second view'; } else { altImg.style.display='none'; } }
-            requestAnimationFrame(function(){ mainImg.style.opacity = '1'; });
-          }, 350); // matches the .piece .swatch img opacity transition in style.css
+            overlay.remove();
+            swapBusy = false;
+          }, 360); // matches the overlay's own opacity transition above
         }
-        pre.onload = apply;
-        pre.onerror = apply; // don't get stuck faded-out if the image 404s
-        pre.src = v.hero;
+        overlay.onload = apply;
+        overlay.onerror = apply; // don't get stuck mid-swap if the image 404s
+        overlay.src = v.hero;
         window.setTimeout(apply, 900); // safety net on a slow/cached-weird load
       }
       el.querySelectorAll('.dot').forEach(function(btn){
