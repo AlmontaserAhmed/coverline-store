@@ -169,9 +169,25 @@
       function showColour(i){
         var c = (p.colors || [])[i]; if(!c) return;
         var v = viewsFor(c);
-        mainImg.src = v.hero; mainImg.alt = p.name + ' in ' + c.label;
-        if(altImg){ altImg.setAttribute('data-alts', (v.alts||[]).join('|')); if(v.back){ altImg.style.display=''; altImg.src = v.back; altImg.alt = p.name + ' in ' + c.label + ', second view'; } else { altImg.style.display='none'; } }
         el.querySelectorAll('.dot').forEach(function(b){ b.setAttribute('aria-pressed', +b.getAttribute('data-i') === i); });
+        if (mainImg.getAttribute('src') === v.hero) return; // already showing this colour
+        // Crossfade instead of a hard src swap: preload the new hero, fade the current one out,
+        // swap once it is actually decoded (never fades in on a still-loading/blank frame), fade back in.
+        var pre = new Image();
+        var applied = false;
+        function apply(){
+          if (applied) return; applied = true;
+          mainImg.style.opacity = '0';
+          window.setTimeout(function(){
+            mainImg.src = v.hero; mainImg.alt = p.name + ' in ' + c.label;
+            if(altImg){ altImg.setAttribute('data-alts', (v.alts||[]).join('|')); if(v.back){ altImg.style.display=''; altImg.src = v.back; altImg.alt = p.name + ' in ' + c.label + ', second view'; } else { altImg.style.display='none'; } }
+            requestAnimationFrame(function(){ mainImg.style.opacity = '1'; });
+          }, 350); // matches the .piece .swatch img opacity transition in style.css
+        }
+        pre.onload = apply;
+        pre.onerror = apply; // don't get stuck faded-out if the image 404s
+        pre.src = v.hero;
+        window.setTimeout(apply, 900); // safety net on a slow/cached-weird load
       }
       el.querySelectorAll('.dot').forEach(function(btn){
         btn.addEventListener('click', function(e){
