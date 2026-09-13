@@ -34,7 +34,7 @@ def align(B, E, search=6):
     sc, dy, dx = best
     return np.roll(np.roll(E, -dy, 0), -dx, 1), sc, dy, dx
 
-def build(base_path, edit_path, out_path, lo=10, hi=34):
+def build(base_path, edit_path, out_path, lo=10, hi=34, target=None):
     B = np.asarray(Image.open(base_path).convert('RGB')).astype(float)
     E = np.asarray(Image.open(edit_path).convert('RGB').resize((B.shape[1], B.shape[0]), Image.LANCZOS)).astype(float)
     E, sc, dy, dx = align(B, E)
@@ -49,6 +49,15 @@ def build(base_path, edit_path, out_path, lo=10, hi=34):
     alpha = np.clip((d-lo)/(hi-lo), 0, 1)
     alpha = _blur(alpha*255, 1.5*S)/255.0
     core = alpha > 0.6
+    # optional: pull the rendered garment to the colour it is listed as (per-channel gain on the changed region only,
+    # measured on the changed pixels' mean). Used when Gemini renders a colourway too dark / too saturated — e.g. the
+    # sand legging came out orange-tan (149,104,76) against the listed #c9a888.
+    if target is not None and core.any():
+        cur = Eg[core].reshape(-1, 3).mean(0)
+        g = np.clip(np.array(target, float)/np.maximum(cur, 1), 0.6, 1.45)
+        inner = np.clip((alpha-0.5)/0.4, 0, 1)[..., None]      # only deep inside the garment, never the rim
+        Eg = np.clip(Eg*(1+(g-1)*inner), 0, 255)
+        print(f'   garment {cur.round().astype(int).tolist()} -> target {list(target)} (gain {g.round(2).tolist()})')
     out = np.clip(B*(1-alpha[..., None]) + Eg*alpha[..., None], 0, 255).astype(np.uint8)
     Image.fromarray(out).save(out_path, quality=94, subsampling=0)
     O = np.asarray(Image.open(out_path).convert('RGB')).astype(float)
@@ -66,4 +75,7 @@ def build(base_path, edit_path, out_path, lo=10, hi=34):
     return changed, ghost
 
 if __name__ == "__main__":
-    build(sys.argv[1], sys.argv[2], sys.argv[3])
+    tgt = None
+    if "--target" in sys.argv:
+        i = sys.argv.index("--target"); tgt = tuple(int(x) for x in sys.argv[i+1].split(",")); del sys.argv[i:i+2]
+    build(sys.argv[1], sys.argv[2], sys.argv[3], target=tgt)

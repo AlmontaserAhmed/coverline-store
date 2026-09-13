@@ -212,7 +212,8 @@
    "colour": "sand",
    "pose": "hero",
    "out": "out/legging-nude-raw.jpg",
-   "base": "out/legging-black-raw.jpg"
+   "base": "out/legging-black-raw.jpg",
+   "target": "176,138,108"
   },
   {
    "id": "legging-nude-proof",
@@ -221,7 +222,8 @@
    "colour": "sand",
    "pose": "move-legging",
    "out": "out/legging-nude-proof-raw.jpg",
-   "base": "out/legging-black-proof-raw.jpg"
+   "base": "out/legging-black-proof-raw.jpg",
+   "target": "176,138,108"
   },
   {
    "id": "legging-nude-back",
@@ -230,7 +232,8 @@
    "colour": "sand",
    "pose": "back",
    "out": "out/legging-nude-back-raw.jpg",
-   "base": "out/legging-black-back-raw.jpg"
+   "base": "out/legging-black-back-raw.jpg",
+   "target": "176,138,108"
   },
   {
    "id": "legging-nude-detail",
@@ -239,7 +242,8 @@
    "colour": "sand",
    "pose": "detail",
    "out": "out/legging-nude-detail-raw.jpg",
-   "base": "out/legging-black-detail-raw.jpg"
+   "base": "out/legging-black-detail-raw.jpg",
+   "target": "176,138,108"
   }
  ]
 }

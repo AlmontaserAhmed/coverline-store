@@ -1,5 +1,5 @@
 {
- "note": "Regenerate the two loungeset navy edits that drifted (figure moved, so the compositor cannot use them) and the two shorts details as true close-ups. Order matters: base before its edit. Then: python3 finish_batch.py jobs/fixes-2.json",
+ "note": "Regenerate the two loungeset navy edits that drifted, and the shorts proof + detail in the same soft light as the hero (proof was hard-lit, detail was a dark 3/4 shot). Order matters: base before its edit. Then: python3 finish_batch.py jobs/fixes-2.json",
  "items": [
   {
    "id": "loungeset-navy",
@@ -20,13 +20,30 @@
    "base": "out/loungeset-cream-detail-raw.jpg"
   },
   {
+   "id": "short-maroon-proof",
+   "model": "A",
+   "garment": "short",
+   "colour": "wine",
+   "pose": "move-short",
+   "out": "out/short-maroon-proof-raw.jpg"
+  },
+  {
+   "id": "short-pink-proof",
+   "model": "A",
+   "garment": "short",
+   "colour": "blush",
+   "pose": "move-short",
+   "out": "out/short-pink-proof-raw.jpg",
+   "base": "out/short-maroon-proof-raw.jpg"
+  },
+  {
    "id": "short-maroon-detail",
    "model": "A",
    "garment": "short",
    "colour": "wine",
    "pose": "detail",
    "out": "out/short-maroon-detail-raw.jpg",
-   "extra": "close crop only: frame from the tee hem at the high hip down to mid-thigh; the short's leg band, side seam and the tee hem overlapping the waistband fill the frame; no face; one relaxed hand at the side with five fingers; the same soft, even studio light and the same plain grey backdrop as the hero, no dark corners"
+   "extra": "close crop only: frame from the tee hem at the high hip down to mid-thigh; the short's leg band, side seam and the tee hem overlapping the waistband fill the frame; no face; one relaxed hand at the side with five fingers; the same soft, even, shadowless studio light and the same plain grey backdrop as the hero, no dark corners, no hard side light"
   },
   {
    "id": "short-pink-detail",
@@ -36,7 +53,7 @@
    "pose": "detail",
    "out": "out/short-pink-detail-raw.jpg",
    "base": "out/short-maroon-detail-raw.jpg",
-   "extra": "close crop only: frame from the tee hem at the high hip down to mid-thigh; the short's leg band, side seam and the tee hem overlapping the waistband fill the frame; no face; one relaxed hand at the side with five fingers; the same soft, even studio light and the same plain grey backdrop as the hero, no dark corners"
+   "extra": "close crop only: frame from the tee hem at the high hip down to mid-thigh; the short's leg band, side seam and the tee hem overlapping the waistband fill the frame; no face; one relaxed hand at the side with five fingers; the same soft, even, shadowless studio light and the same plain grey backdrop as the hero, no dark corners, no hard side light"
   }
  ]
 }

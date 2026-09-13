@@ -21,5 +21,7 @@ for it in job["items"]:
     if not base.exists(): base=HERE.parent.parent/"assets"/"product-images"/(base_id+".jpg")
     fin=HERE/"out"/(it["id"]+".jpg")
     if base.exists() and fin.exists():
-        subprocess.check_call([sys.executable, HERE/"composite.py", str(base), str(fin), str(fin)])
+        cmd=[sys.executable, HERE/"composite.py", str(base), str(fin), str(fin)]
+        if it.get("target"): cmd+=["--target", it["target"]]        # listed colour, e.g. "176,138,108" for sand
+        subprocess.check_call(cmd)
 print("done — any line marked DRIFTED above must be regenerated (generate.py job --only <id>) and finished again")

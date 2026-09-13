@@ -8,7 +8,7 @@ across the frame. Figure and garment keep their relative tones; the room becomes
 usage: python3 match_backdrop.py ref.jpg in.jpg [in2.jpg ...]   (rewrites each in.jpg in place)
 """
 import sys, numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 
 def lum(a): return 0.2126*a[...,0]+0.7152*a[...,1]+0.0722*a[...,2]
 
@@ -22,6 +22,29 @@ def floor_row(L):
     # a real floor is a step on BOTH edges at about the same height; a hem or a hand is not
     if sl>6 and sr>6 and abs(yl-yr)<h*0.03: return (yl+yr)//2
     return -1
+
+
+def figure_mask(L, F, fy):
+    """The model's silhouette: far from the fitted backdrop field, texture removed, and only the one blob that
+    stands on the floor line — the backdrop's paper creases must never become islands of different gain."""
+    h,w=L.shape; k=4
+    small=np.abs(L-F)[::k,::k]>26
+    im=Image.fromarray((small*255).astype(np.uint8))
+    r=max(3,int(w/k*0.02)|1)
+    im=im.filter(ImageFilter.MinFilter(r)).filter(ImageFilter.MaxFilter(r))          # opening: kill texture
+    im=im.filter(ImageFilter.MaxFilter(r+2)).filter(ImageFilter.MinFilter(r+2))      # closing: heal the figure
+    m=np.asarray(im)>127
+    # keep only what connects to the floor-line band in the middle of the frame (the model's feet/legs)
+    seed=np.zeros_like(m); y=int(fy/k); seed[max(0,y-6):y+6, int(m.shape[1]*0.3):int(m.shape[1]*0.7)]=True
+    seed&=m
+    cur=seed
+    for _ in range(400):
+        nxt=np.asarray(Image.fromarray((cur*255).astype(np.uint8)).filter(ImageFilter.MaxFilter(3)))>127
+        nxt&=m
+        if (nxt==cur).all(): break
+        cur=nxt
+    big=np.asarray(Image.fromarray((cur*255).astype(np.uint8)).resize((w,h),Image.BILINEAR))>127
+    return big
 
 def fit_field(L, fy=None):
     h,w=L.shape
@@ -73,6 +96,17 @@ def main():
             if shift>0: T[:shift]=Tf[0]
             elif shift<0: T[shift:]=Tf[-1]
             gain=np.clip(T/np.maximum(F,1),0.70,1.45)
+            # The field gain is for the ROOM. On the figure it would paint the floor's darkening onto trouser legs
+            # (cream joggers went grey from the knee down). Inside the silhouette use one scalar gain per channel
+            # (the mean room gain above the floor) so the garment keeps its own shading.
+            # Per-pixel: a pixel that looks like the fitted backdrop gets the field gain (it IS backdrop, creases and
+            # all); a pixel far from it (garment, skin, hair) gets one scalar gain per channel — the mean room gain
+            # above the floor — so a garment keeps its own shading and never inherits the floor's darkening.
+            dist=np.abs(out-F).max(2)
+            wfig=np.clip((dist-18.0)/22.0,0,1)
+            wfig=np.asarray(Image.fromarray((wfig*255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(w*0.003))).astype(np.float32)[...,None]/255.0
+            scalar=gain[:fy][(dist[:fy]<18)].reshape(-1,3).mean(0)
+            gain=gain*(1-wfig)+scalar*wfig
             out=np.clip(out*gain,0,255)
         Image.fromarray(out.round().astype(np.uint8)).save(p,quality=94)
         c=lambda z: z[:int(z.shape[0]*0.3), :int(z.shape[1]*0.06)].mean()
