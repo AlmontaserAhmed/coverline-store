@@ -45,8 +45,8 @@
    "name": "Long-Enough Tee",
    "price": "£15",
    "colours": {
-    "apricot": "tee-apricot.jpg",
-    "black": "tee-black.jpg"
+    "apricot": "tee-apricot-detail.jpg",
+    "black": "tee-black-detail.jpg"
    },
    "line": "the real oversized {colour} Long-Enough Tee from the garment reference photo — crew neck, dropped shoulder, hem below the hip"
   },
@@ -54,8 +54,8 @@
    "name": "Squat-Proof Legging",
    "price": "£18",
    "colours": {
-    "black": "legging-black.jpg",
-    "sand": "legging-nude.jpg"
+    "black": "legging-black-detail.jpg",
+    "sand": "legging-nude-detail.jpg"
    },
    "line": "the real {colour} high-waist seamless Squat-Proof Legging from the garment reference photo, worn with a fitted black longline tee whose hem sits below the waistband"
   },
@@ -63,8 +63,8 @@
    "name": "Stay-Put Short",
    "price": "£14",
    "colours": {
-    "wine": "short-maroon.jpg",
-    "blush": "short-pink.jpg"
+    "wine": "short-maroon-detail.jpg",
+    "blush": "short-pink-detail.jpg"
    },
    "line": "the real {colour} high-waist seamless Stay-Put Short from the garment reference photo, worn with a fitted black longline tee whose hem sits below the waistband"
   },
@@ -72,8 +72,8 @@
    "name": "Off-Duty Set",
    "price": "£30",
    "colours": {
-    "cream": "loungeset-cream.jpg",
-    "navy": "loungeset-navy.jpg"
+    "cream": "loungeset-cream-detail.jpg",
+    "navy": "loungeset-navy-detail.jpg"
    },
    "line": "the real {colour} Off-Duty Set from the garment reference photo — zip jacket zipped to the collar and matching jogger, outside leg 100–103cm"
   },
@@ -81,10 +81,10 @@
    "name": "Wide-Leg Set",
    "price": "£30",
    "colours": {
-    "black": "coord-black.jpg",
-    "oat": "coord-beige.jpg"
+    "black": "coord-black-detail.jpg",
+    "oat": "coord-oat-detail.jpg"
    },
-   "line": "the real {colour} Wide-Leg Set from the garment reference photo — boxy short-sleeve camp-collar shirt with a deep V and contrast band on collar, V, cuffs and hem, worn over a black Long-Enough Tee so no chest shows, plus the full-length wide-leg trouser with a contrast stripe down each outer leg"
+   "line": "the real {colour} Wide-Leg Set from the garment reference photo — boxy short-sleeve camp-collar shirt with a deep V and a contrast band on collar, V, cuffs and hem (black set = white bands; oat set = pale oat linen-look with black bands), worn over a black Long-Enough Tee so no chest shows, plus the full-length wide-leg trouser with a contrast stripe down each outer leg"
   }
  },
  "poses": {
