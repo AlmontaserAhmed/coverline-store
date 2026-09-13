@@ -1,0 +1,45 @@
+{
+ "note": "13 Sep late night, final method for the Sand legging. Base = the v45 Black photos (ivory tee). Gemini renders the sand fabric (real knit look); then colourway_from_edit.py takes ONLY the legging pixels from that render, aligned onto the base — everything else stays the Black photo byte for byte. composite:false = finish_batch must NOT run its own compositor on these. After finish_batch: for v in legging-nude legging-nude-back legging-nude-proof legging-nude-detail: python3 colourway_from_edit.py ../../assets/product-images/${v/nude/black}.jpg out/$v.jpg out/$v-final.jpg --target 201,168,136 | Run 1 result: back, proof, detail composited cleanly (garment 100% from render, alignment residual 6-11). Front: Gemini lengthened the tee by ~25px so the hem band had to be filled — regenerate the front with the hem clause.",
+ "items": [
+  {
+   "id": "legging-nude",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "../../assets/product-images/legging-black.jpg",
+   "extra": "Change ONLY the colour of the ribbed leggings to a warm sand / light camel (approx. hex #C9A888), rendered as real matte ribbed knit fabric with its natural shading and highlights. Keep every construction line exactly where it is: same waistband width and position, same rib spacing, same seams, same rise, same fit. The ivory t-shirt, the face, hair, skin, hands, feet, pose, backdrop, floor, light and framing all stay exactly as in the base image. The fabric must read clearly as fabric, visibly different from the skin next to it. The t-shirt is NOT to be changed in any way: its hem must end at exactly the same height on the body as in the base image (it must not be made longer or shorter), the waistband of the leggings shows below the hem exactly as in the base image.",
+   "out": "out/legging-nude-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-nude-back",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "../../assets/product-images/legging-black-back.jpg",
+   "extra": "Change ONLY the colour of the ribbed leggings to a warm sand / light camel (approx. hex #C9A888), rendered as real matte ribbed knit fabric with its natural shading and highlights. Keep every construction line exactly where it is: same waistband width and position, same rib spacing, same seams, same rise, same fit. The ivory t-shirt, the face, hair, skin, hands, feet, pose, backdrop, floor, light and framing all stay exactly as in the base image. The fabric must read clearly as fabric, visibly different from the skin next to it.",
+   "out": "out/legging-nude-back-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-nude-proof",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "../../assets/product-images/legging-black-proof.jpg",
+   "extra": "Change ONLY the colour of the ribbed leggings to a warm sand / light camel (approx. hex #C9A888), rendered as real matte ribbed knit fabric with its natural shading and highlights. Keep every construction line exactly where it is: same waistband width and position, same rib spacing, same seams, same rise, same fit. The ivory t-shirt, the face, hair, skin, hands, feet, pose, backdrop, floor, light and framing all stay exactly as in the base image. The fabric must read clearly as fabric, visibly different from the skin next to it.",
+   "out": "out/legging-nude-proof-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-nude-detail",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "../../assets/product-images/legging-black-detail.jpg",
+   "extra": "Change ONLY the colour of the ribbed leggings to a warm sand / light camel (approx. hex #C9A888), rendered as real matte ribbed knit fabric with its natural shading and highlights. Keep every construction line exactly where it is: same waistband width and position, same rib spacing, same seams, same rise, same fit. The ivory t-shirt, the face, hair, skin, hands, feet, pose, backdrop, floor, light and framing all stay exactly as in the base image. The fabric must read clearly as fabric, visibly different from the skin next to it.",
+   "out": "out/legging-nude-detail-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  }
+ ]
+}

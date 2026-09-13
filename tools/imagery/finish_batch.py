@@ -15,7 +15,7 @@ if done: subprocess.check_call([sys.executable, HERE/"match_backdrop.py", str(HE
 # its base so face/skin/room are pixel-identical. Base items must be finished first (jobs list them first).
 import os
 for it in job["items"]:
-    if not it.get("base"): continue
+    if not it.get("base") or it.get("composite") is False: continue   # composite:false = a later step composites this one
     base_id=os.path.basename(it["base"]).replace("-raw.jpg","").replace(".jpg","")
     base=HERE/"out"/(base_id+".jpg")
     if not base.exists(): base=HERE.parent.parent/"assets"/"product-images"/(base_id+".jpg")

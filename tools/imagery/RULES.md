@@ -69,9 +69,16 @@ This file lives in the repo so no session can build a pipeline without it. The p
   both colourways side by side, not just each colourway alone) before shipping, every time — not only for
   skin-adjacent colours.
 
-9. **Colourways of a black garment are never generated — they are recoloured.** (13 Sep, after three failed Gemini
+9. **Colourways of a black garment: Gemini renders the fabric, `colourway_from_edit.py` puts it on the base photo.** (13 Sep, after three failed Gemini
    rounds on the Sand legging.) Gemini re-renders the whole frame on every "edit", so two colourways are never the
    same photo, and it re-styles anything black it can see (the tee got a satin sheen three runs in a row). Rule:
    shoot the base once with the garment in BLACK and every other garment in a NON-black colour (ivory tee), then make
    every other colour with `recolour_dark.py base.jpg out.jpg --target R,G,B` — same pixels, only the black fabric
    remapped, its own ribs/folds/highlights kept. Sand = 201,168,136. Never put a black top on a black-garment base.
+   (Amended 13 Sep, late: a pure pixel recolour of black knit reads as a flat tint — Almontaser: "looks like an
+   overlay, not real pants". So: base photo = black garment + ivory tee; Gemini renders the colourway from that
+   base (colour-only wording, `composite:false` in the job); then `colourway_from_edit.py base.jpg render.jpg
+   out.jpg` aligns the render (scale+shift on the non-garment area) and takes the rendered fabric across the
+   garment silhouette only — everything else stays the base, byte for byte. It prints the render share and
+   alignment residual; if Gemini lengthened/shortened the tee, the hem band is flagged — regenerate that view
+   with the hem clause rather than shipping the fill.)
