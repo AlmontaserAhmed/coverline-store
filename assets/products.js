@@ -18,10 +18,10 @@ window.COVERLINE_PRODUCTS = [
     proof: "Actually long enough. Loose, not clingy.",
     modelNote: "Model is 5'6\" and wears a size S.",
     colors: [
-      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=38", images: ["/assets/product-images/tee-apricot.jpg?v=38", "/assets/product-images/tee-apricot-proof.jpg?v=38", "/assets/product-images/tee-apricot-back.jpg?v=38", "/assets/product-images/tee-apricot-detail.jpg?v=38"] },
-      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/tee-black.jpg?v=38", images: ["/assets/product-images/tee-black.jpg?v=38", "/assets/product-images/tee-black-proof.jpg?v=38", "/assets/product-images/tee-black-back.jpg?v=38", "/assets/product-images/tee-black-detail.jpg?v=38"] }
+      { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=39", images: ["/assets/product-images/tee-apricot.jpg?v=39", "/assets/product-images/tee-apricot-proof.jpg?v=39", "/assets/product-images/tee-apricot-back.jpg?v=39", "/assets/product-images/tee-apricot-detail.jpg?v=39"] },
+      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/tee-black.jpg?v=39", images: ["/assets/product-images/tee-black.jpg?v=39", "/assets/product-images/tee-black-proof.jpg?v=39", "/assets/product-images/tee-black-back.jpg?v=39", "/assets/product-images/tee-black-detail.jpg?v=39"] }
     ],
-    image: "/assets/product-images/tee-apricot.jpg?v=38",
+    image: "/assets/product-images/tee-apricot.jpg?v=39",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,260 C 80,210 160,300 300,240 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".55"/><path d="M0,120 C 100,180 200,60 300,130" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
@@ -37,10 +37,10 @@ window.COVERLINE_PRODUCTS = [
     proof: "Zips to the collar. Boxy jacket, easy jogger.",
     modelNote: "Model is 5'6\" and wears a size S.",
     colors: [
-      { key: "cream", label: "Cream", hex: "#e6e0d4", image: "/assets/product-images/loungeset-cream.jpg?v=38", images: ["/assets/product-images/loungeset-cream.jpg?v=38", "/assets/product-images/loungeset-cream-proof.jpg?v=38", "/assets/product-images/loungeset-cream-back.jpg?v=38", "/assets/product-images/loungeset-cream-detail.jpg?v=38"] },
-      { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=38", images: ["/assets/product-images/loungeset-navy.jpg?v=38", "/assets/product-images/loungeset-navy-proof.jpg?v=38", "/assets/product-images/loungeset-navy-back.jpg?v=38", "/assets/product-images/loungeset-navy-detail.jpg?v=38"] }
+      { key: "cream", label: "Cream", hex: "#e6e0d4", image: "/assets/product-images/loungeset-cream.jpg?v=39", images: ["/assets/product-images/loungeset-cream.jpg?v=39", "/assets/product-images/loungeset-cream-proof.jpg?v=39", "/assets/product-images/loungeset-cream-back.jpg?v=39", "/assets/product-images/loungeset-cream-detail.jpg?v=39"] },
+      { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=39", images: ["/assets/product-images/loungeset-navy.jpg?v=39", "/assets/product-images/loungeset-navy-proof.jpg?v=39", "/assets/product-images/loungeset-navy-back.jpg?v=39", "/assets/product-images/loungeset-navy-detail.jpg?v=39"] }
     ],
-    image: "/assets/product-images/loungeset-cream.jpg?v=38",
+    image: "/assets/product-images/loungeset-cream.jpg?v=39",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,300 C 90,340 220,250 300,300 L300,400 L0,400 Z" fill="var(--accent)" opacity=".4"/><path d="M20,90 C 120,40 200,140 290,80" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
@@ -56,10 +56,10 @@ window.COVERLINE_PRODUCTS = [
     proof: "Contrast-trim shirt + wide-leg trouser. Loose by design.",
     modelNote: "Model is 5'6\" and wears a size S, with the Long-Enough Tee in Black underneath.",
     colors: [
-      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/coord-black.jpg?v=38", images: ["/assets/product-images/coord-black.jpg?v=38", "/assets/product-images/coord-black-proof.jpg?v=38", "/assets/product-images/coord-black-back.jpg?v=38", "/assets/product-images/coord-black-detail.jpg?v=38"] },
-      { key: "oat", label: "Oat", hex: "#d9c9ad", image: "/assets/product-images/coord-oat.jpg?v=38", images: ["/assets/product-images/coord-oat.jpg?v=38", "/assets/product-images/coord-oat-proof.jpg?v=38", "/assets/product-images/coord-oat-back.jpg?v=38", "/assets/product-images/coord-oat-detail.jpg?v=38"] }
+      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/coord-black.jpg?v=39", images: ["/assets/product-images/coord-black.jpg?v=39", "/assets/product-images/coord-black-proof.jpg?v=39", "/assets/product-images/coord-black-back.jpg?v=39", "/assets/product-images/coord-black-detail.jpg?v=39"] },
+      { key: "oat", label: "Oat", hex: "#d9c9ad", image: "/assets/product-images/coord-oat.jpg?v=39", images: ["/assets/product-images/coord-oat.jpg?v=39", "/assets/product-images/coord-oat-proof.jpg?v=39", "/assets/product-images/coord-oat-back.jpg?v=39", "/assets/product-images/coord-oat-detail.jpg?v=39"] }
     ],
-    image: "/assets/product-images/coord-black.jpg?v=38",
+    image: "/assets/product-images/coord-black.jpg?v=39",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,210 C 90,260 190,180 300,230 L300,400 L0,400 Z" fill="var(--accent)" opacity=".45"/><path d="M0,320 C 110,280 190,360 300,310" fill="none" stroke="var(--accent-2)" stroke-width="1"/><path d="M10,80 C 100,120 200,50 290,100" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
@@ -75,10 +75,10 @@ window.COVERLINE_PRODUCTS = [
     proof: "Thick seamless knit. High waist that stays put. Flat measurements on the chart, not a guess.",
     modelNote: "Model is 5'3\" and wears a size S.",
     colors: [
-      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=38", images: ["/assets/product-images/legging-black.jpg?v=38", "/assets/product-images/legging-black-proof.jpg?v=38", "/assets/product-images/legging-black-back.jpg?v=38", "/assets/product-images/legging-black-detail.jpg?v=38"] },
-      { key: "nude", label: "Sand", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=38", images: ["/assets/product-images/legging-nude.jpg?v=38", "/assets/product-images/legging-nude-proof.jpg?v=38", "/assets/product-images/legging-nude-back.jpg?v=38", "/assets/product-images/legging-nude-detail.jpg?v=38"] }
+      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=39", images: ["/assets/product-images/legging-black.jpg?v=39", "/assets/product-images/legging-black-proof.jpg?v=39", "/assets/product-images/legging-black-back.jpg?v=39", "/assets/product-images/legging-black-detail.jpg?v=39"] },
+      { key: "nude", label: "Sand", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=39", images: ["/assets/product-images/legging-nude.jpg?v=39", "/assets/product-images/legging-nude-proof.jpg?v=39", "/assets/product-images/legging-nude-back.jpg?v=39", "/assets/product-images/legging-nude-detail.jpg?v=39"] }
     ],
-    image: "/assets/product-images/legging-black.jpg?v=38",
+    image: "/assets/product-images/legging-black.jpg?v=39",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
@@ -94,10 +94,10 @@ window.COVERLINE_PRODUCTS = [
     proof: "Cut longer than the usual gym short. Seamless, so nothing shows through.",
     modelNote: "Model is 5'3\" and wears a size S.",
     colors: [
-      { key: "maroon", label: "Wine", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=38", images: ["/assets/product-images/short-maroon.jpg?v=38", "/assets/product-images/short-maroon-proof.jpg?v=38", "/assets/product-images/short-maroon-back.jpg?v=38", "/assets/product-images/short-maroon-detail.jpg?v=38"] },
-      { key: "pink", label: "Blush", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=38", images: ["/assets/product-images/short-pink.jpg?v=38", "/assets/product-images/short-pink-proof.jpg?v=38", "/assets/product-images/short-pink-back.jpg?v=38", "/assets/product-images/short-pink-detail.jpg?v=38"] }
+      { key: "maroon", label: "Wine", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=39", images: ["/assets/product-images/short-maroon.jpg?v=39", "/assets/product-images/short-maroon-proof.jpg?v=39", "/assets/product-images/short-maroon-back.jpg?v=39", "/assets/product-images/short-maroon-detail.jpg?v=39"] },
+      { key: "pink", label: "Blush", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=39", images: ["/assets/product-images/short-pink.jpg?v=39", "/assets/product-images/short-pink-proof.jpg?v=39", "/assets/product-images/short-pink-back.jpg?v=39", "/assets/product-images/short-pink-detail.jpg?v=39"] }
     ],
-    image: "/assets/product-images/short-maroon.jpg?v=38",
+    image: "/assets/product-images/short-maroon.jpg?v=39",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
 ];

@@ -45,3 +45,12 @@ This file lives in the repo so no session can build a pipeline without it. The p
 `generate.py job` (raw, from his Terminal — Claude's shells cannot reach the Gemini API) →
 `finish_batch.py job` = crop + `grade.py` → `match_backdrop.py` → `composite.py` for every `"base"` item →
 `run_qc.py job --graded` → contact sheet → ship. Job files list a base before its edits.
+
+## 7. When a Gemini colour edit drifts more than twice — stop paying, use post (13 Sep, learned on the Off-Duty detail: 4 drifts)
+- Saturated garment (wine, blush, navy on the grey set): `recolour.py base.jpg out.jpg --hue a-b --sat s --target r,g,b`
+  masks the garment by hue and re-maps it to the listed colour, keeping the fabric shading. Skin is excluded by
+  hue (skin sits at 19–28°, wine at 355–5°). Used for `short-pink-detail`.
+- Pale / neutral garment (cream, oat, black) that cannot be hue-masked: make the detail as an identical CROP of both
+  colourways' finished heroes (they are the same photo, so the crops match exactly; ~2.7× upscale is fine at gallery
+  size). Used for both `loungeset-*-detail`.
+- Never ship an un-composited drifted edit "for now"; the ghost of the moved figure is visible on the dark site.
