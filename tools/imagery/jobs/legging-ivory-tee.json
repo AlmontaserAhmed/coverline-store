@@ -1,0 +1,41 @@
+{
+ "note": "13 Sep late night. Almontaser: waists are messed up in pretty much every legging pic (black tee hem over black waistband = mush), and colourways must be the SAME picture. New approach: (1) this job gives the Black legging base photos an ivory tee — the last Gemini edit these photos will ever get; (2) every other legging colour is then made by tools/imagery/recolour_dark.py — a pixel-identical remap of the black fabric, no Gemini, no re-rendering. Sand = `python3 recolour_dark.py out/legging-black-ivorytee.jpg out/legging-nude.jpg --target 201,168,136`.",
+ "items": [
+  {
+   "id": "legging-black-ivorytee",
+   "garment": "legging",
+   "colour": "black",
+   "base": "../../assets/product-images/legging-black.jpg",
+   "extra": "The ONLY change in this image: the black short-sleeve t-shirt the woman is wearing becomes an IVORY / off-white (#F3EFE9) matte cotton t-shirt — identical cut, sleeve length, body length, hem position and fit; just the tee's colour. The black ribbed leggings stay black and completely unchanged (same waistband, same ribs, same fit). Face, hair, skin, pose, hands, feet, backdrop, floor, light and framing all stay exactly as in the base image.",
+   "out": "out/legging-black-ivorytee-raw.jpg",
+   "no_ref_image": true
+  },
+  {
+   "id": "legging-black-back-ivorytee",
+   "garment": "legging",
+   "colour": "black",
+   "base": "../../assets/product-images/legging-black-back.jpg",
+   "extra": "The ONLY change in this image: the black short-sleeve t-shirt the woman is wearing becomes an IVORY / off-white (#F3EFE9) matte cotton t-shirt — identical cut, sleeve length, body length, hem position and fit; just the tee's colour. The black ribbed leggings stay black and completely unchanged (same waistband, same ribs, same fit). Face, hair, skin, pose, hands, feet, backdrop, floor, light and framing all stay exactly as in the base image.",
+   "out": "out/legging-black-back-ivorytee-raw.jpg",
+   "no_ref_image": true
+  },
+  {
+   "id": "legging-black-proof-ivorytee",
+   "garment": "legging",
+   "colour": "black",
+   "base": "../../assets/product-images/legging-black-proof.jpg",
+   "extra": "The ONLY change in this image: the black short-sleeve t-shirt the woman is wearing becomes an IVORY / off-white (#F3EFE9) matte cotton t-shirt — identical cut, sleeve length, body length, hem position and fit; just the tee's colour. The black ribbed leggings stay black and completely unchanged (same waistband, same ribs, same fit). Face, hair, skin, pose, hands, feet, backdrop, floor, light and framing all stay exactly as in the base image.",
+   "out": "out/legging-black-proof-ivorytee-raw.jpg",
+   "no_ref_image": true
+  },
+  {
+   "id": "legging-black-detail-ivorytee",
+   "garment": "legging",
+   "colour": "black",
+   "base": "../../assets/product-images/legging-black-detail.jpg",
+   "extra": "The ONLY change in this image: the black short-sleeve t-shirt the woman is wearing becomes an IVORY / off-white (#F3EFE9) matte cotton t-shirt — identical cut, sleeve length, body length, hem position and fit; just the tee's colour. The black ribbed leggings stay black and completely unchanged (same waistband, same ribs, same fit). Face, hair, skin, pose, hands, feet, backdrop, floor, light and framing all stay exactly as in the base image.",
+   "out": "out/legging-black-detail-ivorytee-raw.jpg",
+   "no_ref_image": true
+  }
+ ]
+}

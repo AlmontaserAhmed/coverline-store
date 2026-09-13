@@ -16,7 +16,7 @@ if done: subprocess.check_call([sys.executable, HERE/"match_backdrop.py", str(HE
 import os
 for it in job["items"]:
     if not it.get("base"): continue
-    base_id=os.path.basename(it["base"]).replace("-raw.jpg","")
+    base_id=os.path.basename(it["base"]).replace("-raw.jpg","").replace(".jpg","")
     base=HERE/"out"/(base_id+".jpg")
     if not base.exists(): base=HERE.parent.parent/"assets"/"product-images"/(base_id+".jpg")
     fin=HERE/"out"/(it["id"]+".jpg")
@@ -24,4 +24,5 @@ for it in job["items"]:
         cmd=[sys.executable, HERE/"composite.py", str(base), str(fin), str(fin)]
         if it.get("target"): cmd+=["--target", it["target"]]        # listed colour, e.g. "176,138,108" for sand
         subprocess.check_call(cmd)
+    else: print("COMPOSITE SKIPPED (no base found):", it["id"], base)
 print("done — any line marked DRIFTED above must be regenerated (generate.py job --only <id>) and finished again")

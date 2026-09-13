@@ -68,3 +68,10 @@ This file lives in the repo so no session can build a pipeline without it. The p
   itself being redesigned inside its own mask, so this has to be caught by eye (contact-sheet the SAME view of
   both colourways side by side, not just each colourway alone) before shipping, every time — not only for
   skin-adjacent colours.
+
+9. **Colourways of a black garment are never generated — they are recoloured.** (13 Sep, after three failed Gemini
+   rounds on the Sand legging.) Gemini re-renders the whole frame on every "edit", so two colourways are never the
+   same photo, and it re-styles anything black it can see (the tee got a satin sheen three runs in a row). Rule:
+   shoot the base once with the garment in BLACK and every other garment in a NON-black colour (ivory tee), then make
+   every other colour with `recolour_dark.py base.jpg out.jpg --target R,G,B` — same pixels, only the black fabric
+   remapped, its own ribs/folds/highlights kept. Sand = 201,168,136. Never put a black top on a black-garment base.
