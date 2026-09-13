@@ -1,0 +1,85 @@
+{
+ "note": "13 Sep, late. Almontaser: waistband must sit OVER the tee (tee tucked in), on all four views. Items 1-4: new Black base from the v45 photos with the tee tucked. Items 5-8: Sand rendered from those new Black raws (same run, so the crops match). Then colourway_from_edit.py puts each Sand render onto its Black base. brand.json legging line updated to the tucked look.",
+ "items": [
+  {
+   "id": "legging-black-tucked",
+   "garment": "legging",
+   "colour": "black",
+   "base": "../../assets/product-images/legging-black.jpg",
+   "extra": "The ONLY change: the ivory t-shirt is now tucked into the leggings, so the leggings' high ribbed waistband sits OVER the t-shirt and is fully visible all the way round; the t-shirt's fabric, colour and fit are unchanged, just tucked in. The black leggings themselves are unchanged (same colour, ribs, seams, fit). Face, hair, skin, hands, feet, pose, backdrop, floor, light and framing stay exactly as in the base image.",
+   "out": "out/legging-black-tucked-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-black-back-tucked",
+   "garment": "legging",
+   "colour": "black",
+   "base": "../../assets/product-images/legging-black-back.jpg",
+   "extra": "The ONLY change: the ivory t-shirt is now tucked into the leggings, so the leggings' high ribbed waistband sits OVER the t-shirt and is fully visible all the way round; the t-shirt's fabric, colour and fit are unchanged, just tucked in. The black leggings themselves are unchanged (same colour, ribs, seams, fit). Face, hair, skin, hands, feet, pose, backdrop, floor, light and framing stay exactly as in the base image.",
+   "out": "out/legging-black-back-tucked-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-black-proof-tucked",
+   "garment": "legging",
+   "colour": "black",
+   "base": "../../assets/product-images/legging-black-proof.jpg",
+   "extra": "The ONLY change: the ivory t-shirt is now tucked into the leggings, so the leggings' high ribbed waistband sits OVER the t-shirt and is fully visible all the way round; the t-shirt's fabric, colour and fit are unchanged, just tucked in. The black leggings themselves are unchanged (same colour, ribs, seams, fit). Face, hair, skin, hands, feet, pose, backdrop, floor, light and framing stay exactly as in the base image.",
+   "out": "out/legging-black-proof-tucked-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-black-detail-tucked",
+   "garment": "legging",
+   "colour": "black",
+   "base": "../../assets/product-images/legging-black-detail.jpg",
+   "extra": "The ONLY change: the ivory t-shirt is now tucked into the leggings, so the leggings' high ribbed waistband sits OVER the t-shirt and is fully visible all the way round; the t-shirt's fabric, colour and fit are unchanged, just tucked in. The black leggings themselves are unchanged (same colour, ribs, seams, fit). Face, hair, skin, hands, feet, pose, backdrop, floor, light and framing stay exactly as in the base image.",
+   "out": "out/legging-black-detail-tucked-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-nude-tucked",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "out/legging-black-tucked-raw.jpg",
+   "extra": "Change ONLY the colour of the ribbed leggings to a warm sand / light camel (approx. hex #C9A888), rendered as real matte ribbed knit fabric with its natural shading and highlights. Keep every construction line exactly where it is: same waistband width and position over the tucked-in tee, same rib spacing, same seams, same rise, same fit. The ivory t-shirt stays tucked in exactly as in the base image and is not changed in any way. Face, hair, skin, hands, feet, pose, backdrop, floor, light and framing stay exactly as in the base image. The fabric must read clearly as fabric, visibly different from the skin next to it.",
+   "out": "out/legging-nude-tucked-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-nude-back-tucked",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "out/legging-black-back-tucked-raw.jpg",
+   "extra": "Change ONLY the colour of the ribbed leggings to a warm sand / light camel (approx. hex #C9A888), rendered as real matte ribbed knit fabric with its natural shading and highlights. Keep every construction line exactly where it is: same waistband width and position over the tucked-in tee, same rib spacing, same seams, same rise, same fit. The ivory t-shirt stays tucked in exactly as in the base image and is not changed in any way. Face, hair, skin, hands, feet, pose, backdrop, floor, light and framing stay exactly as in the base image. The fabric must read clearly as fabric, visibly different from the skin next to it.",
+   "out": "out/legging-nude-back-tucked-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-nude-proof-tucked",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "out/legging-black-proof-tucked-raw.jpg",
+   "extra": "Change ONLY the colour of the ribbed leggings to a warm sand / light camel (approx. hex #C9A888), rendered as real matte ribbed knit fabric with its natural shading and highlights. Keep every construction line exactly where it is: same waistband width and position over the tucked-in tee, same rib spacing, same seams, same rise, same fit. The ivory t-shirt stays tucked in exactly as in the base image and is not changed in any way. Face, hair, skin, hands, feet, pose, backdrop, floor, light and framing stay exactly as in the base image. The fabric must read clearly as fabric, visibly different from the skin next to it.",
+   "out": "out/legging-nude-proof-tucked-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-nude-detail-tucked",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "out/legging-black-detail-tucked-raw.jpg",
+   "extra": "Change ONLY the colour of the ribbed leggings to a warm sand / light camel (approx. hex #C9A888), rendered as real matte ribbed knit fabric with its natural shading and highlights. Keep every construction line exactly where it is: same waistband width and position over the tucked-in tee, same rib spacing, same seams, same rise, same fit. The ivory t-shirt stays tucked in exactly as in the base image and is not changed in any way. Face, hair, skin, hands, feet, pose, backdrop, floor, light and framing stay exactly as in the base image. The fabric must read clearly as fabric, visibly different from the skin next to it.",
+   "out": "out/legging-nude-detail-tucked-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  }
+ ]
+}
