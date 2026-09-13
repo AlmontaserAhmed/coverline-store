@@ -99,7 +99,7 @@
   </div>
 </footer>
 
-<script src="/assets/products.js?v=31"></script>
+<script src="/assets/products.js?v=32"></script>
 <script src="/assets/config.js?v=4"></script>
 <script src="/assets/cart.js?v=9"></script>
 <script>
@@ -108,14 +108,23 @@
   var grid = document.getElementById("shopGrid");
   var selectedSizes = {}; // productId -> currently highlighted size (UI only, pre-add)
 
+  // Hover shows the most interesting second view of the chosen colour:
+  // movement ("proof") first, then the fabric detail, then front, then back.
+  function pickAlt(imgs){
+    var order = [/-proof\./, /-detail\./, /-front\./, /-back\./];
+    for (var k = 0; k < order.length; k++){
+      var hit = imgs.filter(function(u){ return order[k].test(u); })[0];
+      if (hit) return hit;
+    }
+    return null;
+  }
   function tile(p){
     var cols = p.colors || [];
     var main = cols[0] || {image:p.image, label:''};
     // Hover preview (13 Sep 2026): a second VIEW of the same colourway — the back shot,
     // else the detail shot — not the other colour. Colour is chosen with the dots only.
-    var galleryAlt = (main.images || []).filter(function(u){ return /-back\./.test(u); })[0]
-                  || (main.images || []).filter(function(u){ return /-detail\./.test(u); })[0];
-    var alt  = galleryAlt ? {image: galleryAlt, label: main.label + ', back view'} : null;
+    var galleryAlt = pickAlt(main.images || []);
+    var alt  = galleryAlt ? {image: galleryAlt, label: main.label + ', second view'} : null;
     return '' +
         '<div class="piece' + (p.colorPhotosMatch === false ? ' mismatched-photos' : '') + '" data-id="' + p.id + '">' +
       '<a class="tile-link" href="/product.html?id=' + p.id + '" aria-label="' + p.name + '"></a>' +
@@ -150,16 +159,12 @@
       var sw = el.querySelector('.swatch');
       var mainImg = sw.querySelector('img:not(.alt)');
       var altImg  = sw.querySelector('img.alt');
-      function viewsFor(c){
-        var imgs = c.images || [];
-        var back = imgs.filter(function(u){ return /-back\./.test(u); })[0] || imgs.filter(function(u){ return /-detail\./.test(u); })[0];
-        return { hero: c.image, back: back };
-      }
+      function viewsFor(c){ return { hero: c.image, back: pickAlt(c.images || []) }; }
       function showColour(i){
         var c = (p.colors || [])[i]; if(!c) return;
         var v = viewsFor(c);
         mainImg.src = v.hero; mainImg.alt = p.name + ' in ' + c.label;
-        if(altImg){ if(v.back){ altImg.src = v.back; altImg.alt = p.name + ' in ' + c.label + ', back view'; altImg.style.display=''; } else { altImg.style.display='none'; } }
+        if(altImg){ if(v.back){ altImg.src = v.back; altImg.alt = p.name + ' in ' + c.label + ', second view'; altImg.style.display=''; } else { altImg.style.display='none'; } }
         el.querySelectorAll('.dot').forEach(function(b){ b.setAttribute('aria-pressed', +b.getAttribute('data-i') === i); });
       }
       el.querySelectorAll('.dot').forEach(function(btn){

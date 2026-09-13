@@ -1,0 +1,46 @@
+{
+ "note": "Short gallery to the same 4-view structure as every other product: hero, movement, back, detail. Plus a retake of legging-nude-detail (first take was a front-on crop that read as bare skin).",
+ "items": [
+  {
+   "id": "short-maroon-proof",
+   "model": "B",
+   "garment": "short",
+   "colour": "wine",
+   "pose": "proof",
+   "out": "out/short-maroon-proof-raw.jpg"
+  },
+  {
+   "id": "short-maroon-detail",
+   "model": "B",
+   "garment": "short",
+   "colour": "wine",
+   "pose": "detail",
+   "out": "out/short-maroon-detail-raw.jpg"
+  },
+  {
+   "id": "short-pink-proof",
+   "model": "B",
+   "garment": "short",
+   "colour": "blush",
+   "pose": "proof",
+   "out": "out/short-pink-proof-raw.jpg"
+  },
+  {
+   "id": "short-pink-detail",
+   "model": "B",
+   "garment": "short",
+   "colour": "blush",
+   "pose": "detail",
+   "out": "out/short-pink-detail-raw.jpg"
+  },
+  {
+   "id": "legging-nude-detail",
+   "model": "B",
+   "garment": "legging",
+   "colour": "sand",
+   "pose": "detail",
+   "extra": "crop from the hip to mid-calf, taken from the SIDE so the outer thigh and the ribbed knit are the subject, the tee hem covering the waistband, one hand resting on the hip \u2014 never a front-on crotch crop",
+   "out": "out/legging-nude-detail-raw.jpg"
+  }
+ ]
+}

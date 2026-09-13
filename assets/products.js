@@ -66,17 +66,17 @@ window.COVERLINE_PRODUCTS = [
     id: "legging",
     name: "The Squat-Proof Legging",
     tagline: "Leggings you can bend over in.",
-    desc: "Opaque enough to squat in, soft enough to sleep in — no mirror check before you leave the house.",
+    desc: "A thick seamless knit, soft enough to sleep in — the legging you don't second-guess before leaving the house.",
     longDesc: "For the days you basically live in leggings — school run, gym, the floor at pickup, the sofa afterwards. High waistband that actually stays put when you sit, fabric thick enough that bending down in daylight isn't a whole calculation. If you've already bought the £12 pair twice, this is meant to be the one you don't have to replace.",
     fit: "Runs small — it's cut to Asian sizing, so go one up from your usual UK size (a UK 10–12 is an M, 12–14 an L). Only S to L exist in this one. Check the chart below before you pick.",
     priceLabel: "£18",
     price: 18,
     sizes: ["S","M","L"],
-    proof: "Squat-tested. Not sheer. High waist that stays put.",
+    proof: "Thick seamless knit. High waist that stays put. Flat measurements on the chart, not a guess.",
     modelNote: "Model is 5'3\" and wears a size S.",
     colors: [
-      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=25", images: ["/assets/product-images/legging-black.jpg?v=25", "/assets/product-images/legging-black-proof.jpg?v=24", "/assets/product-images/legging-black-back.jpg?v=25", "/assets/product-images/legging-black-detail.jpg?v=25"] },
-      { key: "nude", label: "Sand", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=24", images: ["/assets/product-images/legging-nude.jpg?v=24", "/assets/product-images/legging-nude-proof.jpg?v=24", "/assets/product-images/legging-nude-back.jpg?v=29", "/assets/product-images/legging-nude-detail.jpg?v=29"] }
+      { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=32", images: ["/assets/product-images/legging-black.jpg?v=32", "/assets/product-images/legging-black-proof.jpg?v=32", "/assets/product-images/legging-black-back.jpg?v=32", "/assets/product-images/legging-black-detail.jpg?v=32"] },
+      { key: "nude", label: "Sand", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=32", images: ["/assets/product-images/legging-nude.jpg?v=32", "/assets/product-images/legging-nude-proof.jpg?v=32", "/assets/product-images/legging-nude-back.jpg?v=32", "/assets/product-images/legging-nude-detail.jpg?v=32"] }
     ],
     image: "/assets/product-images/legging-black.jpg?v=25",
     colorPhotosMatch: false, // 12 Sep 2026: nude/black photos are two separate shoots, not pixel-matched like tee/co-ord's colourway swaps — homepage hover-preview disabled for this product, see style.css .mismatched-photos
@@ -86,19 +86,19 @@ window.COVERLINE_PRODUCTS = [
     id: "short",
     name: "The Stay-Put Short",
     tagline: "Shorts that stay where you put them.",
-    desc: "Seamless, opaque, squat-tested — the gym short you don't have to pull back down between sets.",
+    desc: "Seamless, high-waisted, cut longer than the usual gym short — so you're not pulling them back down between sets.",
     longDesc: "Seamless, so there's no chafing and no lines showing through leggings underneath. Cut with a bit more length than the usual gym short, so squatting, lunging or sitting on the floor doesn't need a second hand to sort them out afterwards. At £14 they're an easy add if you're already checking out.",
     fit: "Runs small and sits high on the waist. Go one up from your usual UK size — a UK 8 is an M, a UK 10 an L, a UK 12 an XL. Chart below.",
     priceLabel: "£14",
     price: 14,
     sizes: ["S","M","L","XL"],
-    proof: "Passes the squat test. Longer than the usual gym short.",
+    proof: "Cut longer than the usual gym short. Seamless, so nothing shows through.",
     modelNote: "Model is 5'3\" and wears a size S.",
     colors: [
-      { key: "maroon", label: "Wine", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=21", images: ["/assets/product-images/short-maroon.jpg?v=21", "/assets/product-images/short-maroon-back.jpg?v=21", "/assets/product-images/short-maroon-detail.jpg?v=21"] },
-      { key: "pink", label: "Blush", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=21", images: ["/assets/product-images/short-pink.jpg?v=21", "/assets/product-images/short-pink-detail.jpg?v=21", "/assets/product-images/short-pink-back.jpg?v=21"] }
+      { key: "maroon", label: "Wine", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=32", images: ["/assets/product-images/short-maroon.jpg?v=32", "/assets/product-images/short-maroon-proof.jpg?v=32", "/assets/product-images/short-maroon-back.jpg?v=32", "/assets/product-images/short-maroon-detail.jpg?v=32"] },
+      { key: "pink", label: "Blush", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=32", images: ["/assets/product-images/short-pink.jpg?v=32", "/assets/product-images/short-pink-proof.jpg?v=32", "/assets/product-images/short-pink-back.jpg?v=32", "/assets/product-images/short-pink-detail.jpg?v=32"] }
     ],
-    image: "/assets/product-images/short-maroon.jpg?v=21",
+    image: "/assets/product-images/short-maroon.jpg?v=32",
     colorPhotosMatch: false, // 12 Sep 2026: maroon/pink photos are two separate shoots, not pixel-matched like tee/co-ord's colourway swaps — homepage hover-preview disabled for this product, see style.css .mismatched-photos
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
