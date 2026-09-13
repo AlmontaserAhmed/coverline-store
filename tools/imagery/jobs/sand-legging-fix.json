@@ -1,0 +1,41 @@
+{
+ "note": "Fix: live Sand legging (legging-nude-*) reads as bare skin/booty-shorts in most views \u2014 flagged by Almontaser 13 Sep. Root cause: the sand colourway was generated as an independent shot rather than a colour-edit of the verified black hero (violates RULES.md #1), and the garment reference image used for later edits was itself the flawed skin-toned render, reinforcing the problem. This job re-derives all four sand views from the finished BLACK images via a base-edit, skips the flawed nude reference image entirely (no_ref_image), and describes the target colour in text only, with an explicit instruction against skin/nude-hosiery ambiguity. Run generate.py, then finish_batch.py, then run_qc.py --graded, then eyeball on the dark site before shipping. If it still drifts toward skin tone after 2 attempts, fall back to RULES.md #7 (post-process) \u2014 but note recolour.py's own docstring says it does NOT work for sand since hue is too close to skin; in that case the fallback is a manual Photoshop-style adjustment, not recolour.py.",
+ "items": [
+  {
+   "id": "legging-nude-fix",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "../../assets/product-images/legging-black.jpg",
+   "extra": "The Sand fabric is a warm tan/camel (approx. hex #C9A888) \u2014 visibly matte knit fabric with clear ribbing/seam texture, not glossy or sheer. At every point along the leg there must be obvious, unmistakable tonal contrast between the fabric and the model's visible skin (hands, feet, face). It must never be readable as bare skin, sheer tights, or nude hosiery, even at a glance or thumbnail size.",
+   "out": "out/legging-nude-fix-raw.jpg",
+   "no_ref_image": true
+  },
+  {
+   "id": "legging-nude-back-fix",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "../../assets/product-images/legging-black-back.jpg",
+   "extra": "The Sand fabric is a warm tan/camel (approx. hex #C9A888) \u2014 visibly matte knit fabric with clear ribbing/seam texture, not glossy or sheer. At every point along the leg there must be obvious, unmistakable tonal contrast between the fabric and the model's visible skin (hands, feet, face). It must never be readable as bare skin, sheer tights, or nude hosiery, even at a glance or thumbnail size.",
+   "out": "out/legging-nude-back-fix-raw.jpg",
+   "no_ref_image": true
+  },
+  {
+   "id": "legging-nude-detail-fix",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "../../assets/product-images/legging-black-detail.jpg",
+   "extra": "The Sand fabric is a warm tan/camel (approx. hex #C9A888) \u2014 visibly matte knit fabric with clear ribbing/seam texture, not glossy or sheer. At every point along the leg there must be obvious, unmistakable tonal contrast between the fabric and the model's visible skin (hands, feet, face). It must never be readable as bare skin, sheer tights, or nude hosiery, even at a glance or thumbnail size.",
+   "out": "out/legging-nude-detail-fix-raw.jpg",
+   "no_ref_image": true
+  },
+  {
+   "id": "legging-nude-proof-fix",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "../../assets/product-images/legging-black-proof.jpg",
+   "extra": "The Sand fabric is a warm tan/camel (approx. hex #C9A888) \u2014 visibly matte knit fabric with clear ribbing/seam texture, not glossy or sheer. At every point along the leg there must be obvious, unmistakable tonal contrast between the fabric and the model's visible skin (hands, feet, face). It must never be readable as bare skin, sheer tights, or nude hosiery, even at a glance or thumbnail size.",
+   "out": "out/legging-nude-proof-fix-raw.jpg",
+   "no_ref_image": true
+  }
+ ]
+}
