@@ -1,0 +1,35 @@
+{
+ "note": "13 Sep, final legging job. (1) Sand front re-rendered from the v45 Black front with a hard tee-hem clause (first render lengthened the tee). (2) Detail: new Black base with the tee tucked in / waistband over the tee, then Sand rendered from that raw in the same run. Back + proof Sand renders from sand-legging-v3 are already approved. After finish_batch: colourway_from_edit.py for front (base assets/legging-black.jpg) and detail (base out/legging-black-detail-tucked.jpg).",
+ "items": [
+  {
+   "id": "legging-nude",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "../../assets/product-images/legging-black.jpg",
+   "extra": "Change ONLY the colour of the ribbed leggings to a warm sand / light camel (approx. hex #C9A888), rendered as real matte ribbed knit fabric with its natural shading and highlights. Keep every construction line exactly where it is: same waistband width and position, same rib spacing, same seams, same rise, same fit. The ivory t-shirt, the face, hair, skin, hands, feet, pose, backdrop, floor, light and framing all stay exactly as in the base image. The fabric must read clearly as fabric, visibly different from the skin next to it. The t-shirt is NOT to be changed in any way: its hem must end at exactly the same height on the body as in the base image (it must not be made longer or shorter), the waistband of the leggings shows below the hem exactly as in the base image.",
+   "out": "out/legging-nude-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-black-detail-tucked",
+   "garment": "legging",
+   "colour": "black",
+   "base": "../../assets/product-images/legging-black-detail.jpg",
+   "extra": "The ONLY change: the ivory t-shirt is now tucked into the leggings, so the leggings' high ribbed waistband sits OVER the t-shirt and is fully visible all the way round; the t-shirt's fabric, colour and fit are unchanged, just tucked in. The black leggings themselves are unchanged (same colour, ribs, seams, fit). Face, hair, skin, hands, feet, pose, backdrop, floor, light and framing stay exactly as in the base image.",
+   "out": "out/legging-black-detail-tucked-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  },
+  {
+   "id": "legging-nude-detail-tucked",
+   "garment": "legging",
+   "colour": "sand",
+   "base": "out/legging-black-detail-tucked-raw.jpg",
+   "extra": "Change ONLY the colour of the ribbed leggings to a warm sand / light camel (approx. hex #C9A888), rendered as real matte ribbed knit fabric with its natural shading and highlights. Keep every construction line exactly where it is: same waistband width and position over the tucked-in tee, same rib spacing, same seams, same rise, same fit. The ivory t-shirt stays tucked in exactly as in the base image and is not changed in any way. Face, hair, skin, hands, feet, pose, backdrop, floor, light and framing stay exactly as in the base image. The fabric must read clearly as fabric, visibly different from the skin next to it.",
+   "out": "out/legging-nude-detail-tucked-raw.jpg",
+   "no_ref_image": true,
+   "composite": false
+  }
+ ]
+}
