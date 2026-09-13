@@ -54,3 +54,17 @@ This file lives in the repo so no session can build a pipeline without it. The p
   colourways' finished heroes (they are the same photo, so the crops match exactly; ~2.7× upscale is fine at gallery
   size). Used for both `loungeset-*-detail`.
 - Never ship an un-composited drifted edit "for now"; the ghost of the moved figure is visible on the dark site.
+
+## 8. A colour-only edit must never invent construction — describe colour, not fabric texture (13 Sep night, found on the Sand legging "fix")
+- The v1 Sand-legging fix solved the skin-tone problem but broke rule #1's spirit: it silently changed the
+  waistband width and rib pattern, so Black and Sand now read as two different garments, not one recoloured.
+- Cause: the `extra` prompt described the target fabric ("clear ribbing/seam texture", "obvious tonal
+  contrast") instead of only the colour. With `no_ref_image` in play there is no image anchoring construction,
+  so Gemini took texture language as permission to redesign, not just recolour.
+- Rule: an `extra` string on a `"base"` edit may specify colour (hex is fine) and may say skin/fabric contrast
+  must be visually clear, but must NEVER describe ribbing, seams, waistband style, sheen, or any other
+  construction/texture detail — and should explicitly say to keep every construction line pixel-identical to
+  the base image. `composite.py`'s drift check catches the model/pose moving; it does NOT catch the garment
+  itself being redesigned inside its own mask, so this has to be caught by eye (contact-sheet the SAME view of
+  both colourways side by side, not just each colourway alone) before shipping, every time — not only for
+  skin-adjacent colours.
