@@ -1,0 +1,34 @@
+{
+ "note": "Third pass: navy detail edit drifted twice (framing lock added); shorts details came back with a grey tee instead of black. Then: python3 finish_batch.py jobs/fixes-3.json",
+ "items": [
+  {
+   "id": "loungeset-navy-detail",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "navy",
+   "pose": "detail",
+   "out": "out/loungeset-navy-detail-raw.jpg",
+   "base": "out/loungeset-cream-detail-raw.jpg",
+   "extra": "EDIT ONLY THE COLOUR. Keep the crop, the framing, the pose, the hands, the zip and the collar exactly where they are in the base image \u2014 do not move or re-frame the figure"
+  },
+  {
+   "id": "short-maroon-detail",
+   "model": "A",
+   "garment": "short",
+   "colour": "wine",
+   "pose": "detail",
+   "out": "out/short-maroon-detail-raw.jpg",
+   "extra": "close crop only: frame from the tee hem at the high hip down to mid-thigh; the short's leg band, side seam and the tee hem overlapping the waistband fill the frame; no face; one relaxed hand at the side with five fingers; the same soft, even, shadowless studio light and plain grey backdrop as the hero. The tee is SOLID BLACK cotton exactly as in the hero image \u2014 not grey, not heathered, not charcoal"
+  },
+  {
+   "id": "short-pink-detail",
+   "model": "A",
+   "garment": "short",
+   "colour": "blush",
+   "pose": "detail",
+   "out": "out/short-pink-detail-raw.jpg",
+   "base": "out/short-maroon-detail-raw.jpg",
+   "extra": "close crop only: frame from the tee hem at the high hip down to mid-thigh; the short's leg band, side seam and the tee hem overlapping the waistband fill the frame; no face; one relaxed hand at the side with five fingers; the same soft, even, shadowless studio light and plain grey backdrop as the hero. The tee is SOLID BLACK cotton exactly as in the hero image \u2014 not grey, not heathered, not charcoal"
+  }
+ ]
+}
