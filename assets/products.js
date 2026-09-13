@@ -16,7 +16,8 @@ window.COVERLINE_PRODUCTS = [
     price: 15,
     sizes: ["S","M","L","XL","XXL"],
     proof: "Actually long enough. Loose, not clingy.",
-    modelNote: "Model is 5'6\" and wears a size S.",
+    modelNote: "Shown in size S on our house model (5\'6\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
+    care: "Cotton jersey. Machine wash cold, inside out; hang or lay flat to dry. It\'ll soften with washing rather than shrink if you keep it out of the tumble dryer.",
     colors: [
       { key: "apricot", label: "Apricot", hex: "#dcb08c", image: "/assets/product-images/tee-apricot.jpg?v=39", images: ["/assets/product-images/tee-apricot.jpg?v=39", "/assets/product-images/tee-apricot-proof.jpg?v=39", "/assets/product-images/tee-apricot-back.jpg?v=39", "/assets/product-images/tee-apricot-detail.jpg?v=39"] },
       { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/tee-black.jpg?v=39", images: ["/assets/product-images/tee-black.jpg?v=39", "/assets/product-images/tee-black-proof.jpg?v=39", "/assets/product-images/tee-black-back.jpg?v=39", "/assets/product-images/tee-black-detail.jpg?v=39"] }
@@ -35,7 +36,8 @@ window.COVERLINE_PRODUCTS = [
     price: 30,
     sizes: ["S","M","L","XL"],
     proof: "Zips to the collar. Boxy jacket, easy jogger.",
-    modelNote: "Model is 5'6\" and wears a size S.",
+    modelNote: "Shown in size S on our house model (5\'6\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
+    care: "Soft brushed stretch knit. Machine wash cold with similar colours, zip the jacket before washing, hang or lay flat to dry. Skip the tumble dryer.",
     colors: [
       { key: "cream", label: "Cream", hex: "#e6e0d4", image: "/assets/product-images/loungeset-cream.jpg?v=39", images: ["/assets/product-images/loungeset-cream.jpg?v=39", "/assets/product-images/loungeset-cream-proof.jpg?v=39", "/assets/product-images/loungeset-cream-back.jpg?v=39", "/assets/product-images/loungeset-cream-detail.jpg?v=39"] },
       { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=39", images: ["/assets/product-images/loungeset-navy.jpg?v=39", "/assets/product-images/loungeset-navy-proof.jpg?v=39", "/assets/product-images/loungeset-navy-back.jpg?v=39", "/assets/product-images/loungeset-navy-detail.jpg?v=39"] }
@@ -54,7 +56,8 @@ window.COVERLINE_PRODUCTS = [
     price: 30,
     sizes: ["S","M","L","XL","XXL"],
     proof: "Contrast-trim shirt + wide-leg trouser. Loose by design.",
-    modelNote: "Model is 5'6\" and wears a size S, with the Long-Enough Tee in Black underneath.",
+    modelNote: "Shown in size S on our house model (5\'6\"), with the Long-Enough Tee in Black underneath. Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
+    care: "Linen-look woven polyester. Machine wash cold on a gentle cycle, hang to dry, cool iron if it needs it. It doesn\'t crease in a bag, which is the point.",
     colors: [
       { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/coord-black.jpg?v=39", images: ["/assets/product-images/coord-black.jpg?v=39", "/assets/product-images/coord-black-proof.jpg?v=39", "/assets/product-images/coord-black-back.jpg?v=39", "/assets/product-images/coord-black-detail.jpg?v=39"] },
       { key: "oat", label: "Oat", hex: "#d9c9ad", image: "/assets/product-images/coord-oat.jpg?v=39", images: ["/assets/product-images/coord-oat.jpg?v=39", "/assets/product-images/coord-oat-proof.jpg?v=39", "/assets/product-images/coord-oat-back.jpg?v=39", "/assets/product-images/coord-oat-detail.jpg?v=39"] }
@@ -73,7 +76,8 @@ window.COVERLINE_PRODUCTS = [
     price: 18,
     sizes: ["S","M","L"],
     proof: "Thick seamless knit. High waist that stays put. Flat measurements on the chart, not a guess.",
-    modelNote: "Model is 5'3\" and wears a size S.",
+    modelNote: "Shown in size S on our house model (5\'3\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
+    care: "Seamless stretch knit. Machine wash cold, hang or lay flat to dry. Skip the tumble dryer — it\'s what kills the stretch in every pair you\'ve owned before.",
     colors: [
       { key: "black", label: "Black", hex: "#25272a", image: "/assets/product-images/legging-black.jpg?v=39", images: ["/assets/product-images/legging-black.jpg?v=39", "/assets/product-images/legging-black-proof.jpg?v=39", "/assets/product-images/legging-black-back.jpg?v=39", "/assets/product-images/legging-black-detail.jpg?v=39"] },
       { key: "nude", label: "Sand", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=39", images: ["/assets/product-images/legging-nude.jpg?v=39", "/assets/product-images/legging-nude-proof.jpg?v=39", "/assets/product-images/legging-nude-back.jpg?v=39", "/assets/product-images/legging-nude-detail.jpg?v=39"] }
@@ -92,7 +96,8 @@ window.COVERLINE_PRODUCTS = [
     price: 14,
     sizes: ["S","M","L","XL"],
     proof: "Cut longer than the usual gym short. Seamless, so nothing shows through.",
-    modelNote: "Model is 5'3\" and wears a size S.",
+    modelNote: "Shown in size S on our house model (5\'3\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
+    care: "Seamless stretch knit. Machine wash cold, hang or lay flat to dry. Skip the tumble dryer — it\'s what kills the stretch in every pair you\'ve owned before.",
     colors: [
       { key: "maroon", label: "Wine", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=39", images: ["/assets/product-images/short-maroon.jpg?v=39", "/assets/product-images/short-maroon-proof.jpg?v=39", "/assets/product-images/short-maroon-back.jpg?v=39", "/assets/product-images/short-maroon-detail.jpg?v=39"] },
       { key: "pink", label: "Blush", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=39", images: ["/assets/product-images/short-pink.jpg?v=39", "/assets/product-images/short-pink-proof.jpg?v=39", "/assets/product-images/short-pink-back.jpg?v=39", "/assets/product-images/short-pink-detail.jpg?v=39"] }

@@ -7,7 +7,7 @@ import { placeCjOrder } from "./cj.js";
 import { sendMail } from "./agentmail.js";
 
 function orderText(order){
-  const items = order.lines.map(function(l){ return "  - " + l.name + " — " + l.color + ", size " + l.size + " x" + l.qty + " (£" + (l.unit * l.qty) + ")"; }).join("\n");
+  const items = order.lines.map(function(l){ return "  - " + l.name + " — " + (l.colorLabel || l.color) + ", size " + l.size + " x" + l.qty + " (£" + (l.unit * l.qty) + ")"; }).join("\n");
   return "Order " + order.ref + "\n" + items + "\nTotal paid: £" + order.total.toFixed(2) + "\n\n" +
     "Deliver to:\n" + order.customer.name + "\n" + order.customer.address + "\n" + order.customer.city + ", " + order.customer.postcode;
 }

@@ -19,7 +19,8 @@ export async function onRequestPost({ request, env }){
   if(order.customer && order.customer.email){
     await sendMail(env, order.customer.email, "Your Coverline order " + ref + " is on its way",
       "Hi " + ((order.customer.name || "").split(" ")[0]) + ",\n\nIt's shipped. Tracking number: " + number + (carrier !== "OTHER" ? " (" + carrier + ")" : "") +
-      "\n\nUK delivery is usually 5–10 working days from now. If the tracking hasn't moved after 20 business days, reply to this and we'll chase it or send a replacement.\n\nCoverline");
+      "\n\nUK delivery is usually 5–10 working days from now. If the tracking hasn't moved after 20 working days, reply to this and we'll chase it or send a replacement." +
+      "\n\nOnce it's arrived: one honest line on how it fit helps the next person more than anything we could write — https://coverlineshop.com/review.html?ref=" + ref + "\n\nCoverline");
   }
   return json({ ok: true, ref: ref });
 }

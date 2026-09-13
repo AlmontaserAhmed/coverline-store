@@ -53,7 +53,7 @@ export async function onRequestPost({ request, env }){
           price_data: {
             currency: "gbp",
             unit_amount: Math.round(l.unit * 100),
-            product_data: { name: (l.name + " — " + l.color + " / " + l.size).slice(0, 127) }
+            product_data: { name: (l.name + " — " + (l.colorLabel || l.color) + " / " + l.size).slice(0, 127) }
           }
         };
       })

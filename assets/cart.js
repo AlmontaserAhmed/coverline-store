@@ -148,7 +148,7 @@
     if(checkoutMode){ renderCheckout(); return; }
 
     if(cart.length === 0){
-      drawerBody.innerHTML = '<p class="cart-empty">Nothing in here yet. Tap a size on any piece to add it.</p>';
+      drawerBody.innerHTML = '<p class="cart-empty">Nothing in here yet. Open any piece, pick a colour and a size, and it lands here.</p>';
       drawerFoot.innerHTML = '';
       return;
     }

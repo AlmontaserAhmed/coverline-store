@@ -71,20 +71,22 @@
     <a href="/terms.html">Terms</a>
     <a href="/privacy.html">Privacy</a>
     <a href="https://www.instagram.com/wearcoverline" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@wearcoverline" target="_blank" rel="noopener">TikTok</a>
   </div>
 </footer>
 
-<script src="/assets/products.js?v=39"></script>
+<script src="/assets/products.js?v=40"></script>
 <script src="/assets/sizecharts.js?v=2"></script>
 <script src="/assets/reviews.js?v=1"></script>
 <script src="/assets/config.js?v=4"></script>
-<script src="/assets/cart.js?v=9"></script>
+<script src="/assets/cart.js?v=10"></script>
 <script>
 (function(){
   var PRODUCTS = window.COVERLINE_PRODUCTS;
   var params = new URLSearchParams(window.location.search);
   var id = params.get('id') || PRODUCTS[0].id;
-  var p = window.CoverlineCart.productById(id) || PRODUCTS[0];
+  var p = window.CoverlineCart.productById(id);
+  if(!p){ window.location.replace('/#shop'); return; }
   var qty = 1;
   var chosenSize = null;
   // Store-review pass (12 Sep 2026): no colour pre-selected on load — the page used
@@ -94,16 +96,27 @@
   // until you click a swatch, and add-to-bag is blocked (like size) until you do.
   var chosenColor = null;
 
+  var url='https://coverlineshop.com/product.html?id='+encodeURIComponent(p.id);
   document.getElementById('pageTitle').textContent = p.name + ' — Coverline';
   (function(){
     var set=function(sel,attr,val){ var el=document.querySelector(sel); if(el) el.setAttribute(attr,val); };
-    var url='https://coverlineshop.com/product.html?id='+encodeURIComponent(p.id);
     set('link[rel=canonical]','href',url); set('meta[property="og:url"]','content',url);
     set('meta[property="og:title"]','content',p.name+' — Coverline');
     set('meta[property="og:description"]','content',p.desc);
     set('meta[property="og:image"]','content','https://coverlineshop.com'+(p.image||'').split('?')[0]);
   })();
   document.getElementById('pageDesc').setAttribute('content', p.desc);
+  (function(){
+    var ld = document.createElement('script'); ld.type = 'application/ld+json';
+    ld.textContent = JSON.stringify({
+      "@context": "https://schema.org", "@type": "Product", "name": p.name, "description": p.desc,
+      "brand": { "@type": "Brand", "name": "Coverline" },
+      "image": (p.colors || []).map(function(c){ return 'https://coverlineshop.com' + (c.image || '').split('?')[0]; }),
+      "offers": { "@type": "Offer", "url": url, "priceCurrency": "GBP", "price": String(p.price), "availability": "https://schema.org/InStock",
+        "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "GBP" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "GB" } } }
+    });
+    document.head.appendChild(ld);
+  })();
 
   (function(){ var mn=document.getElementById('pdpModelNote'); if(p.modelNote){ mn.textContent=p.modelNote; mn.hidden=false; } })();
   var activeImg = 0;
@@ -191,7 +204,7 @@
       '<div class="pdp-accordion">' +
         accItem('Fit &amp; sizing', '<p>' + p.fit + '</p>') +
         (sizeChartHtml() ? accItem('Size chart', sizeChartHtml()) : '') +
-        accItem('Fabric &amp; care', '<p>Soft stretch fabric. Machine wash cold, hang or lay flat to dry. Skip the tumble dryer — it\'s what kills the stretch in every pair you\'ve owned before.</p>') +
+        accItem('Fabric &amp; care', '<p>' + (p.care || 'Machine wash cold, hang or lay flat to dry. Skip the tumble dryer.') + '</p>') +
         accItem('Shipping', '<p>UK delivery usually takes 5&ndash;10 working days &mdash; it comes from further away than the high street, and it\'s priced like it. We\'d rather say that now than promise next-day and miss it. You\'ll get a tracking link by email once it\'s on the way.</p><p><a href="/shipping-returns.html" class="link-quiet">Full shipping &amp; returns policy &rarr;</a></p>') +
         accItem('Returns', '<p>Wrong size, damaged, or not what you ordered? Email us within 14 days of delivery and we\'ll send a replacement or refund you &mdash; you never have to post anything back. Full detail in our <a href="/shipping-returns.html">returns policy</a>.</p>') +
       '</div>';
@@ -212,17 +225,29 @@
     });
     document.getElementById('addToBagBtn').addEventListener('click', function(){
       if(p.colors && p.colors.length && !chosenColor){
-        alert('Pick a colour first — tap one of the swatches above.');
+        showPickNote('Pick a colour first — tap one of the swatches above.', '.pdp-colors');
         return;
       }
       if(!chosenSize){
-        alert('Pick a size first — the fit note below will tell you which way to go if you\'re between two.');
+        showPickNote('Pick a size first — the fit note below says which way to go if you\'re between two.', '.pdp-sizes');
         return;
       }
+      clearPickNote();
       window.CoverlineCart.add(p.id, chosenSize, qty, chosenColor ? chosenColor.key : null);
       var note = document.getElementById('addedNote');
       if(note) note.hidden = false;
     });
+    // Inline "pick a colour/size" nudge — replaces the old alert() (level-10 site review, 13 Sep 2026):
+    // a browser alert on a sticky add-to-bag button is jarring on mobile and can't be styled.
+    function clearPickNote(){ var n = document.getElementById('pickNote'); if(n) n.remove(); }
+    function showPickNote(msg, scrollSel){
+      clearPickNote();
+      var n = document.createElement('p');
+      n.id = 'pickNote'; n.className = 'order-error'; n.setAttribute('role', 'alert'); n.textContent = msg;
+      document.getElementById('addToBagBtn').insertAdjacentElement('afterend', n);
+      var target = document.querySelector(scrollSel);
+      if(target && target.scrollIntoView) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
     document.querySelectorAll('.acc-trigger').forEach(function(btn){
       btn.addEventListener('click', function(){
@@ -260,11 +285,11 @@
   function renderFaq(){
     var faqs = [
       ['Is it see-through?',
-       'No. The legging and the short are the thick, seamless kind &mdash; "squat-tested" on the page means exactly that. The tee is a proper cotton weight, not a tissue tee. Nothing in this drop is sheer; that was the first filter when we picked the pieces.'],
+       'Not by design. The legging and the short are a thick, seamless knit &mdash; not the tissue-thin kind &mdash; and the tee is cotton, not a tissue tee. Nothing in this drop is sold as sheer; that was the first filter when we picked the pieces. And if yours turns out to be, that counts as "not what you ordered" &mdash; email us and we\'ll refund it.'],
       ['How long does delivery actually take?',
        'UK delivery is usually 5&ndash;10 working days. It comes from further away than the high street, which is also part of why the prices are what they are. You get a tracking link by email the moment it ships.'],
       ['I\'m between two sizes &mdash; which way do I go?',
-       'The fit note above says for each piece. Short version: legging and short, size up if you want less compression; the tee is oversized on purpose, so size down if you want it closer to the body; the sets run true to size.'],
+       'The fit note above says for each piece. Short version: the legging and short run small, so go one up from your usual UK size; the tee is oversized on purpose, so size down if you want it closer to the body; for the two sets, trust the centimetres in the chart over your usual letter size.'],
       ['What if it doesn\'t fit?',
        'Email us within 14 days of delivery and we\'ll sort a replacement or a refund. You don\'t post anything back. Full detail on the <a href="/shipping-returns.html">shipping &amp; returns</a> page.']
     ];
