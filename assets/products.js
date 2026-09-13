@@ -79,7 +79,6 @@ window.COVERLINE_PRODUCTS = [
       { key: "nude", label: "Sand", hex: "#c9a888", image: "/assets/product-images/legging-nude.jpg?v=32", images: ["/assets/product-images/legging-nude.jpg?v=32", "/assets/product-images/legging-nude-proof.jpg?v=32", "/assets/product-images/legging-nude-back.jpg?v=32", "/assets/product-images/legging-nude-detail.jpg?v=32"] }
     ],
     image: "/assets/product-images/legging-black.jpg?v=25",
-    colorPhotosMatch: false, // 12 Sep 2026: nude/black photos are two separate shoots, not pixel-matched like tee/co-ord's colourway swaps — homepage hover-preview disabled for this product, see style.css .mismatched-photos
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,240 C 100,300 200,200 300,260 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,150 C 110,90 190,210 300,160" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   },
   {
@@ -95,11 +94,10 @@ window.COVERLINE_PRODUCTS = [
     proof: "Cut longer than the usual gym short. Seamless, so nothing shows through.",
     modelNote: "Model is 5'3\" and wears a size S.",
     colors: [
-      { key: "maroon", label: "Wine", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=32", images: ["/assets/product-images/short-maroon.jpg?v=32", "/assets/product-images/short-maroon-proof.jpg?v=32", "/assets/product-images/short-maroon-back.jpg?v=32", "/assets/product-images/short-maroon-detail.jpg?v=32"] },
-      { key: "pink", label: "Blush", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=32", images: ["/assets/product-images/short-pink.jpg?v=32", "/assets/product-images/short-pink-proof.jpg?v=32", "/assets/product-images/short-pink-back.jpg?v=32", "/assets/product-images/short-pink-detail.jpg?v=32"] }
+      { key: "maroon", label: "Wine", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=32", images: ["/assets/product-images/short-maroon.jpg?v=32", "/assets/product-images/short-maroon-back.jpg?v=32", "/assets/product-images/short-maroon-detail.jpg?v=32"] },
+      { key: "pink", label: "Blush", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=32", images: ["/assets/product-images/short-pink.jpg?v=32", "/assets/product-images/short-pink-back.jpg?v=32", "/assets/product-images/short-pink-detail.jpg?v=32"] }
     ],
     image: "/assets/product-images/short-maroon.jpg?v=32",
-    colorPhotosMatch: false, // 12 Sep 2026: maroon/pink photos are two separate shoots, not pixel-matched like tee/co-ord's colourway swaps — homepage hover-preview disabled for this product, see style.css .mismatched-photos
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
 ];

@@ -398,9 +398,9 @@ button.submit{
 /* Hover preview (13 Sep 2026): hovering a tile shows the BACK view of the colour
    currently chosen — a second view of the same garment, the convention shoppers
    expect. Colour is chosen with the dots only; hover never changes colour.
-   .mismatched-photos (set when a product's colour photos don't match) still
-   suppresses the preview. Phones have no hover, so the dots do all the work. */
-@media (hover:hover){ .piece:not(.mismatched-photos):hover .swatch img.alt{ opacity:1; } }
+   Phones have no hover, so the dots do all the work. (The old .mismatched-photos
+   opt-out went with the colour-swap hover — no longer needed.) */
+@media (hover:hover){ .piece:hover .swatch img.alt{ opacity:1; } }
 .piece .swatch.show-alt img.alt{ opacity:1; }
 .piece .meta{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
 .piece h3{ font-size:1.12rem; line-height:1.25; }
