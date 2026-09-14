@@ -289,9 +289,9 @@ button.submit{
 .pdp-info .tagline{ margin-top:10px; color:var(--ink-soft); font-size:.98rem; }
 .pdp-info .price{ margin-top:18px; font-family:'Jost',sans-serif; font-size:1.1rem; letter-spacing:.03em; }
 .pdp-info .proof{
-  display:inline-block; margin-top:14px; background:var(--accent); color:var(--paper);
-  font-family:'Jost',sans-serif; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
-  padding:6px 12px;
+  display:inline-block; margin-top:14px; background:var(--paper-raised); color:var(--ink);
+  font-family:'Jost',sans-serif; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase;
+  padding:7px 12px; border-left:2px solid var(--accent);
 }
 .pdp-info .longdesc{ margin-top:22px; color:var(--ink); font-size:.95rem; line-height:1.7; }
 .pdp-sizes{ margin-top:26px; }
@@ -439,8 +439,7 @@ button.submit{
   .piece .price{ font-size:.78rem; }
   .piece .desc{ display:none; }
   .piece .dots{ margin-top:8px; }
-  .piece-edit{ padding:18px 16px; justify-content:space-between; }
-  .piece-edit ul{ display:none; }
+  .piece-edit{ padding:18px 16px; justify-content:flex-start; grid-column:1 / -1; }
   .piece-edit h3{ font-size:1.15rem; margin-top:14px; }
   .piece-edit .link-quiet{ margin-top:14px; font-size:.64rem; }
   .piece .dot{ width:22px; height:22px; }

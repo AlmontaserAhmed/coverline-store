@@ -15,7 +15,7 @@ window.COVERLINE_PRODUCTS = [
     priceLabel: "£15",
     price: 15,
     sizes: ["S","M","L","XL","XXL"],
-    proof: "Actually long enough. Loose, not clingy.",
+    proof: "Longer in the body. Loose fit.",
     modelNote: "Shown in size S on our house model (5\'6\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
     care: "Cotton jersey. Machine wash cold, inside out; hang or lay flat to dry. It\'ll soften with washing rather than shrink if you keep it out of the tumble dryer.",
     colors: [
@@ -36,7 +36,7 @@ window.COVERLINE_PRODUCTS = [
     priceLabel: "£30",
     price: 30,
     sizes: ["S","M","L","XL"],
-    proof: "Zips to the collar. Boxy jacket, easy jogger.",
+    proof: "Zips to the collar. Jogger 100 to 103cm outside leg.",
     modelNote: "Shown in size S on our house model (5\'6\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
     care: "Soft brushed stretch knit. Machine wash cold with similar colours, zip the jacket before washing, hang or lay flat to dry. Skip the tumble dryer.",
     colors: [
@@ -56,7 +56,7 @@ window.COVERLINE_PRODUCTS = [
     priceLabel: "£30",
     price: 30,
     sizes: ["S","M","L","XL","XXL"],
-    proof: "Contrast-trim shirt + wide-leg trouser. Loose by design.",
+    proof: "Shirt and trouser. Loose fit, full-length leg.",
     modelNote: "Shown in size S on our house model (5\'6\"), with the Long-Enough Tee in Black underneath. Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
     care: "Linen-look woven polyester. Machine wash cold on a gentle cycle, hang to dry, cool iron if it needs it. It doesn\'t crease in a bag, which is the point.",
     colors: [
@@ -76,7 +76,7 @@ window.COVERLINE_PRODUCTS = [
     priceLabel: "£18",
     price: 18,
     sizes: ["S","M","L"],
-    proof: "Thick seamless knit. High waist that stays put. Flat measurements on the chart, not a guess.",
+    proof: "Thick seamless knit. High waist. Sizes S to L, runs small.",
     modelNote: "Shown in size S on our house model (5\'3\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
     care: "Seamless stretch knit. Machine wash cold, hang or lay flat to dry. Skip the tumble dryer — it\'s what kills the stretch in every pair you\'ve owned before.",
     colors: [
@@ -96,7 +96,7 @@ window.COVERLINE_PRODUCTS = [
     priceLabel: "£14",
     price: 14,
     sizes: ["S","M","L","XL"],
-    proof: "Cut longer than the usual gym short. Seamless, so nothing shows through.",
+    proof: "Seamless. Longer leg than a standard gym short.",
     modelNote: "Shown in size S on our house model (5\'3\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
     care: "Seamless stretch knit. Machine wash cold, hang or lay flat to dry. Skip the tumble dryer — it\'s what kills the stretch in every pair you\'ve owned before.",
     colors: [
