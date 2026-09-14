@@ -1,37 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;1,9..144,440;1,9..144,540&family=Jost:wght@300;400;500&display=swap');
 
 :root{
-  --paper:#f6ebe7;
-  --paper-raised:#efdad5;
-  --ink:#2b1218;
-  --ink-soft:#7a4c50;
-  --hair:#dcbcb7;
-  --accent:#9c2b4e;
-  --accent-2:#c98a83;
+  --paper:#f2ede8;
+  --paper-raised:#e5dcd3;
+  --ink:#231e1b;
+  --ink-soft:#665a53;
+  --hair:#d6cabf;
+  --accent:#7a3b3b;
+  --accent-2:#c39a8c;
   --focus:#5a6bd8;
   --ok:#4d7a52;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#180c0f;
-    --paper-raised:#241317;
-    --ink:#f3e2de;
-    --ink-soft:#c99da0;
-    --hair:#3d2226;
-    --accent:#e8709a;
-    --accent-2:#c98a83;
+    --paper:#17130f;
+    --paper-raised:#221c17;
+    --ink:#efe8e0;
+    --ink-soft:#b5a99e;
+    --hair:#3a312a;
+    --accent:#d9908a;
+    --accent-2:#8a6a5e;
     --focus:#93a4ff;
     --ok:#8fc396;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#180c0f;
-  --paper-raised:#241317;
-  --ink:#f3e2de;
-  --ink-soft:#c99da0;
-  --hair:#3d2226;
-  --accent:#e8709a;
-  --accent-2:#c98a83;
+  --paper:#17130f;
+  --paper-raised:#221c17;
+  --ink:#efe8e0;
+  --ink-soft:#b5a99e;
+  --hair:#3a312a;
+  --accent:#d9908a;
+  --accent-2:#8a6a5e;
   --focus:#93a4ff;
   --ok:#8fc396;
 }
