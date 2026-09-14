@@ -1,0 +1,37 @@
+{
+  "note": "Second pass: Gemini renders the Blush (Light Pink) fabric on each Wine base photo. Run AFTER short-final.json has produced the 4 raw wine bases. These 'edit' outputs are NOT shipped directly — colourway_from_edit.py composites the rendered fabric back onto the untouched wine base so the two colourways are the same photograph (see RULES.md rule 9).",
+  "items": [
+    {
+      "id": "short-blush-hero-edit",
+      "garment": "short",
+      "colour": "blush",
+      "base": "out/short-wine-hero-raw.jpg",
+      "extra": "change ONLY the short's colour to a heathered light pink; do not change the waistband width, rib pattern, mesh panel, scrunch seam, pose, framing, or the tee",
+      "out": "out/short-blush-hero-edit-raw.jpg"
+    },
+    {
+      "id": "short-blush-move-edit",
+      "garment": "short",
+      "colour": "blush",
+      "base": "out/short-wine-move-raw.jpg",
+      "extra": "change ONLY the short's colour to a heathered light pink; do not change the waistband width, rib pattern, mesh panel, scrunch seam, pose, framing, or the tee",
+      "out": "out/short-blush-move-edit-raw.jpg"
+    },
+    {
+      "id": "short-blush-back-edit",
+      "garment": "short",
+      "colour": "blush",
+      "base": "out/short-wine-back-raw.jpg",
+      "extra": "change ONLY the short's colour to a heathered light pink; do not change the waistband width, rib pattern, mesh panel, scrunch seam, pose, framing, or the tee",
+      "out": "out/short-blush-back-edit-raw.jpg"
+    },
+    {
+      "id": "short-blush-detail-edit",
+      "garment": "short",
+      "colour": "blush",
+      "base": "out/short-wine-detail-raw.jpg",
+      "extra": "change ONLY the short's colour to a heathered light pink; do not change the waistband width, rib pattern, mesh panel, scrunch seam, pose, framing, or the tee",
+      "out": "out/short-blush-detail-edit-raw.jpg"
+    }
+  ]
+}

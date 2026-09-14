@@ -1,0 +1,13 @@
+{
+  "note": "Combined finish batch for the Stay-Put Short re-source (14 Sep). Wine items finish first (base for compositing), then Blush edit-raws get finished and composited onto their wine base by finish_batch.py's own composite.py step.",
+  "items": [
+    {"id": "short-wine", "garment": "short", "colour": "wine", "out": "out/short-wine-hero-raw.jpg"},
+    {"id": "short-wine-move", "garment": "short", "colour": "wine", "out": "out/short-wine-move-raw.jpg"},
+    {"id": "short-wine-back", "garment": "short", "colour": "wine", "out": "out/short-wine-back-raw.jpg"},
+    {"id": "short-wine-detail", "garment": "short", "colour": "wine", "out": "out/short-wine-detail-raw.jpg"},
+    {"id": "short-blush", "garment": "short", "colour": "blush", "base": "out/short-wine-hero-raw.jpg", "out": "out/short-blush-hero-edit-raw.jpg"},
+    {"id": "short-blush-move", "garment": "short", "colour": "blush", "base": "out/short-wine-move-raw.jpg", "out": "out/short-blush-move-edit-raw.jpg"},
+    {"id": "short-blush-back", "garment": "short", "colour": "blush", "base": "out/short-wine-back-raw.jpg", "out": "out/short-blush-back-edit-raw.jpg"},
+    {"id": "short-blush-detail", "garment": "short", "colour": "blush", "base": "out/short-wine-detail-raw.jpg", "out": "out/short-blush-detail-edit-raw.jpg"}
+  ]
+}

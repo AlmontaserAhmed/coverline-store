@@ -6,3 +6,4 @@ tools/imagery/__pycache__/
 _to_delete/
 qc/
 Claude outputs/
+restart-dev.command

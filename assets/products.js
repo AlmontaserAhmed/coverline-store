@@ -99,10 +99,10 @@ window.COVERLINE_PRODUCTS = [
     modelNote: "Shown in size S on our house model (5\'3\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
     care: "Seamless stretch knit. Machine wash cold, hang or lay flat to dry. Skip the tumble dryer — it\'s what kills the stretch in every pair you\'ve owned before.",
     colors: [
-      { key: "maroon", label: "Wine", hex: "#532d2e", image: "/assets/product-images/short-maroon.jpg?v=39", images: ["/assets/product-images/short-maroon.jpg?v=39", "/assets/product-images/short-maroon-proof.jpg?v=39", "/assets/product-images/short-maroon-back.jpg?v=39", "/assets/product-images/short-maroon-detail.jpg?v=39"] },
-      { key: "pink", label: "Blush", hex: "#dcb9b6", image: "/assets/product-images/short-pink.jpg?v=39", images: ["/assets/product-images/short-pink.jpg?v=39", "/assets/product-images/short-pink-proof.jpg?v=39", "/assets/product-images/short-pink-back.jpg?v=39", "/assets/product-images/short-pink-detail.jpg?v=39"] }
+      { key: "maroon", label: "Wine", hex: "#946468", image: "/assets/product-images/short-wine.jpg?v=48", images: ["/assets/product-images/short-wine.jpg?v=48", "/assets/product-images/short-wine-move.jpg?v=48", "/assets/product-images/short-wine-back.jpg?v=48", "/assets/product-images/short-wine-detail.jpg?v=48"] },
+      { key: "pink", label: "Blush", hex: "#c59c9d", image: "/assets/product-images/short-blush.jpg?v=48", images: ["/assets/product-images/short-blush.jpg?v=48", "/assets/product-images/short-blush-move.jpg?v=48", "/assets/product-images/short-blush-back.jpg?v=48", "/assets/product-images/short-blush-detail.jpg?v=48"] }
     ],
-    image: "/assets/product-images/short-maroon.jpg?v=39",
+    image: "/assets/product-images/short-wine.jpg?v=48",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
 ];

@@ -1,0 +1,41 @@
+{
+  "note": "Stay-Put Short re-source (14 Sep): real CJ SKU CJDK1950809xx (Seamless Yoga Shorts Women Solid Color High Waist Hip-lifting Fitness Pants), colours Wine Red + Light Pink, real construction = wide ribbed heathered waistband + side mesh panel down the outer thigh + rear scrunch seam. Garment reference is now the real CJ photo (tools/imagery/refs/cj-short-wine.png / cj-short-blush.png), not a site render — see RULES.md rule 10. Wine shot as the true base (4 views); Blush is a Gemini colourway edit of each Wine base, composited with colourway_from_edit.py so the two colourways are the same photo. Waistband sits OVER a tucked-in ivory tee on every view (the legging convention, applied here too) — never the tee hem over the waistband.",
+  "items": [
+    {
+      "id": "short-wine-hero",
+      "model": "A",
+      "garment": "short",
+      "colour": "wine",
+      "pose": "hero",
+      "extra": "the ivory tee is tucked into the short so the short's own ribbed waistband sits visibly OVER the tee, not the tee hem covering the waistband; keep every construction line — waistband width, rib pattern, mesh panel, scrunch seam — pixel-faithful to the garment reference photo, changing nothing about its cut",
+      "out": "out/short-wine-hero-raw.jpg"
+    },
+    {
+      "id": "short-wine-move",
+      "model": "A",
+      "garment": "short",
+      "colour": "wine",
+      "pose": "move-short",
+      "extra": "the ivory tee is tucked into the short so the short's own ribbed waistband sits visibly OVER the tee, not the tee hem covering the waistband; keep every construction line — waistband width, rib pattern, mesh panel, scrunch seam — pixel-faithful to the garment reference photo, changing nothing about its cut",
+      "out": "out/short-wine-move-raw.jpg"
+    },
+    {
+      "id": "short-wine-back",
+      "model": "A",
+      "garment": "short",
+      "colour": "wine",
+      "pose": "back",
+      "extra": "the ivory tee is tucked into the short so the short's own ribbed waistband sits visibly OVER the tee, not the tee hem covering the waistband; the rear scrunch seam from the garment reference photo must be visible; keep every construction line pixel-faithful to the reference, changing nothing about its cut",
+      "out": "out/short-wine-back-raw.jpg"
+    },
+    {
+      "id": "short-wine-detail",
+      "model": "A",
+      "garment": "short",
+      "colour": "wine",
+      "pose": "detail",
+      "extra": "close crop on the hip showing the ribbed waistband sitting over the tucked-in tee and the side mesh panel clearly; keep every construction line pixel-faithful to the garment reference photo, changing nothing about its cut",
+      "out": "out/short-wine-detail-raw.jpg"
+    }
+  ]
+}

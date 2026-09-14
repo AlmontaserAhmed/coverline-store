@@ -1,132 +1,132 @@
 {
- "palette": {
-  "ivory": "#F3EFE9",
-  "oat": "#E8DFD3",
-  "stone": "#B8AFA6",
-  "ink": "#2B1218",
-  "berry": "#9C2B4E"
- },
- "background": "a plain mid-grey seamless studio backdrop (grey, not white \u2014 it should read darker than the model's skin highlights), a slightly darker grey floor, soft natural light from the front-left, no props, barefoot",
- "style_block": "Photography, not digital art. Soft diffused natural window light from the front-left, warm 3200K (the backdrop takes on a faint warm cast, never blue), gentle directional falloff. Soft-edged shadows in one consistent direction, low density, no harsh contact shadows. Neutral studio white balance, natural skin tones, no orange or amber cast, subtle saturation. 85mm f/1.8 equivalent, editorial photography, soft background blur, subject in sharp focus. Vertical 4:5 composition, generous negative space at the top or side for a text overlay, subject off-centre on the rule of thirds. Mood: calm, considered, unhurried. Natural visible skin texture, no airbrushing, natural asymmetric pose with weight on one leg. Subtle realistic film grain.",
- "negative": "over-saturation, HDR artifacts, cartoonish rendering, waxy or plastic skin, extra or fused fingers, backward-bending wrists, mismatched shadow direction, visible watermark, bare midriff, crop top, sports bra as outerwear, text, logos, garment colour blending with or reading as bare skin, sheer or nude-hosiery look on any leg/torso garment, insufficient tonal contrast between fabric and visible skin",
- "models": {
-  "A": {
-   "reference": "../../assets/product-images/tee-apricot.jpg",
-   "line": "the same woman as the reference image \u2014 dark hair in a low bun, warm olive-tan skin, mid-20s, around 5'6\", athletic-but-soft build, calm closed-mouth expression",
-   "locked_to": [
-    "tee",
-    "coord",
-    "short"
-   ],
-   "references": [
-    "../../assets/product-images/tee-apricot.jpg",
-    "refs/modelA-front.jpg",
-    "refs/modelA-face.jpg",
-    "refs/modelA-profile.jpg"
-   ]
+  "palette": {
+    "ivory": "#F3EFE9",
+    "oat": "#E8DFD3",
+    "stone": "#B8AFA6",
+    "ink": "#2B1218",
+    "berry": "#9C2B4E"
   },
-  "B": {
-   "reference": "refs/modelB-front.jpg",
-   "line": "the same woman as the reference image \u2014 mid-20s, around 5'3\", of Mongolian heritage, pilates build, long-limbed for her height, soft curve through hip and thigh, high wide cheekbones, defined jawline, straight nose, dark almond eyes, straight jet-black hair in a sleek low bun, small gold huggie hoops, composed closed-mouth almost-smile",
-   "locked_to": [
-    "legging",
-    "loungeset"
-   ],
-   "references": [
-    "refs/modelB-front.jpg",
-    "refs/modelB-face.jpg",
-    "refs/modelB-threequarter.jpg",
-    "refs/modelB-hands.jpg"
-   ]
-  }
- },
- "garments": {
-  "tee": {
-   "name": "Long-Enough Tee",
-   "price": "\u00a315",
-   "colours": {
-    "apricot": "tee-apricot-detail.jpg",
-    "black": "tee-black-detail.jpg"
-   },
-   "line": "the real oversized {colour} Long-Enough Tee from the garment reference photo \u2014 crew neck, dropped shoulder, hem below the hip"
+  "background": "a plain mid-grey seamless studio backdrop (grey, not white \u2014 it should read darker than the model's skin highlights), a slightly darker grey floor, soft natural light from the front-left, no props, barefoot",
+  "style_block": "Photography, not digital art. Soft diffused natural window light from the front-left, warm 3200K (the backdrop takes on a faint warm cast, never blue), gentle directional falloff. Soft-edged shadows in one consistent direction, low density, no harsh contact shadows. Neutral studio white balance, natural skin tones, no orange or amber cast, subtle saturation. 85mm f/1.8 equivalent, editorial photography, soft background blur, subject in sharp focus. Vertical 4:5 composition, generous negative space at the top or side for a text overlay, subject off-centre on the rule of thirds. Mood: calm, considered, unhurried. Natural visible skin texture, no airbrushing, natural asymmetric pose with weight on one leg. Subtle realistic film grain.",
+  "negative": "over-saturation, HDR artifacts, cartoonish rendering, waxy or plastic skin, extra or fused fingers, backward-bending wrists, mismatched shadow direction, visible watermark, bare midriff, crop top, sports bra as outerwear, text, logos, garment colour blending with or reading as bare skin, sheer or nude-hosiery look on any leg/torso garment, insufficient tonal contrast between fabric and visible skin",
+  "models": {
+    "A": {
+      "reference": "../../assets/product-images/tee-apricot.jpg",
+      "line": "the same woman as the reference image \u2014 dark hair in a low bun, warm olive-tan skin, mid-20s, around 5'6\", athletic-but-soft build, calm closed-mouth expression",
+      "locked_to": [
+        "tee",
+        "coord",
+        "short"
+      ],
+      "references": [
+        "../../assets/product-images/tee-apricot.jpg",
+        "refs/modelA-front.jpg",
+        "refs/modelA-face.jpg",
+        "refs/modelA-profile.jpg"
+      ]
+    },
+    "B": {
+      "reference": "refs/modelB-front.jpg",
+      "line": "the same woman as the reference image \u2014 mid-20s, around 5'3\", of Mongolian heritage, pilates build, long-limbed for her height, soft curve through hip and thigh, high wide cheekbones, defined jawline, straight nose, dark almond eyes, straight jet-black hair in a sleek low bun, small gold huggie hoops, composed closed-mouth almost-smile",
+      "locked_to": [
+        "legging",
+        "loungeset"
+      ],
+      "references": [
+        "refs/modelB-front.jpg",
+        "refs/modelB-face.jpg",
+        "refs/modelB-threequarter.jpg",
+        "refs/modelB-hands.jpg"
+      ]
+    }
   },
-  "legging": {
-   "name": "Squat-Proof Legging",
-   "price": "\u00a318",
-   "colours": {
-    "black": "legging-black-detail.jpg",
-    "sand": "legging-nude-detail.jpg"
-   },
-   "line": "the real {colour} high-waist seamless Squat-Proof Legging from the garment reference photo, worn with a fitted ivory (off-white) tee"
+  "garments": {
+    "tee": {
+      "name": "Long-Enough Tee",
+      "price": "\u00a315",
+      "colours": {
+        "apricot": "tee-apricot-detail.jpg",
+        "black": "tee-black-detail.jpg"
+      },
+      "line": "the real oversized {colour} Long-Enough Tee from the garment reference photo \u2014 crew neck, dropped shoulder, hem below the hip"
+    },
+    "legging": {
+      "name": "Squat-Proof Legging",
+      "price": "\u00a318",
+      "colours": {
+        "black": "legging-black-detail.jpg",
+        "sand": "legging-nude-detail.jpg"
+      },
+      "line": "the real {colour} high-waist seamless Squat-Proof Legging from the garment reference photo, worn with a fitted ivory (off-white) tee"
+    },
+    "short": {
+      "name": "Stay-Put Short",
+      "price": "\u00a314",
+      "colours": {
+        "wine": "../../tools/imagery/refs/cj-short-wine.png",
+        "blush": "../../tools/imagery/refs/cj-short-blush.png"
+      },
+      "line": "the real {colour} high-waist seamless biker short from the garment reference photo \u2014 wide ribbed heathered waistband, side mesh panel down the outer thigh, rear scrunch seam \u2014 worn with a fitted ivory (off-white) tee"
+    },
+    "loungeset": {
+      "name": "Off-Duty Set",
+      "price": "\u00a330",
+      "colours": {
+        "cream": "loungeset-cream-detail.jpg",
+        "navy": "loungeset-navy-detail.jpg"
+      },
+      "line": "the real {colour} Off-Duty Set from the garment reference photo \u2014 zip jacket zipped to the collar and matching jogger, outside leg 100\u2013103cm"
+    },
+    "coord": {
+      "name": "Wide-Leg Set",
+      "price": "\u00a330",
+      "colours": {
+        "black": "coord-black-detail.jpg",
+        "oat": "coord-oat-detail.jpg"
+      },
+      "line": "the real {colour} Wide-Leg Set from the garment reference photo \u2014 boxy short-sleeve camp-collar shirt with a deep V and a contrast band on collar, V, cuffs and hem (black set = white bands; oat set = pale oat linen-look with black bands), worn over a black Long-Enough Tee so no chest shows, plus the full-length wide-leg trouser with a contrast stripe down each outer leg"
+    }
   },
-  "short": {
-   "name": "Stay-Put Short",
-   "price": "\u00a314",
-   "colours": {
-    "wine": "short-maroon-detail.jpg",
-    "blush": "short-pink-detail.jpg"
-   },
-   "line": "the real {colour} high-waist seamless Stay-Put Short from the garment reference photo, worn with a fitted ivory (off-white) tee"
+  "poses": {
+    "hero": "standing front-facing, feet in frame, weight shifted onto one leg, arms relaxed, face visible, calm closed-mouth expression",
+    "three-quarter": "standing three-quarter turn, weight shifted onto one leg, natural relaxed arms, face visible",
+    "back": "standing with her back to camera, full length, head turned so the profile shows, arms relaxed",
+    "detail": "close crop on the garment's defining detail \u2014 waistband and seam for bottoms, collar or hem and sleeve for tops \u2014 hands relaxed and natural if in frame, five fingers",
+    "proof": "side profile in a full-depth squat, heels down, back straight, tee hem still covering the waistband, fabric opaque",
+    "ref-front": "standing front-facing, full body, arms relaxed at sides, neutral expression, feet in frame",
+    "ref-threequarter": "standing three-quarter turn to camera-left, full body, weight on one leg, arms relaxed",
+    "ref-profile": "standing in strict side profile, full body, arms relaxed, face in profile",
+    "ref-back": "standing with back to camera, full body, head turned slightly so the jawline is visible",
+    "ref-face": "head-and-shoulders portrait, front-facing, neutral closed-mouth expression, natural skin texture, hair as described",
+    "ref-hands": "close crop from elbow to fingertips of both hands resting naturally at the hips, five fingers each, relaxed, sleeve hems visible",
+    "wrist": "close crop on one relaxed arm and hand at the side, sleeve hem sitting exactly at the wrist bone, five fingers, natural straight wrist, no bend",
+    "move-tee": "arms raised straight overhead, palms together, showing the tee hem staying below the hip \u2014 the fit point \u2014 full body, face visible, weight even",
+    "move-loungeset": "mid-step walking towards camera, jacket zipped to the collar, one hand lifting the collar, full body, relaxed",
+    "move-coord": "mid-stride walking, the wide-leg trouser swinging, shirt open over the black tee, full body, face visible",
+    "move-legging": "side profile in a full-depth squat, heels down, back straight, tee hem covering the waistband",
+    "move-short": "deep lunge from the side, back knee low, hands on the front thigh, tee hem covering the waistband, face visible"
   },
-  "loungeset": {
-   "name": "Off-Duty Set",
-   "price": "\u00a330",
-   "colours": {
-    "cream": "loungeset-cream-detail.jpg",
-    "navy": "loungeset-navy-detail.jpg"
-   },
-   "line": "the real {colour} Off-Duty Set from the garment reference photo \u2014 zip jacket zipped to the collar and matching jogger, outside leg 100\u2013103cm"
-  },
-  "coord": {
-   "name": "Wide-Leg Set",
-   "price": "\u00a330",
-   "colours": {
-    "black": "coord-black-detail.jpg",
-    "oat": "coord-oat-detail.jpg"
-   },
-   "line": "the real {colour} Wide-Leg Set from the garment reference photo \u2014 boxy short-sleeve camp-collar shirt with a deep V and a contrast band on collar, V, cuffs and hem (black set = white bands; oat set = pale oat linen-look with black bands), worn over a black Long-Enough Tee so no chest shows, plus the full-length wide-leg trouser with a contrast stripe down each outer leg"
-  }
- },
- "poses": {
-  "hero": "standing front-facing, feet in frame, weight shifted onto one leg, arms relaxed, face visible, calm closed-mouth expression",
-  "three-quarter": "standing three-quarter turn, weight shifted onto one leg, natural relaxed arms, face visible",
-  "back": "standing with her back to camera, full length, head turned so the profile shows, arms relaxed",
-  "detail": "close crop on the garment's defining detail \u2014 waistband and seam for bottoms, collar or hem and sleeve for tops \u2014 hands relaxed and natural if in frame, five fingers",
-  "proof": "side profile in a full-depth squat, heels down, back straight, tee hem still covering the waistband, fabric opaque",
-  "ref-front": "standing front-facing, full body, arms relaxed at sides, neutral expression, feet in frame",
-  "ref-threequarter": "standing three-quarter turn to camera-left, full body, weight on one leg, arms relaxed",
-  "ref-profile": "standing in strict side profile, full body, arms relaxed, face in profile",
-  "ref-back": "standing with back to camera, full body, head turned slightly so the jawline is visible",
-  "ref-face": "head-and-shoulders portrait, front-facing, neutral closed-mouth expression, natural skin texture, hair as described",
-  "ref-hands": "close crop from elbow to fingertips of both hands resting naturally at the hips, five fingers each, relaxed, sleeve hems visible",
-  "wrist": "close crop on one relaxed arm and hand at the side, sleeve hem sitting exactly at the wrist bone, five fingers, natural straight wrist, no bend",
-  "move-tee": "arms raised straight overhead, palms together, showing the tee hem staying below the hip \u2014 the fit point \u2014 full body, face visible, weight even",
-  "move-loungeset": "mid-step walking towards camera, jacket zipped to the collar, one hand lifting the collar, full body, relaxed",
-  "move-coord": "mid-stride walking, the wide-leg trouser swinging, shirt open over the black tee, full body, face visible",
-  "move-legging": "side profile in a full-depth squat, heels down, back straight, tee hem covering the waistband",
-  "move-short": "deep lunge from the side, back knee low, hands on the front thigh, tee hem covering the waistband, face visible"
- },
- "qc_defects": [
-  "extra_fingers",
-  "fused_fingers",
-  "bent_wrist",
-  "unnatural_limb_or_joint",
-  "extra_limb",
-  "distorted_face",
-  "watermark",
-  "bare_midriff",
-  "text_artifacts",
-  "garment_mismatch"
- ],
- "grade": {
-  "backdrop_L": [
-   132,
-   158
+  "qc_defects": [
+    "extra_fingers",
+    "fused_fingers",
+    "bent_wrist",
+    "unnatural_limb_or_joint",
+    "extra_limb",
+    "distorted_face",
+    "watermark",
+    "bare_midriff",
+    "text_artifacts",
+    "garment_mismatch"
   ],
-  "warmth": [
-   4,
-   13
-  ],
-  "note": "grade.py normalises every render; qc.py fails anything outside these after grading"
- }
+  "grade": {
+    "backdrop_L": [
+      132,
+      158
+    ],
+    "warmth": [
+      4,
+      13
+    ],
+    "note": "grade.py normalises every render; qc.py fails anything outside these after grading"
+  }
 }
