@@ -493,7 +493,8 @@ button.submit{
   .shop + hr.rule{ margin-top:48px; }
   .statement{ padding:64px 0 12px!important; }
   .statement blockquote{ font-size:1.45rem!important; }
-  .statement p{ text-align:left; font-size:.92rem!important; margin-top:20px!important; }
+  .statement p{ text-align:left; font-size:.95rem!important; line-height:1.6; margin-top:16px!important; }
+  .statement .brand-line{ text-align:center!important; font-size:1.35rem!important; }
   .access{ padding:64px 0 80px; }
 }
 
