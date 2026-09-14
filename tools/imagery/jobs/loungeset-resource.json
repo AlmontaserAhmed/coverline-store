@@ -1,0 +1,81 @@
+{
+ "note": "Off-Duty Set re-shoot after re-sourcing to CJ SKU CJWY217155004DW (14 Sep 2026). Cream is generated from the Model B reference sheet + the real CJ Apricot photo; Charcoal is a colour-only EDIT of each cream image (finish_batch.py composites it back onto the cream base). Order matters: cream items first. Detail uses the loungeset-specific crop pose (rule 3).",
+ "items": [
+  {
+   "id": "loungeset-cream",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "cream",
+   "pose": "hero",
+   "extra": "The jacket is genuinely oversized and boxy on her, sleeves reaching past the wrist bone, hem at the hip, zipped fully up to the collar. The jogger is relaxed, drawstring visible at the waist, elasticated cuff sitting on the top of the foot. Match the fit in the garment reference photo, not a slim fit.",
+   "out": "out/loungeset-cream-raw.jpg"
+  },
+  {
+   "id": "loungeset-charcoal",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "charcoal",
+   "pose": "hero",
+   "base": "out/loungeset-cream-raw.jpg",
+   "extra": "Change ONLY the colour of the jacket and jogger to a dark charcoal grey, approximately #434551. Keep every seam, the zip, the collar, the ribbing, every fold and highlight, the skin, hair, face, backdrop and floor pixel-identical to the base image.",
+   "out": "out/loungeset-charcoal-raw.jpg"
+  },
+  {
+   "id": "loungeset-cream-proof",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "cream",
+   "pose": "move-loungeset",
+   "extra": "The jacket is genuinely oversized and boxy, zipped fully up to the collar; the jogger relaxed with a visible drawstring. Match the fit in the garment reference photo.",
+   "out": "out/loungeset-cream-proof-raw.jpg"
+  },
+  {
+   "id": "loungeset-charcoal-proof",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "charcoal",
+   "pose": "move-loungeset",
+   "base": "out/loungeset-cream-proof-raw.jpg",
+   "extra": "Change ONLY the colour of the jacket and jogger to a dark charcoal grey, approximately #434551. Keep every seam, the zip, the collar, the ribbing, every fold and highlight, the skin, hair, face, backdrop and floor pixel-identical to the base image.",
+   "out": "out/loungeset-charcoal-proof-raw.jpg"
+  },
+  {
+   "id": "loungeset-cream-back",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "cream",
+   "pose": "back",
+   "extra": "The jacket is oversized and boxy across the back and shoulders; the jogger relaxed with elasticated cuffs. Match the fit in the garment reference photo.",
+   "out": "out/loungeset-cream-back-raw.jpg"
+  },
+  {
+   "id": "loungeset-charcoal-back",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "charcoal",
+   "pose": "back",
+   "base": "out/loungeset-cream-back-raw.jpg",
+   "extra": "Change ONLY the colour of the jacket and jogger to a dark charcoal grey, approximately #434551. Keep every seam, the zip, the collar, the ribbing, every fold and highlight, the skin, hair, backdrop and floor pixel-identical to the base image.",
+   "out": "out/loungeset-charcoal-back-raw.jpg"
+  },
+  {
+   "id": "loungeset-cream-detail",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "cream",
+   "pose": "detail-loungeset",
+   "extra": "This is a DETAIL crop, not a full-length shot: frame from her chin down to mid-chest only. Zip fully closed, zip pull at the collar.",
+   "out": "out/loungeset-cream-detail-raw.jpg"
+  },
+  {
+   "id": "loungeset-charcoal-detail",
+   "model": "B",
+   "garment": "loungeset",
+   "colour": "charcoal",
+   "pose": "detail-loungeset",
+   "base": "out/loungeset-cream-detail-raw.jpg",
+   "extra": "Change ONLY the colour of the jacket to a dark charcoal grey, approximately #434551. Keep every seam, the zip, the collar, the ribbing, every fold and highlight, the skin, hair, backdrop pixel-identical to the base image.",
+   "out": "out/loungeset-charcoal-detail-raw.jpg"
+  }
+ ]
+}
