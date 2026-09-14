@@ -7,7 +7,7 @@
    "garment": "loungeset",
    "colour": "cream",
    "pose": "hero",
-   "extra": "The jacket is genuinely oversized and boxy on her, sleeves reaching past the wrist bone, hem at the hip, zipped fully up to the collar. The jogger is relaxed, drawstring visible at the waist, elasticated cuff sitting on the top of the foot. Match the fit in the garment reference photo, not a slim fit.",
+   "extra": "This must NOT look fitted, tailored or slim in any way. The real product is a loose, boxy, oversized unisex-cut fleece set. Drop-shoulder seam sits well below the natural shoulder point, partway down the upper arm. Sleeves are long and loose with visible slack, bunching before the wrist bone, never tight against the forearm. The jacket body has clear extra room \u2014 visible slouch and soft folds at the sides and front, not skimming the torso. Hem sits loose at the hip, not cinched in. The jogger legs are wide and loose all the way down the thigh and calf, fabric puddling slightly above the elasticated ankle cuff, never tapered or skin-tight against the leg. Match the loose, boxy silhouette in the garment reference photo exactly \u2014 that photo is the real product, not a design suggestion.",
    "out": "out/loungeset-cream-raw.jpg"
   },
   {
@@ -26,7 +26,7 @@
    "garment": "loungeset",
    "colour": "cream",
    "pose": "move-loungeset",
-   "extra": "The jacket is genuinely oversized and boxy, zipped fully up to the collar; the jogger relaxed with a visible drawstring. Match the fit in the garment reference photo.",
+   "extra": "This must NOT look fitted, tailored or slim in any way. The real product is a loose, boxy, oversized unisex-cut fleece set. Drop-shoulder seam sits well below the natural shoulder point, partway down the upper arm. Sleeves are long and loose with visible slack, bunching before the wrist bone, never tight against the forearm. The jacket body has clear extra room \u2014 visible slouch and soft folds at the sides and front, not skimming the torso. Hem sits loose at the hip, not cinched in. The jogger legs are wide and loose all the way down the thigh and calf, fabric puddling slightly above the elasticated ankle cuff, never tapered or skin-tight against the leg. Match the loose, boxy silhouette in the garment reference photo exactly \u2014 that photo is the real product, not a design suggestion. Lighting must match the hero shot exactly: soft, even, diffused studio light, no harsh highlights, no blown-out or overexposed backdrop, same overall brightness and contrast as the other views of this product.",
    "out": "out/loungeset-cream-proof-raw.jpg"
   },
   {
@@ -45,7 +45,7 @@
    "garment": "loungeset",
    "colour": "cream",
    "pose": "back",
-   "extra": "The jacket is oversized and boxy across the back and shoulders; the jogger relaxed with elasticated cuffs. Match the fit in the garment reference photo.",
+   "extra": "This must NOT look fitted, tailored or slim in any way. The real product is a loose, boxy, oversized unisex-cut fleece set. Drop-shoulder seam sits well below the natural shoulder point, partway down the upper arm. Sleeves are long and loose with visible slack, bunching before the wrist bone, never tight against the forearm. The jacket body has clear extra room \u2014 visible slouch and soft folds at the sides and front, not skimming the torso. Hem sits loose at the hip, not cinched in. The jogger legs are wide and loose all the way down the thigh and calf, fabric puddling slightly above the elasticated ankle cuff, never tapered or skin-tight against the leg. Match the loose, boxy silhouette in the garment reference photo exactly \u2014 that photo is the real product, not a design suggestion.",
    "out": "out/loungeset-cream-back-raw.jpg"
   },
   {
@@ -64,7 +64,7 @@
    "garment": "loungeset",
    "colour": "cream",
    "pose": "detail-loungeset",
-   "extra": "This is a DETAIL crop, not a full-length shot: frame from her chin down to mid-chest only. Zip fully closed, zip pull at the collar.",
+   "extra": "This is a DETAIL crop, not a full-length shot: frame from her chin down to mid-chest only. Zip fully closed, zip pull at the collar. Lighting must be soft, even, neutral-toned studio light matching the other views exactly \u2014 no warm colour cast, no dim or underlit backdrop.",
    "out": "out/loungeset-cream-detail-raw.jpg"
   },
   {
