@@ -32,16 +32,33 @@ def backdrop_check(im):
     cast = max(r, g, b) - min(r, g, b)
     return cast < 14, f"top-band RGB {r:.0f}/{g:.0f}/{b:.0f}, cast {cast:.0f}"
 
-def gemini_check(path, model_key, garment_hint=""):
+def gemini_check(path, model_key, garment_hint="", garment_ref_path=None, construction_hint=""):
     from google import genai
     client = genai.Client()
     ref = Image.open((HERE / BRAND["models"][model_key]["reference"]).resolve()).convert("RGB")
     cand = Image.open(path).convert("RGB")
+    contents = [ref, cand]
+    construction_clause = ""
+    if garment_ref_path:
+        greal = Image.open(garment_ref_path).convert("RGB")
+        contents.append(greal)
+        construction_clause = (
+            " Image 3 is the REAL product's own photo from the supplier — the ground truth for construction, "
+            "not a style reference. Compare Image 2 against Image 3 feature by feature: collar style, zip, every "
+            "seam line, cuffs/hem, and — critically — any pockets (their presence, shape and position). "
+            + (f"Specifically expected: {construction_hint}. " if construction_hint else "")
+            + "Add key construction_accurate (true/false — false if ANY described feature, especially a pocket, "
+            "is missing or not clearly visible in Image 2) and construction_notes (short, name exactly what's "
+            "missing or wrong, e.g. 'no visible front pockets')."
+        )
     q = ("Image 1 is the reference person. Image 2 is a candidate. Answer as strict JSON with keys: "
          "same_person (true/false), confidence (0-1), defects (list of strings from: extra_fingers, fused_fingers, "
          "bent_wrist, watermark, bare_midriff, extra_limb, distorted_face, text_artifacts — empty if none), "
-         "backdrop_plain_grey (true/false), notes (short). " + (f"Garment expected: {garment_hint}. Add key garment_matches (true/false)." if garment_hint else ""))
-    resp = client.models.generate_content(model="gemini-3.6-flash", contents=[ref, cand, q])
+         "backdrop_plain_grey (true/false), notes (short). "
+         + (f"Garment expected: {garment_hint}. Add key garment_matches (true/false)." if garment_hint else "")
+         + construction_clause)
+    contents.append(q)
+    resp = client.models.generate_content(model="gemini-3.6-flash", contents=contents)
     txt = resp.text.strip().strip("`")
     if txt.startswith("json"): txt = txt[4:]
     return json.loads(txt)
@@ -50,6 +67,8 @@ if __name__ == "__main__":
     path = sys.argv[1]; model_key = sys.argv[sys.argv.index("--model")+1]
     strict = "--strict" in sys.argv
     garment = sys.argv[sys.argv.index("--garment")+1] if "--garment" in sys.argv else ""
+    garment_ref = sys.argv[sys.argv.index("--garment-ref")+1] if "--garment-ref" in sys.argv else None
+    construction_hint = sys.argv[sys.argv.index("--construction")+1] if "--construction" in sys.argv else ""
     im = Image.open(path); fails, warns = [], []
     if "--graded" in sys.argv:
         import grade as G; ms = G.measure(im); lo, hi = BRAND["grade"]["backdrop_L"]; wlo, whi = BRAND["grade"]["warmth"]
@@ -59,12 +78,13 @@ if __name__ == "__main__":
     ok, why = backdrop_check(im)
     if not ok: warns.append(f"backdrop cast: {why}")
     if os.environ.get("GEMINI_API_KEY"):
-        r = gemini_check(path, model_key, garment)
+        r = gemini_check(path, model_key, garment, garment_ref, construction_hint)
         if not r.get("same_person") or r.get("confidence", 0) < 0.7: fails.append(f"identity: {r}")
         if r.get("defects"): fails.append(f"defects: {r['defects']}")
         if r.get("anatomy_ok") is False: fails.append("anatomy flagged")
         if "--close-crop" in sys.argv: warns.append("close crop — a human looks at hands/joints before this ships, regardless of PASS")
         if garment and r.get("garment_matches") is False: fails.append("garment mismatch")
+        if garment_ref and r.get("construction_accurate") is False: fails.append(f"construction mismatch vs real product photo: {r.get('construction_notes','')}")
         if r.get("backdrop_plain_grey") is False: warns.append("backdrop not plain grey (Gemini)")
     else:
         warns.append("no GEMINI_API_KEY — identity/defect check skipped")

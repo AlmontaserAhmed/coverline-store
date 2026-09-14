@@ -14,6 +14,12 @@ for it in job["items"]:
     if it.get("model") is None: print("SKIP (no model)", it["id"]); continue
     hint=B["garments"][it["garment"]]["name"]+" in "+it["colour"]
     cmd=[sys.executable, str(HERE/"qc.py"), str(img), "--model", it["model"], "--garment", hint, "--strict"]
+    gcolours=B["garments"][it["garment"]].get("colours",{})
+    gref=gcolours.get(it["colour"])
+    if gref and "detail" not in it["id"]:
+        cmd += ["--garment-ref", str((HERE/gref).resolve())]
+        cline=B["garments"][it["garment"]].get("line","")
+        if cline: cmd += ["--construction", cline]
     if it.get("pose") in ("detail","ref-hands") or "detail" in it["id"]: cmd.append("--close-crop")
     if "--graded" in extra: cmd.append("--graded")
     r=subprocess.run(cmd, capture_output=True, text=True); out=(r.stdout+r.stderr).strip()
