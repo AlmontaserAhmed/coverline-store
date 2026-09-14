@@ -42,14 +42,17 @@ window.COVERLINE_SIZE_CHARTS = {
   },
   loungeset: {
     unit: "cm",
-    columns: ["Size", "Jacket chest", "Jacket length", "Sleeve", "Trouser length", "Hip", "Waist (relaxed)"],
+    columns: ["Size", "Bust", "Waist", "Hip"],
     rows: [
-      ["S",  "106", "71", "52", "100", "113", "64"],
-      ["M",  "110", "72", "53", "101", "117", "68"],
-      ["L",  "114", "73", "54", "102", "121", "72"],
-      ["XL", "118", "74", "55", "103", "125", "76"]
+      ["XS",  "84",  "64", "94"],
+      ["S",   "88",  "68", "98"],
+      ["M",   "92",  "72", "102"],
+      ["L",   "96",  "76", "106"],
+      ["XL",  "100", "80", "110"],
+      ["2XL", "104", "84", "114"],
+      ["3XL", "108", "88", "118"]
     ],
-    note: "The jacket is boxy; the jogger has an elasticated waist. Trouser length is the full outside leg. Tolerance ±1–3cm."
+    note: "Body measurements from the supplier — no garment lengths given, since the jacket is deliberately oversized and boxy. Tolerance ±1–3cm."
   },
   coord: {
     unit: "cm",

@@ -15,7 +15,7 @@
 // product/variant query endpoint once the API key exists.
 export const CATALOG = {
   tee:       { name: "The Long-Enough Tee",     price: 15, sizes: ["S","M","L","XL","XXL"], colors: { apricot: "Apricot", black: "Black" }, cj: {} },
-  loungeset: { name: "The Off-Duty Set",        price: 30, sizes: ["S","M","L","XL"],       colors: { cream: "Cream", navy: "Navy" },       cj: {} },
+  loungeset: { name: "The Off-Duty Set",        price: 30, sizes: ["XS","S","M","L","XL","2XL","3XL"], colors: { cream: "Cream", charcoal: "Charcoal" }, cj: {} },
   coord:     { name: "The Wide-Leg Set",        price: 30, sizes: ["S","M","L","XL","XXL"], colors: { black: "Black", oat: "Oat" },         cj: {} },
   legging:   { name: "The Squat-Proof Legging", price: 18, sizes: ["S","M","L"],            colors: { black: "Black", nude: "Sand" },       cj: {} },
   short:     { name: "The Stay-Put Short",      price: 14, sizes: ["S","M","L","XL"],       colors: { maroon: "Wine", pink: "Blush" },      cj: {} }

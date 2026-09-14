@@ -27,23 +27,22 @@ window.COVERLINE_PRODUCTS = [
   },
   {
     id: "loungeset",
-    soldOut: true, // 14 Sep 2026: pulled from sale pending re-sourcing — see coverline-product-accuracy-audit-2026-09-14.md
     name: "The Off-Duty Set",
     tagline: "Zip jacket and jogger, sold together.",
-    desc: "A boxy zip jacket and matching jogger. The jogger is cut a few centimetres shorter than a standard one, so it sits on the shoe rather than under it.",
-    longDesc: "A zip-up jacket and jogger you can wear together or split up. The jacket is boxy and zips to the collar, so it works over a tee or on its own. The jogger has an elasticated waist and a slightly shorter leg than standard (100 to 103cm outside leg depending on size), so it sits on the shoe instead of pooling on it.",
-    fit: "Boxy through the jacket, elasticated waist on the jogger. Outside leg is 100–103cm depending on size — a touch shorter than a standard jogger, which suits a shorter frame; if you're tall for your size it will show ankle. Numbers in the chart below.",
+    desc: "An oversized, boxy zip jacket and matching relaxed jogger with a drawstring waist and elasticated ankle cuffs.",
+    longDesc: "A zip-up jacket and jogger you can wear together or split up. The jacket is deliberately oversized and boxy with dropped shoulders and a stand collar, so it works loose over a tee or on its own. The jogger is relaxed through the leg with a drawstring waist and elasticated cuffs at the ankle.",
+    fit: "Oversized and boxy through the jacket with dropped shoulders — it's meant to be loose, not fitted. The jogger has a drawstring waist and elasticated ankle cuffs. Sizing follows body measurements (bust/waist/hip), not garment length — check the chart below rather than your usual letter size.",
     priceLabel: "£30",
     price: 30,
-    sizes: ["S","M","L","XL"],
-    proof: "Zips to the collar. Jogger 100 to 103cm outside leg.",
-    modelNote: "Shown in size S on our house model (5\'6\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
+    sizes: ["XS","S","M","L","XL","2XL","3XL"],
+    proof: "Oversized boxy jacket, relaxed drawstring jogger.",
+    modelNote: "Shown in size S on our house model (5\'3\"). Product images are AI-generated; the size chart is the supplier\'s real body measurements.",
     care: "Soft brushed stretch knit. Machine wash cold with similar colours, zip the jacket before washing, hang or lay flat to dry. Skip the tumble dryer.",
     colors: [
-      { key: "cream", label: "Cream", hex: "#e6e0d4", image: "/assets/product-images/loungeset-cream.jpg?v=39", images: ["/assets/product-images/loungeset-cream.jpg?v=39", "/assets/product-images/loungeset-cream-proof.jpg?v=39", "/assets/product-images/loungeset-cream-back.jpg?v=39", "/assets/product-images/loungeset-cream-detail.jpg?v=39"] },
-      { key: "navy", label: "Navy", hex: "#22283a", image: "/assets/product-images/loungeset-navy.jpg?v=39", images: ["/assets/product-images/loungeset-navy.jpg?v=39", "/assets/product-images/loungeset-navy-proof.jpg?v=39", "/assets/product-images/loungeset-navy-back.jpg?v=39", "/assets/product-images/loungeset-navy-detail.jpg?v=39"] }
+      { key: "cream", label: "Cream", hex: "#e6e0d4", image: "/assets/product-images/loungeset-cream.jpg?v=53", images: ["/assets/product-images/loungeset-cream.jpg?v=53", "/assets/product-images/loungeset-cream-proof.jpg?v=53", "/assets/product-images/loungeset-cream-back.jpg?v=53", "/assets/product-images/loungeset-cream-detail.jpg?v=53"] },
+      { key: "charcoal", label: "Charcoal", hex: "#5c5860", image: "/assets/product-images/loungeset-charcoal.jpg?v=53", images: ["/assets/product-images/loungeset-charcoal.jpg?v=53", "/assets/product-images/loungeset-charcoal-proof.jpg?v=53", "/assets/product-images/loungeset-charcoal-back.jpg?v=53", "/assets/product-images/loungeset-charcoal-detail.jpg?v=53"] }
     ],
-    image: "/assets/product-images/loungeset-cream.jpg?v=39",
+    image: "/assets/product-images/loungeset-cream.jpg?v=53",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,300 C 90,340 220,250 300,300 L300,400 L0,400 Z" fill="var(--accent)" opacity=".4"/><path d="M20,90 C 120,40 200,140 290,80" fill="none" stroke="var(--accent-2)" stroke-width="1"/>'; }
   },
   {
