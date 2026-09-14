@@ -16,7 +16,9 @@ for it in job["items"]:
     cmd=[sys.executable, str(HERE/"qc.py"), str(img), "--model", it["model"], "--garment", hint, "--strict"]
     gcolours=B["garments"][it["garment"]].get("colours",{})
     gref=gcolours.get(it["colour"])
-    if gref and "detail" not in it["id"]:
+    # back-view shots can't show front-facing construction (pockets, zip, chest seams) — skip that check there,
+    # it's a structural non-match, not a defect
+    if gref and "detail" not in it["id"] and it.get("pose") != "back":
         cmd += ["--garment-ref", str((HERE/gref).resolve())]
         cline=B["garments"][it["garment"]].get("line","")
         if cline: cmd += ["--construction", cline]
