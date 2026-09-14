@@ -27,6 +27,7 @@ window.COVERLINE_PRODUCTS = [
   },
   {
     id: "loungeset",
+    soldOut: true, // 14 Sep 2026: pulled from sale pending re-sourcing — see coverline-product-accuracy-audit-2026-09-14.md
     name: "The Off-Duty Set",
     tagline: "Dressed in one go.",
     desc: "Boxy zip jacket and a jogger cut a touch shorter for petite frames — zip it up, pull them on, and you're done. No thinking required.",

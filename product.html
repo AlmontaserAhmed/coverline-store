@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://coverlineshop.com/product.html">
 <meta property="og:image" content="https://coverlineshop.com/assets/product-images/tee-apricot.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/style.css?v=15">
+<link rel="stylesheet" href="/assets/style.css?v=16">
 </head>
 <body>
 
@@ -75,7 +75,7 @@
   </div>
 </footer>
 
-<script src="/assets/products.js?v=48"></script>
+<script src="/assets/products.js?v=49"></script>
 <script src="/assets/sizecharts.js?v=2"></script>
 <script src="/assets/reviews.js?v=1"></script>
 <script src="/assets/config.js?v=4"></script>
@@ -112,7 +112,7 @@
       "@context": "https://schema.org", "@type": "Product", "name": p.name, "description": p.desc,
       "brand": { "@type": "Brand", "name": "Coverline" },
       "image": (p.colors || []).map(function(c){ return 'https://coverlineshop.com' + (c.image || '').split('?')[0]; }),
-      "offers": { "@type": "Offer", "url": url, "priceCurrency": "GBP", "price": String(p.price), "availability": "https://schema.org/InStock",
+      "offers": { "@type": "Offer", "url": url, "priceCurrency": "GBP", "price": String(p.price), "availability": p.soldOut ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
         "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "GBP" }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "GB" } } }
     });
     document.head.appendChild(ld);
@@ -179,6 +179,7 @@
       '<h1>' + p.name + '</h1>' +
       '<p class="tagline">' + p.tagline + '</p>' +
       '<p class="price">' + p.priceLabel + '</p>' +
+      (p.soldOut ? '<p class="stock-badge stock-badge-pdp">Currently out of stock</p>' : '') +
       '<span class="proof">' + p.proof + '</span>' +
       '<p class="longdesc">' + p.longDesc + '</p>' +
       (p.colors && p.colors.length ? (
@@ -197,8 +198,13 @@
         '<div class="sizes" role="group" aria-label="Size">' + sizesHtml + '</div>' +
       '</div>' +
       '<div class="pdp-add">' +
-        '<button type="button" class="btn" id="addToBagBtn">Add to bag — £' + p.price + '</button>' +
-        '<p class="pdp-added-note" id="addedNote" hidden>In your bag. Keep browsing or check out when you\'re ready.</p>' +
+        (p.soldOut ?
+          '<button type="button" class="btn" id="addToBagBtn" disabled aria-disabled="true">Out of stock</button>' +
+          '<p class="pdp-added-note" id="addedNote" hidden style="display:none">We\'re re-sourcing this one — email us and we\'ll let you know the moment it\'s back.</p>'
+        :
+          '<button type="button" class="btn" id="addToBagBtn">Add to bag — £' + p.price + '</button>' +
+          '<p class="pdp-added-note" id="addedNote" hidden>In your bag. Keep browsing or check out when you\'re ready.</p>'
+        ) +
         '<p class="trust-strip">Free tracked UK delivery (5&#8209;10 working days) &middot; 14&#8209;day no&#8209;post&#8209;back returns</p>' +
       '</div>' +
       '<div class="pdp-accordion">' +
@@ -224,6 +230,7 @@
       });
     });
     document.getElementById('addToBagBtn').addEventListener('click', function(){
+      if(p.soldOut) return;
       if(p.colors && p.colors.length && !chosenColor){
         showPickNote('Pick a colour first — tap one of the swatches above.', '.pdp-colors');
         return;

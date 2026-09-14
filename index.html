@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://coverlineshop.com/">
 <meta property="og:image" content="https://coverlineshop.com/assets/product-images/tee-apricot-proof.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/style.css?v=15">
+<link rel="stylesheet" href="/assets/style.css?v=16">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
   </div>
 </footer>
 
-<script src="/assets/products.js?v=48"></script>
+<script src="/assets/products.js?v=49"></script>
 <script src="/assets/config.js?v=4"></script>
 <script src="/assets/cart.js?v=10"></script>
 <script>
@@ -125,8 +125,9 @@
     var galleryAlt = pickAlt(main.images || []);
     var alt  = galleryAlt ? {image: galleryAlt, label: main.label + ', second view'} : null;
     return '' +
-        '<div class="piece" data-id="' + p.id + '">' +
+        '<div class="piece' + (p.soldOut ? ' out-of-stock' : '') + '" data-id="' + p.id + '">' +
         '<div class="swatch">' +
+          (p.soldOut ? '<span class="stock-badge">Out of Stock</span>' : '') +
           '<img src="' + main.image + '" alt="' + p.name + ' in ' + main.label + '" loading="lazy">' +
           (alt ? '<img class="alt" src="' + alt.image + '" alt="' + p.name + ' in ' + alt.label + '" loading="lazy">' : '') +
           '<a class="tile-link" href="/product.html?id=' + p.id + '" aria-label="' + p.name + '"></a>' +

@@ -393,6 +393,17 @@ button.submit{
 
 /* ---------- Grid v2 (12 Sep 2026): image-led tiles, colour dots, 2-up on phone ---------- */
 .piece{ position:relative; }
+
+/* Out-of-stock badge (14 Sep 2026): shown on a product pulled from sale while re-sourcing —
+   see coverline-product-accuracy-audit-2026-09-14.md. Dims the tile image; leaves the tile
+   clickable so the page can still explain why it's unavailable. */
+.piece.out-of-stock .swatch img{ opacity:.5; }
+.stock-badge{
+  font-family:'Jost',sans-serif; font-size:.66rem; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ink); background:var(--paper); border:1px solid var(--hair); padding:5px 11px;
+}
+.piece .swatch .stock-badge{ position:absolute; top:12px; left:12px; z-index:3; }
+.stock-badge-pdp{ display:inline-block; margin-top:8px; }
 .piece .swatch{ margin-bottom:14px; background:var(--paper-raised); }
 .piece .swatch img{ transition:opacity .35s ease; }
 .piece .swatch img:not(.alt){ transition:opacity .35s ease; }
