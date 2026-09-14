@@ -9,10 +9,10 @@ from PIL import Image, ImageDraw, ImageFont
 
 import os
 FONT_DIR = os.path.dirname(os.path.abspath(__file__))
-INK = (43, 18, 24)        # #2B1218
-OAT = (232, 223, 211)     # #E8DFD3
-STONE = (184, 175, 166)   # #B8AFA6
-BERRY = (156, 43, 78)     # #9C2B4E
+INK = (35, 30, 27)        # #231E1B (clay palette, 14 Sep 2026)
+OAT = (229, 220, 211)     # #E5DCD3
+STONE = (181, 169, 158)   # #B5A99E
+BERRY = (122, 59, 59)     # #7A3B3B (wine accent)
 WHITE = (255, 255, 255)
 
 def font(size, weight="SemiBold"):
