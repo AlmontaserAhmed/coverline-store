@@ -75,7 +75,7 @@
   </div>
 </footer>
 
-<script src="/assets/products.js?v=50"></script>
+<script src="/assets/products.js?v=51"></script>
 <script src="/assets/sizecharts.js?v=2"></script>
 <script src="/assets/reviews.js?v=1"></script>
 <script src="/assets/config.js?v=4"></script>
@@ -211,7 +211,7 @@
         accItem('Fit &amp; sizing', '<p>' + p.fit + '</p>') +
         (sizeChartHtml() ? accItem('Size chart', sizeChartHtml()) : '') +
         accItem('Fabric &amp; care', '<p>' + (p.care || 'Machine wash cold, hang or lay flat to dry. Skip the tumble dryer.') + '</p>') +
-        accItem('Shipping', '<p>UK delivery usually takes 5&ndash;10 working days. It ships tracked, straight from our supplier, which is further away than the high street &mdash; and it\'s priced like it. We\'d rather say that now than promise next-day and miss it. You\'ll get a tracking link by email once it\'s on the way.</p><p><a href="/shipping-returns.html" class="link-quiet">Full shipping &amp; returns policy &rarr;</a></p>') +
+        accItem('Shipping', '<p>UK delivery usually takes 5&ndash;10 working days. It ships tracked, straight from our supplier, which is further away than the high street &mdash; and it\'s priced like it. You\'ll get a tracking link by email once it\'s on the way.</p><p><a href="/shipping-returns.html" class="link-quiet">Full shipping &amp; returns policy &rarr;</a></p>') +
         accItem('Returns', '<p>Wrong size, damaged, or not what you ordered? Email us within 14 days of delivery and we\'ll send a replacement or refund you &mdash; you never have to post anything back. Full detail in our <a href="/shipping-returns.html">returns policy</a>.</p>') +
       '</div>';
 
@@ -311,7 +311,7 @@
     var sec = document.getElementById('pdpReviews');
     sec.hidden = false;
     if(!mine.length){
-      document.getElementById('reviewsList').innerHTML = '<p class="reviews-empty">First drop, so nothing here yet. If you\'ve bought one, the link in your delivery email lets you tell the next person what height you are and where the hem hit &mdash; that\'s the useful bit.</p>';
+      document.getElementById('reviewsList').innerHTML = '<p class="reviews-empty">This is our first drop, so there are no reviews yet. If you\'ve bought one, the link in your delivery email lets you leave one. Your height and the size you took are the most useful things to include.</p>';
       return;
     }
     document.getElementById('reviewsList').innerHTML = mine.map(function(r){

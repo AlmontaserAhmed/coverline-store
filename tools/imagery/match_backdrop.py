@@ -80,12 +80,12 @@ def main():
             Fl,fy=fit_field(L)
             F=np.stack([fit_field(out[...,c],fy)[0] for c in range(3)],-1) if fy>=0 else Fl
             # tight crops (torso / legs fill the frame) have no clean border: the edge strips are garment
-            tight=p.endswith("-detail.jpg") and any(k in p for k in ("tee-","loungeset-","legging-"))
+            tight=p.endswith("-detail.jpg") and any(k in p for k in ("tee-","loungeset-","legging-","short-"))
             if fy<0 or tight:
                 # no clean border to fit a field on. Use a hand-picked pure-backdrop patch per crop type
                 # (fractions of w,h: x0,x1,y0,y1) and a single global gain so the patch matches the reference's
                 # top-strip level. Keeps the close-up in the same room as the full-body shots.
-                patch={"tee-":(0.0,0.12,0.0,0.30),"loungeset-":(0.0,0.10,0.0,0.25),"legging-":(0.88,1.0,0.0,0.30)}
+                patch={"tee-":(0.0,0.12,0.0,0.30),"loungeset-":(0.0,0.10,0.0,0.25),"legging-":(0.88,1.0,0.0,0.30),"short-":(0.90,1.0,0.0,0.25)}
                 key=next((k for k in patch if k in p),None)
                 if key:
                     x0,x1,y0,y1=patch[key]; own=out[int(h*y0):int(h*y1), int(w*x0):int(w*x1)].reshape(-1,3).mean(0)

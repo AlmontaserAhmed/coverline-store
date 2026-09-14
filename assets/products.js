@@ -8,9 +8,9 @@ window.COVERLINE_PRODUCTS = [
   {
     id: "tee",
     name: "The Long-Enough Tee",
-    tagline: "Stays down when you reach up.",
-    desc: "Actually long enough: it stays down when you reach for the top shelf, and covers the waistband of your leggings without riding up.",
-    longDesc: "The tee that ends the reach-up-and-tug-it-down routine. Cut longer through the body so it stays down when you lift your arms, and loose enough to layer over leggings or under a jacket without bunching at the waist. Most \"longline\" tees on the high street are cut for someone half a foot taller than you — this one's actually made to the length it says.",
+    tagline: "Long enough to stay down.",
+    desc: "A longline tee that covers the waistband of your leggings and stays there when you lift your arms. Loose fit, cut for shorter proportions.",
+    longDesc: "Cut longer through the body than a standard tee, so it stays down when you reach up, and loose enough to wear over leggings or under a jacket without bunching at the waist. Most longline tees are drafted for someone around 5'9\", which is why they end up cropped on you. This one is made to the length it says on a shorter frame.",
     fit: "Oversized by design — order your usual size for the intended relaxed fit, or size down for something closer to fitted.",
     priceLabel: "£15",
     price: 15,
@@ -29,9 +29,9 @@ window.COVERLINE_PRODUCTS = [
     id: "loungeset",
     soldOut: true, // 14 Sep 2026: pulled from sale pending re-sourcing — see coverline-product-accuracy-audit-2026-09-14.md
     name: "The Off-Duty Set",
-    tagline: "Dressed in one go.",
-    desc: "Boxy zip jacket and a jogger cut a touch shorter for petite frames — zip it up, pull them on, and you're done. No thinking required.",
-    longDesc: "A zip jacket and jogger that get you dressed in one move. The jacket is cut boxy and zips right up to the collar, so it works over a tee or on its own; the jogger has an elasticated waist and a full-length leg that sits on the shoe. It just happens to look like you put thought into it, even on the days you very much didn't.",
+    tagline: "Zip jacket and jogger, sold together.",
+    desc: "A boxy zip jacket and matching jogger. The jogger is cut a few centimetres shorter than a standard one, so it sits on the shoe rather than under it.",
+    longDesc: "A zip-up jacket and jogger you can wear together or split up. The jacket is boxy and zips to the collar, so it works over a tee or on its own. The jogger has an elasticated waist and a slightly shorter leg than standard (100 to 103cm outside leg depending on size), so it sits on the shoe instead of pooling on it.",
     fit: "Boxy through the jacket, elasticated waist on the jogger. Outside leg is 100–103cm depending on size — a touch shorter than a standard jogger, which suits a shorter frame; if you're tall for your size it will show ankle. Numbers in the chart below.",
     priceLabel: "£30",
     price: 30,
@@ -49,9 +49,9 @@ window.COVERLINE_PRODUCTS = [
   {
     id: "coord",
     name: "The Wide-Leg Set",
-    tagline: "Looks planned. Took four seconds.",
-    desc: "A relaxed short-sleeve shirt with contrast trim and a full-length wide-leg trouser, cut loose — brunch to dinner without a change. Petite? Cuff it. The cuff looks planned.",
-    longDesc: "A boxy, collared short-sleeve shirt with a deep V and a contrast band running the neckline, cuffs and hem, over a full-length wide-leg trouser with a matching stripe down each leg. Loose everywhere on purpose — the wide leg gives you room to sit, walk and get in a car without anything pulling. The V runs deep, so we wear ours over the Long-Enough Tee for daytime and on its own for evenings. Linen-look woven polyester: holds the drape, doesn't crease in your bag.",
+    tagline: "Shirt and wide-leg trouser set.",
+    desc: "A short-sleeve collared shirt with contrast trim and a matching wide-leg trouser. Loose all over. The trouser is full length, so if you're petite you'll want to cuff it or wear a heel.",
+    longDesc: "A boxy collared shirt with a deep V and contrast trim on the neckline, cuffs and hem, with a wide-leg trouser that has a matching stripe down each leg. It's loose everywhere, which is the point. The V is deep, so a tee underneath works for daytime. Linen-look woven polyester that holds its shape and doesn't crease much.",
     fit: "Loose through the top, wide through the leg, elasticated waist. The trouser is full length (105–107cm outside leg) — shorter frames will want a cuff or a heel, and the cuff looks intentional. The supplier's own UK conversion is in the chart below; trust it over your usual letter size.",
     priceLabel: "£30",
     price: 30,
@@ -69,9 +69,9 @@ window.COVERLINE_PRODUCTS = [
   {
     id: "legging",
     name: "The Squat-Proof Legging",
-    tagline: "Leggings you can bend over in.",
-    desc: "A thick seamless knit, soft enough to sleep in and covered enough to bend over in — the legging you don't second-guess before leaving the house.",
-    longDesc: "For the days you basically live in leggings — school run, gym, the floor at pickup, the sofa afterwards. High waistband that actually stays put when you sit, fabric thick enough that bending down in daylight isn't a whole calculation. If you've already bought the £12 pair twice, this is meant to be the one you don't have to replace.",
+    tagline: "Thick, high-waisted, stays up.",
+    desc: "A thick seamless knit with a high waistband that stays up when you sit. Runs small, so go one size up from your usual.",
+    longDesc: "For the days you live in leggings. The waistband is high and stays up when you sit, and the knit is thick enough that you don't need to think about it when you bend down. Soft enough to sleep in. It's the pair you keep instead of rebuying the cheap ones every few months.",
     fit: "Runs small — it's cut to Asian sizing, so go one up from your usual UK size (a UK 10–12 is an M, 12–14 an L). Only S to L exist in this one. Check the chart below before you pick.",
     priceLabel: "£18",
     price: 18,
@@ -89,9 +89,9 @@ window.COVERLINE_PRODUCTS = [
   {
     id: "short",
     name: "The Stay-Put Short",
-    tagline: "Shorts that stay where you put them.",
-    desc: "Seamless, high-waisted, cut longer than the usual gym short — covers the top of your thigh and stays put, so you're not pulling them back down between sets.",
-    longDesc: "Seamless, so there's no chafing and no lines showing through leggings underneath. Cut with a bit more length than the usual gym short, so squatting, lunging or sitting on the floor doesn't need a second hand to sort them out afterwards. At £14 they're an easy add if you're already checking out.",
+    tagline: "Seamless short, longer in the leg.",
+    desc: "Seamless and high-waisted, cut a bit longer in the leg than the average gym short so it stays put when you squat.",
+    longDesc: "Seamless, so there's no chafing and nothing shows through if you wear them under leggings. The leg is a bit longer than a typical gym short, so it doesn't ride up when you squat, lunge or sit on the floor. £14.",
     fit: "Runs small and sits high on the waist. Go one up from your usual UK size — a UK 8 is an M, a UK 10 an L, a UK 12 an XL. Chart below.",
     priceLabel: "£14",
     price: 14,
@@ -100,10 +100,10 @@ window.COVERLINE_PRODUCTS = [
     modelNote: "Shown in size S on our house model (5\'3\"). Product images are AI-generated; the size chart is the supplier\'s real garment measurements.",
     care: "Seamless stretch knit. Machine wash cold, hang or lay flat to dry. Skip the tumble dryer — it\'s what kills the stretch in every pair you\'ve owned before.",
     colors: [
-      { key: "maroon", label: "Wine", hex: "#946468", image: "/assets/product-images/short-wine.jpg?v=50", images: ["/assets/product-images/short-wine.jpg?v=50", "/assets/product-images/short-wine-back.jpg?v=50", "/assets/product-images/short-wine-detail.jpg?v=50"] },
-      { key: "pink", label: "Blush", hex: "#c59c9d", image: "/assets/product-images/short-blush.jpg?v=49", images: ["/assets/product-images/short-blush.jpg?v=49", "/assets/product-images/short-blush-back.jpg?v=49", "/assets/product-images/short-blush-detail.jpg?v=49"] }
+      { key: "maroon", label: "Wine", hex: "#946468", image: "/assets/product-images/short-wine.jpg?v=51", images: ["/assets/product-images/short-wine.jpg?v=51", "/assets/product-images/short-wine-back.jpg?v=51", "/assets/product-images/short-wine-detail.jpg?v=51"] },
+      { key: "pink", label: "Blush", hex: "#c59c9d", image: "/assets/product-images/short-blush.jpg?v=51", images: ["/assets/product-images/short-blush.jpg?v=51", "/assets/product-images/short-blush-back.jpg?v=51", "/assets/product-images/short-blush-detail.jpg?v=51"] }
     ],
-    image: "/assets/product-images/short-wine.jpg?v=50",
+    image: "/assets/product-images/short-wine.jpg?v=51",
     swatch: function(){ return '<rect width="300" height="400" fill="var(--paper-raised)"/><path d="M0,270 C 100,320 200,240 300,280 L300,400 L0,400 Z" fill="var(--accent-2)" opacity=".5"/><path d="M0,170 C 100,220 200,120 300,180" fill="none" stroke="var(--accent)" stroke-width="1"/>'; }
   }
 ];
