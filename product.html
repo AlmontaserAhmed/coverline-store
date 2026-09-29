@@ -100,15 +100,10 @@
   var chosenColor = null;
 
   var url='https://coverlineshop.com/shop/'+encodeURIComponent(p.id);
-  document.getElementById('pageTitle').textContent = p.name + ' — Coverline';
+  // title, description and Open Graph come prerendered from tools/seo/build-seo.mjs; don't overwrite them here.
   (function(){
     var set=function(sel,attr,val){ var el=document.querySelector(sel); if(el) el.setAttribute(attr,val); };
-    set('link[rel=canonical]','href',url); set('meta[property="og:url"]','content',url);
-    set('meta[property="og:title"]','content',p.name+' — Coverline');
-    set('meta[property="og:description"]','content',p.desc);
-    set('meta[property="og:image"]','content','https://coverlineshop.com'+(p.image||'').split('?')[0]);
   })();
-  document.getElementById('pageDesc').setAttribute('content', p.desc);
   (function(){
     if(document.querySelector('script[type="application/ld+json"]')) return; // prerendered copy already in <head>
     var ld = document.createElement('script'); ld.type = 'application/ld+json';
