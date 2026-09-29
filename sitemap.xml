@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://coverlineshop.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://coverlineshop.com/product.html?id=tee</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://coverlineshop.com/product.html?id=loungeset</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://coverlineshop.com/product.html?id=coord</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://coverlineshop.com/product.html?id=legging</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://coverlineshop.com/product.html?id=short</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://coverlineshop.com/shipping-returns.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://coverlineshop.com/terms.html</loc><changefreq>monthly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://coverlineshop.com/privacy.html</loc><changefreq>monthly</changefreq><priority>0.2</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://coverlineshop.com/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/tee-apricot.jpg</image:loc><image:title>The Long-Enough Tee</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/loungeset-cream.jpg</image:loc><image:title>The Off-Duty Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/coord-black.jpg</image:loc><image:title>The Wide-Leg Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/legging-black.jpg</image:loc><image:title>The Squat-Proof Legging</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/short-wine.jpg</image:loc><image:title>The Stay-Put Short</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://coverlineshop.com/shop/tee</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/tee-apricot.jpg</image:loc><image:title>The Long-Enough Tee</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/tee-apricot-proof.jpg</image:loc><image:title>The Long-Enough Tee</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/tee-apricot-back.jpg</image:loc><image:title>The Long-Enough Tee</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/tee-apricot-detail.jpg</image:loc><image:title>The Long-Enough Tee</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/tee-black.jpg</image:loc><image:title>The Long-Enough Tee</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/tee-black-proof.jpg</image:loc><image:title>The Long-Enough Tee</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/tee-black-back.jpg</image:loc><image:title>The Long-Enough Tee</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/tee-black-detail.jpg</image:loc><image:title>The Long-Enough Tee</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://coverlineshop.com/shop/loungeset</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/loungeset-cream.jpg</image:loc><image:title>The Off-Duty Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/loungeset-cream-proof.jpg</image:loc><image:title>The Off-Duty Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/loungeset-cream-back.jpg</image:loc><image:title>The Off-Duty Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/loungeset-cream-detail.jpg</image:loc><image:title>The Off-Duty Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/loungeset-charcoal.jpg</image:loc><image:title>The Off-Duty Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/loungeset-charcoal-proof.jpg</image:loc><image:title>The Off-Duty Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/loungeset-charcoal-back.jpg</image:loc><image:title>The Off-Duty Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/loungeset-charcoal-detail.jpg</image:loc><image:title>The Off-Duty Set</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://coverlineshop.com/shop/coord</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/coord-black.jpg</image:loc><image:title>The Wide-Leg Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/coord-black-proof.jpg</image:loc><image:title>The Wide-Leg Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/coord-black-back.jpg</image:loc><image:title>The Wide-Leg Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/coord-black-detail.jpg</image:loc><image:title>The Wide-Leg Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/coord-oat.jpg</image:loc><image:title>The Wide-Leg Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/coord-oat-proof.jpg</image:loc><image:title>The Wide-Leg Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/coord-oat-back.jpg</image:loc><image:title>The Wide-Leg Set</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/coord-oat-detail.jpg</image:loc><image:title>The Wide-Leg Set</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://coverlineshop.com/shop/legging</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/legging-black.jpg</image:loc><image:title>The Squat-Proof Legging</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/legging-black-proof.jpg</image:loc><image:title>The Squat-Proof Legging</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/legging-black-back.jpg</image:loc><image:title>The Squat-Proof Legging</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/legging-black-detail.jpg</image:loc><image:title>The Squat-Proof Legging</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/legging-nude.jpg</image:loc><image:title>The Squat-Proof Legging</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/legging-nude-proof.jpg</image:loc><image:title>The Squat-Proof Legging</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/legging-nude-back.jpg</image:loc><image:title>The Squat-Proof Legging</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/legging-nude-detail.jpg</image:loc><image:title>The Squat-Proof Legging</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://coverlineshop.com/shop/short</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/short-wine.jpg</image:loc><image:title>The Stay-Put Short</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/short-wine-back.jpg</image:loc><image:title>The Stay-Put Short</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/short-wine-detail.jpg</image:loc><image:title>The Stay-Put Short</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/short-blush.jpg</image:loc><image:title>The Stay-Put Short</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/short-blush-back.jpg</image:loc><image:title>The Stay-Put Short</image:title></image:image>
+    <image:image><image:loc>https://coverlineshop.com/assets/product-images/short-blush-detail.jpg</image:loc><image:title>The Stay-Put Short</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://coverlineshop.com/shipping-returns.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://coverlineshop.com/terms.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://coverlineshop.com/privacy.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
 </urlset>

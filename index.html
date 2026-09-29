@@ -3,18 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Coverline — Basics Cut for Petite Frames</title>
-<meta name="description" content="Everyday basics cut for petite frames. Tees that end at your hip, leggings that stop at your ankle, sets in shorter lengths. From £14, free tracked UK delivery.">
+<title>Petite Clothing UK: Tees, Leggings &amp; Sets | Coverline</title>
+<meta name="description" content="Petite clothing for UK women: longline tees, leggings and sets cut for shorter frames, so nothing swims or bunches. From £14, free tracked UK delivery.">
 <link rel="canonical" href="https://coverlineshop.com/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%23180f12%27/%3E%3Ctext x=%2732%27 y=%2745%27 font-family=%27Georgia,serif%27 font-style=%27italic%27 font-size=%2740%27 text-anchor=%27middle%27 fill=%27%23f2e6df%27%3EC%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Coverline">
-<meta property="og:title" content="Coverline — Basics Cut for Petite Frames">
-<meta property="og:description" content="Everyday basics cut for petite frames. Tees that end at your hip, leggings that stop at your ankle, sets in shorter lengths. From £14, free tracked UK delivery.">
+<meta property="og:title" content="Petite Clothing UK: Tees, Leggings &amp; Sets | Coverline">
+<meta property="og:description" content="Petite clothing for UK women: longline tees, leggings and sets cut for shorter frames, so nothing swims or bunches. From £14, free tracked UK delivery.">
 <meta property="og:url" content="https://coverlineshop.com/">
 <meta property="og:image" content="https://coverlineshop.com/assets/product-images/tee-apricot-proof.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/style.css?v=19">
+<!--seo:start-->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://coverlineshop.com/#org","name":"Coverline","url":"https://coverlineshop.com/","logo":"https://coverlineshop.com/assets/product-images/tee-apricot.jpg","email":"coverlineshop@agentmail.to","address":{"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"},"sameAs":["https://www.instagram.com/wearcoverline","https://www.tiktok.com/@wearcoverline"]},{"@type":"WebSite","@id":"https://coverlineshop.com/#site","url":"https://coverlineshop.com/","name":"Coverline","publisher":{"@id":"https://coverlineshop.com/#org"},"inLanguage":"en-GB"},{"@type":"ItemList","name":"The Edit — petite basics","itemListElement":[{"@type":"ListItem","position":1,"url":"https://coverlineshop.com/shop/tee","name":"The Long-Enough Tee"},{"@type":"ListItem","position":2,"url":"https://coverlineshop.com/shop/loungeset","name":"The Off-Duty Set"},{"@type":"ListItem","position":3,"url":"https://coverlineshop.com/shop/coord","name":"The Wide-Leg Set"},{"@type":"ListItem","position":4,"url":"https://coverlineshop.com/shop/legging","name":"The Squat-Proof Legging"},{"@type":"ListItem","position":5,"url":"https://coverlineshop.com/shop/short","name":"The Stay-Put Short"}]}]}</script>
+<!--seo:end-->
 </head>
 <body>
 
@@ -61,7 +64,7 @@
         <h2>The Edit</h2>
         <p>Five pieces in two colours each. Tap a colour to see it on the model. The photos are AI-generated on our two house models, and the size charts are the supplier's real measurements, so check those before you order.</p>
       </div>
-      <div class="shop-grid" id="shopGrid"></div>
+      <div class="shop-grid" id="shopGrid"><!--seo-grid:start--><nav aria-label="Products"><a href="/shop/tee">The Long-Enough Tee — £15</a> <a href="/shop/loungeset">The Off-Duty Set — £30</a> <a href="/shop/coord">The Wide-Leg Set — £30</a> <a href="/shop/legging">The Squat-Proof Legging — £18</a> <a href="/shop/short">The Stay-Put Short — £14</a></nav><!--seo-grid:end--></div>
     </div>
   </section>
 
@@ -132,9 +135,9 @@
           (p.soldOut ? '<span class="stock-badge">Out of Stock</span>' : '') +
           '<img src="' + main.image + '" alt="' + p.name + ' in ' + main.label + '" loading="lazy">' +
           (alt ? '<img class="alt" src="' + alt.image + '" alt="' + p.name + ' in ' + alt.label + '" loading="lazy">' : '') +
-          '<a class="tile-link" href="/product.html?id=' + p.id + '" aria-label="' + p.name + '"></a>' +
+          '<a class="tile-link" href="/shop/' + p.id + '" aria-label="' + p.name + '"></a>' +
         '</div>' +
-        '<div class="meta"><h3><a href="/product.html?id=' + p.id + '">' + p.name + '</a></h3><p class="price">' + p.priceLabel + '</p></div>' +
+        '<div class="meta"><h3><a href="/shop/' + p.id + '">' + p.name + '</a></h3><p class="price">' + p.priceLabel + '</p></div>' +
         '<p class="desc">' + p.tagline + '</p>' +
         (cols.length ? '<div class="dots" role="group" aria-label="Colours">' +
           cols.map(function(c,i){ return '<button type="button" class="dot" data-i="' + i + '" aria-pressed="false" title="' + c.label + '"><span style="background:' + c.hex + '"></span></button>'; }).join('') +
